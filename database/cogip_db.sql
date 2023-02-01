@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le : mer. 01 fév. 2023 à 13:25
--- Version du serveur :  5.7.24
--- Version de PHP : 7.4.1
+-- Hôte : 127.0.0.1
+-- Généré le : mer. 01 fév. 2023 à 15:16
+-- Version du serveur : 10.4.24-MariaDB
+-- Version de PHP : 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,51 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `cogip_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `companies`
+--
+
+CREATE TABLE `companies` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `types_id` int(11) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `tva` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` int(11) NOT NULL,
+  `company_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `invoices`
+--
+
+CREATE TABLE `invoices` (
+  `id` int(11) NOT NULL,
+  `ref` varchar(50) NOT NULL,
+  `id_company` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -95,6 +139,27 @@ CREATE TABLE `users` (
 --
 
 --
+-- Index pour la table `companies`
+--
+ALTER TABLE `companies`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `type` (`types_id`);
+
+--
+-- Index pour la table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `company` (`company_id`);
+
+--
+-- Index pour la table `invoices`
+--
+ALTER TABLE `invoices`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `companies` (`id_company`);
+
+--
 -- Index pour la table `permissions`
 --
 ALTER TABLE `permissions`
@@ -111,8 +176,8 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `roles_permission`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `permission_id` (`permission_id`),
-  ADD KEY `role_id` (`role_id`);
+  ADD KEY `roles_permission_ibfk_1` (`permission_id`),
+  ADD KEY `roles_permission_ibfk_2` (`role_id`);
 
 --
 -- Index pour la table `types`
@@ -124,12 +189,29 @@ ALTER TABLE `types`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `role_id` (`role_id`);
+  ADD KEY `users_ibfk_1` (`role_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `companies`
+--
+ALTER TABLE `companies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `invoices`
+--
+ALTER TABLE `invoices`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `permissions`
@@ -156,14 +238,26 @@ ALTER TABLE `types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `companies`
+--
+ALTER TABLE `companies`
+  ADD CONSTRAINT `type` FOREIGN KEY (`types_id`) REFERENCES `types` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD CONSTRAINT `company` FOREIGN KEY (`company_id`) REFERENCES `companies` (`id`);
+
+--
+-- Contraintes pour la table `invoices`
+--
+ALTER TABLE `invoices`
+  ADD CONSTRAINT `companies` FOREIGN KEY (`id_company`) REFERENCES `companies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `roles_permission`
