@@ -2,6 +2,11 @@
 require_once __DIR__.'/../index.php';
 require __DIR__ . '/../vendor/autoload.php';
 
-use Dotenv;
+use Dotenv\Dotenv;
+use App\Core\DbConnect;
 
-Dotenv\Dotenv::createImmutable(__DIR__ . '/')->load();
+Dotenv::createImmutable(__DIR__ . '/')->load();
+
+$bdd = new DbConnect();
+$bdd->connect();
+
