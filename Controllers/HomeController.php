@@ -12,4 +12,10 @@ class HomeController extends Controller
     {
         return $this->view('welcome',["name" => "Cogip"]);
     }
+
+    public function apiInvoice()
+    {
+        return $this->show('readInvoices');
+    }
+
 }
