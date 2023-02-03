@@ -2,7 +2,8 @@
 namespace App\Core;
 
 use Dotenv\Dotenv;
-use App\Database\PDO;
+
+Dotenv::createImmutable(__DIR__ . '/')->load();
 
 class DbConnect{
 
@@ -22,8 +23,6 @@ class DbConnect{
 
         $bdd = new \PDO("mysql:host=$this->host;dbname=$this->dbname", "$this->username", "$this->password");
         $bdd->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE,\PDO::FETCH_ASSOC);  
-        
-        var_dump("Connecté à la base de données");
         
         return $bdd;
 
