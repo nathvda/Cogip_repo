@@ -4,7 +4,21 @@ namespace App\Controllers;
 use App\Core\DbConnect;
 use App\Model\ContactModel;
 
+/**
+ * Gère les actions relatives aux personnes de contact
+ * add → ajout
+ * getInvoice → récupère un élément unique
+ * getInvoices → récupère tous les éléments
+ * updateInvoice → met à jour les informations d'un élément
+ * delete → supprime un élément de la base de donnée.
+ */
+
 class ContactsController extends DbConnect{
+
+        /**
+     * Crée un contact au moyen des informations renvoyées par le validateur
+     * $data → informations renvoyées par le validateur.
+     */
 
     public function add($data){
 
@@ -12,6 +26,11 @@ class ContactsController extends DbConnect{
         echo $data['name'] . " a bien été ajouté.e à la base de données";
 
     }
+
+    /**
+     * Récupère les informations d'un contact selon son identifiant unique
+     * $id → identifiant unique.
+     */
 
     public function getContact($id){
 
@@ -33,6 +52,10 @@ class ContactsController extends DbConnect{
         }
 
     }
+
+    /**
+     * Récupère toutes les informations des contacts sous format JSON.
+     */
 
     public function getContacts(){
         header("Access-Control-Allow-Origin: *");
@@ -57,12 +80,24 @@ class ContactsController extends DbConnect{
 
     }
 
+    /**
+     * Mets à jour un contact selon son id et utilise les informations retournées par le validateur.
+     * $id → identifiant unique
+     * $data → informations renvoyées par le validateur
+     */
+
+
     public function updateContact($id, $data){
 
         (new ContactModel)->editContact($id, $data['name'], intval($data['company_id']), $data['email'], $data['phone']);
         echo $data['name'] . " a bien été modifiée";
 
     }
+
+    /**
+     * Supprime un contact selon son id.
+     * $id = identifiant unique.
+     */
 
     public function delete($id){
 

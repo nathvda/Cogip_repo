@@ -4,6 +4,15 @@ namespace App\Controllers;
 use App\Core\DbConnect;
 use App\Model\InvoicesModel;
 
+/**
+ * Gère les actions relatives aux factures
+ * add → ajout
+ * getInvoice → récupère un élément unique
+ * getInvoices → récupère tous les éléments
+ * updateInvoice → met à jour les informations d'un élément
+ * delete → supprime un élément de la base de donnée.
+ */
+
 class InvoicesController extends DbConnect{
 
     public function add($data){

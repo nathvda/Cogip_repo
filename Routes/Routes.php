@@ -6,6 +6,7 @@ use App\Controllers\HomeController;
 use App\Controllers\CompanyController;
 use App\Controllers\InvoicesController;
 use App\Controllers\ContactsController;
+use App\Controllers\UsersController;
 
 $router = new Router();
 
@@ -20,7 +21,6 @@ $router->get('/', function() {
  * → /companies/add → ajout d'une entreprise.
  * → /companies/{id}/edit, ex: /companies/1/edit → edit d'une entreprise, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
  */
-
 
 $router->mount('/companies', function() use ($router){
 
@@ -45,12 +45,12 @@ $router->post('/add', function() {
 });
 
 $router->delete('/{companyid}/delete', function($companyid) { 
+    echo $companyid;
     (new CompanyController)->delete($companyid);
 });
 
 
 });
-
 
 /** 
  * Route d'accès aux factures.
@@ -121,8 +121,25 @@ $router->mount('/contacts', function() use ($router){
         (new ContactsController)->delete($contactid);
     });
 
+});
 
+$router->mount('/register', function() use ($router){
 
+    $router->post('/', function(){
+        echo "This will be the register page";
+        (new UsersController)->registerUser($_POST);
+
+    });
+    
+});
+
+$router->mount('/logout', function() use ($router){
+
+    $router->get('/', function(){
+        echo "This will be the logout function";
+
+    });
+    
 });
 
 $router->run();

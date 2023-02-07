@@ -95,21 +95,34 @@ $bdd->connect();
 </form>
 
 <h2>Test delete company</h2>
+<b>Doesn't work cause needs JSON and DELETE function (front)</b>
 
 <form method="post" action="/companies/5/delete">
     <button type="submit">send</button>
 </form>
 
 <h2>Test delete invoice</h2>
+<b>Doesn't work cause needs JSON and DELETE function (front)</b>
 
 <form method="post" action="/invoices/5/delete">
     <button type="submit">send</button>
 </form>
 
 <h2>Test delete contact</h2>
+<b>Doesn't work cause needs JSON and DELETE function (front)</b>
 
 <form method="post" action="/contact/1/delete">
     <button type="submit">send</button>
+</form>
+
+<h2>Registering test</h2>
+
+<form method="post" action="/register">
+    <input type="text" name="firstname">
+    <input type="text" name="lastname">
+    <input type="email" name="email">
+    <input type="text" name="password">
+    <button type="submit">register</button>
 </form>
 
 </head>

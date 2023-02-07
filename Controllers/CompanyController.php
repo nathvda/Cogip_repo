@@ -4,13 +4,32 @@ namespace App\Controllers;
 use App\Core\DbConnect;
 use App\Model\CompaniesModel;
 
+/**
+ * Gère les actions relatives aux entreprises
+ * add → ajout
+ * getInvoice → récupère un élément unique
+ * getInvoices → récupère tous les éléments
+ * updateInvoice → met à jour les informations d'un élément
+ * delete → supprime un élément de la base de donnée.
+ */
+
 class CompanyController extends DbConnect{
+
+    /**
+     * Crée une entreprise au moyen des informations renvoyées par le validateur
+     * $data → informations renvoyées par le validateur.
+     */
 
     public function add($data){
 
         (new CompaniesModel)->createCompany($data['name'],intval($data['type']),$data['country'], $data['tva']);
         echo $data['name'] . " a bien été ajouté à la base de données";
     }
+
+    /**
+     * Récupère les informations d'une entreprise selon son identifiant unique
+     * $id → identifiant unique.
+     */
 
     public function getCompany($id){
 
@@ -36,6 +55,10 @@ class CompanyController extends DbConnect{
 
     }
 
+    /**
+     * Récupère toutes les informations des entreprises sous format JSON.
+     */
+
     public function getCompanies(){
         header("Access-Control-Allow-Origin: *");
         header("Content-Type: application/json; charset=UTF-8");
@@ -59,12 +82,23 @@ class CompanyController extends DbConnect{
 
     }
 
+    /**
+     * Mets à jour une entreprise selon son id et utilise les informations retournées par le validateur.
+     * $id → id de l'entreprise
+     * $data → informations renvoyées par le validateur
+     */
+
     public function updateCompany($id, $data){
 
         (new CompaniesModel)->editCompany($id, $data['name'],intval($data['type']),$data['country'], $data['tva']);
         echo $data['name'] . " a bien été modifiée";
 
     }
+
+    /**
+     * Supprime une entreprise selon son id.
+     * $id = id de l'entreprise
+     */
 
     public function delete($id){
 

@@ -53,4 +53,5 @@ class CompaniesModel extends DbConnect{
         $stmt =$this->connect()->prepare($sql);
         $stmt->execute([$id]);
     }
+
 }
