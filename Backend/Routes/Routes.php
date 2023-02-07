@@ -2,6 +2,7 @@
 namespace App\Routes;
 
 use Bramus\Router\Router;
+
 use App\Controllers\HomeController;
 use App\Controllers\CompanyController;
 use App\Controllers\InvoicesController;
