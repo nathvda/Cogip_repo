@@ -1,0 +1,13 @@
+{
+  "workbench.colorTheme": "Relaxed",
+  "editor.fontSize": 12,
+  "editor.tabSize": 6,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "breadcrumbs.icons": false,
+  "workbench.preferredDarkColorTheme": "Community Material Theme Palenight",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+}

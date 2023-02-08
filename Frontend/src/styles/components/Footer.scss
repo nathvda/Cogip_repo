@@ -1,0 +1,42 @@
+.footer {
+      display: flex;
+      flex-direction: column;
+
+      &__line {
+            width: 80%;
+            height: 0.5vw;
+            margin: auto;
+
+            &--yellow {
+                  background-color: yellow;
+            }
+
+            &--gray {
+                  background-color: gray;
+            }
+      }
+
+      &__logo {
+            border: solid yellow 3px;
+            width: 20%;
+            margin: auto;
+      }
+
+      &__informations {
+            font-size: 4vw;
+            margin: auto;
+
+            &__adress {
+                  display: flex;
+                  flex-direction: row;
+            }
+
+            &__phone {
+                  @extend .footer__informations__adress;
+            }
+
+            &__fax {
+                  @extend .footer__informations__adress;
+            }
+      }
+}

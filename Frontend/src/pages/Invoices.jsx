@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 const Invoices = () => {
@@ -6,6 +7,7 @@ const Invoices = () => {
         <div>
             <Header />
             <h1>Invoices</h1>
+            <Footer />
         </div>
     );
 };

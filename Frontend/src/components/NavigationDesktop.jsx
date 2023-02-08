@@ -3,15 +3,12 @@ import { Link } from 'react-router-dom';
 
 const NavigationDesktop = () => {
     return (
-        <div>
-            <p>test ordinateur</p>
-            <nav>
-                <Link to={'/'}>Homepage</Link>
-                <Link to={`/companies`}>Companies</Link>
-                <Link to={`/invoices`}>Invoices</Link>
-                <Link to={`/contacts`}>Contacts</Link>
+            <nav className='header__nav--desktop'>
+                <Link className='header__nav--desktop--link' to={'/'}>Homepage</Link>
+                <Link className='header__nav--desktop--link' to={`/companies`}>Companies</Link>
+                <Link className='header__nav--desktop--link' to={`/invoices`}>Invoices</Link>
+                <Link className='header__nav--desktop--link' to={`/contacts`}>Contacts</Link>
             </nav>
-        </div>
     );
 };
 
