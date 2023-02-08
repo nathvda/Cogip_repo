@@ -23,6 +23,8 @@ This project also uses environment variables to allow you to access the database
 > - The username
 > - The password
 
+We used several libraries such as AXIOS for the HTTP requests, and React Router for the routing. For the Backend, we used Bramus Router, as was proposed in the base project we built everything on. We also used PHPunit to implement some basic testing. 
+
 ## Versions
 
 
