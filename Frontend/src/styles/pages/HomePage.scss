@@ -1,0 +1,27 @@
+.homepage {
+      &__sectionTop {
+            display: flex;
+
+            &__title {
+                  font-size: 5vw;
+                  width: 50%;
+            }
+
+            &__img {
+                  width: 50%;
+            }
+      }
+
+      &__sectionBottom {
+            display: flex;
+
+            &__title {
+                  font-size: 5vw;
+                  width: 50%;
+            }
+
+            &__img {
+                  width: 50%;
+            }
+      }
+}
