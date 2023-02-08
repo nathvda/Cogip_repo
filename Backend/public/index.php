@@ -26,7 +26,7 @@ $bdd->connect();
 </script>
 
 <h2>Test add company</h2>
-<form method="post" action="/companies/add">
+<form method="post" action="../companies/add">
     <input type="text" name="name">
     <input type="text" name="type">
     <input type="text" name="country">

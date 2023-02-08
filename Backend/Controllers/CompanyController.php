@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Core\DbConnect;
 use App\Model\CompaniesModel;
+use Exception;
 
 /**
  * Gère les actions relatives aux entreprises
@@ -22,8 +23,16 @@ class CompanyController extends DbConnect{
 
     public function add($data){
 
+        try{ 
         (new CompaniesModel)->createCompany($data['name'],intval($data['type']),$data['country'], $data['tva']);
-        echo $data['name'] . " a bien été ajouté à la base de données";
+        
+        return $data['name'] . " a bien été ajouté à la base de données";
+        
+        } catch (Exception) {
+
+        return "Did not work";
+
+        }
     }
 
     /**
@@ -43,6 +52,7 @@ class CompanyController extends DbConnect{
             http_response_code(200);
             
             echo json_encode($result);
+
         } else {
         
             http_response_code(404);

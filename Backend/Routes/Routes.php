@@ -17,10 +17,10 @@ $router->get('/', function() {
 
 /** 
  * Route d'accès aux entreprises.
- * → /companies → toutes les entreprises.
- * → /companies/{id}, ex: /companies/1 → accès à l'entreprise numéro 1.
- * → /companies/add → ajout d'une entreprise.
- * → /companies/{id}/edit, ex: /companies/1/edit → edit d'une entreprise, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
+ * → Backend/companies → toutes les entreprises.
+ * → Backend/companies/{id}, ex: /companies/1 → accès à l'entreprise numéro 1.
+ * → Backend/companies/add → ajout d'une entreprise.
+ * → Backend/companies/{id}/edit, ex: /companies/1/edit → edit d'une entreprise, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
  */
 
 $router->mount('/companies', function() use ($router){
@@ -55,10 +55,10 @@ $router->delete('/{companyid}/delete', function($companyid) {
 
 /** 
  * Route d'accès aux factures.
- * → /invoices → toutes les factures.
- * → /invoices/{id}, ex: /invoices/1 → accès à la facture numéro 1.
- * → /invoices/add → ajout d'une facture.
- * → /invoices/{id}/edit, ex: /invoices/1/edit → edit d'une facture, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
+ * → Backend/invoices → toutes les factures.
+ * → Backend/invoices/{id}, ex: /invoices/1 → accès à la facture numéro 1.
+ * → Backend/invoices/add → ajout d'une facture.
+ * → Backend/invoices/{id}/edit, ex: /invoices/1/edit → edit d'une facture, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
  */
 
 $router->mount('/invoices', function() use ($router){
@@ -90,10 +90,10 @@ $router->mount('/invoices', function() use ($router){
 
 /** 
  * Route d'accès aux contacts.
- * → /contacts → toutes les contacts.
- * → /contacts/{id}, ex: /contacts/1 → accès au contact numéro 1.
- * → /contacts/add → ajout d'un contact.
- * → /contacts/{id}/edit, ex: /contacts/1/edit → edit d'un contact, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
+ * → Backend/contacts → toutes les contacts.
+ * → Backend/contacts/{id}, ex: /contacts/1 → accès au contact numéro 1.
+ * → Backend/contacts/add → ajout d'un contact.
+ * → Backend/contacts/{id}/edit, ex: /contacts/1/edit → edit d'un contact, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
  */
 
 $router->mount('/contacts', function() use ($router){
