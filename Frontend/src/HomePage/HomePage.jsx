@@ -1,9 +1,9 @@
 import React from "react";
-import Table from "../components/Table";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import { invoicesTable } from "../assets/dataListExample";
-import { contactsTable } from "../assets/dataListExample";
+import Footer from "../componentsIndividuals/Footer";
+import Header from "../componentsIndividuals/Header";
+import TableContacts from "./components/TableContacts";
+import TableInvoices from "./components/TableInvoices";
+import TableCompanies from "./components/TableCompanies";
 
 const HomePage = () => {
   return (
@@ -22,19 +22,19 @@ const HomePage = () => {
       <section className="homepage__sectionInvoices">
         <h1 className="homepage__sectionInvoices__title">Last invoices</h1>
         <div className="homepage__sectionInvoices__table">
-          <Table data={invoicesTable} />
+          <TableInvoices />
         </div>
       </section>
       <section className="homepage__sectionContacts">
         <h1 className="homepage__sectionContacts__title">Last contacts</h1>
         <div className="homepage__sectionContacts__table">
-          <Table data={contactsTable} />
+          <TableContacts />
         </div>
       </section>
       <section className="homepage__sectionCompanies">
         <h1 className="homepage__sectionCompanies__title">Last companies</h1>
         <div className="homepage__sectionCompanies__table">
-          <Table data={contactsTable} />
+          <TableCompanies />
         </div>
       </section>
       <section className="homepage__sectionBottom">
