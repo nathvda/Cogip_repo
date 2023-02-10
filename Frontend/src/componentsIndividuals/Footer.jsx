@@ -84,14 +84,15 @@ const Footer = () => {
       <div className="footer__line footer__line--gray"></div>
       <nav className="footer__nav">
         <Link className="footer__nav__link" to={"/"}>
-          Homepage
-        </Link>
-        <Link className="footer__nav__link" to={`/companies`}>
-          Companies
+          Home
         </Link>
         <Link className="footer__nav__link" to={`/invoices`}>
           Invoices
         </Link>
+        <Link className="footer__nav__link" to={`/companies`}>
+          Companies
+        </Link>
+
         <Link className="footer__nav__link" to={`/contacts`}>
           Contacts
         </Link>

@@ -8,6 +8,7 @@ import HomePage from './HomePage/HomePage';
 import Companies from './Companies/Companies';
 import Invoices from './Invoices/Invoices';
 import Contacts from './Contacts/Contacts';
+import Showcontacts from './Contacts/Showcontacts';
 import "./styles/index.scss"
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: `/contacts`,
     element: <Contacts />
+  },
+  {
+    path: `/showcontacts`,
+    element: <Showcontacts />
   }
 ]);
 

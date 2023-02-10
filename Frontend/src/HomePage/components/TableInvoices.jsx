@@ -16,7 +16,7 @@ const TableInvoices = () => {
       <thead>
         <tr>
           <th>Invoice number</th>
-          <th>Due dates</th>
+          <th>Dates due</th>
           <th>Company</th>
           <th>Created at</th>
         </tr>

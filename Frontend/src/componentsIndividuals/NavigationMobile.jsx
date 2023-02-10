@@ -12,7 +12,7 @@ const NavigationMobile = () => {
                 <div className='header__nav__line header__nav__line--bottom'></div>
             </button>
             <div className='header__nav--style'>
-                <Link className='header__nav__link' to={'/'}>Homepage</Link>
+                <Link className='header__nav__link' to={'/'}>Home</Link>
                 <Link className='header__nav__link' to={`/invoices`}>Invoices</Link>
                 <Link className='header__nav__link' to={`/companies`}>Companies</Link>
                 <Link className='header__nav__link' to={`/contacts`}>Contacts</Link>
