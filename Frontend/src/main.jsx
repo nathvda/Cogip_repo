@@ -4,10 +4,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import HomePage from './pages/HomePage';
-import Companies from './pages/Companies';
-import Invoices from './pages/Invoices';
-import Contacts from './pages/Contacts';
+import HomePage from './HomePage/HomePage';
+import Companies from './Companies/Companies';
+import Invoices from './Invoices/Invoices';
+import Contacts from './Contacts/Contacts';
 import "./styles/index.scss"
 
 const router = createBrowserRouter([
