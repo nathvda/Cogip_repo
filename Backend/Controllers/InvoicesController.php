@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Core\DbConnect;
 use App\Model\InvoicesModel;
+use Exception;
 
 /**
  * Gère les actions relatives aux factures
@@ -17,8 +18,12 @@ class InvoicesController extends DbConnect{
 
     public function add($data){
 
-        (new InvoicesModel)->createInvoice($data['ref'], $data['date_due'], intval($data['company']));
-        echo $data['ref'] . " a bien été ajouté à la base de données";
+        try { 
+        $res = (new InvoicesModel)->createInvoice($data['ref'], $data['date_due'], intval($data['id_company']));
+        return $res;
+        } catch (Exception $e){
+        var_dump('nope');
+        }
     }
 
     public function getInvoice($id){
