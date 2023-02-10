@@ -40,8 +40,9 @@ $router->get('/{companyid}/edit', function($companyid) {
     (new CompanyController)->getCompany($companyid);
 });
 
-$router->put('/{companyid}/edit', function($companyid) { 
-    (new CompanyController)->updateCompany($companyid, $_POST);
+$router->put('/{companyid}/edit', function($companyid) {
+    $payload = json_decode(file_get_contents('php://input'), true); 
+    (new CompanyController)->updateCompany($companyid, $payload);
 });
 
 $router->post('/add', function() { 
@@ -79,7 +80,8 @@ $router->mount('/invoices', function() use ($router){
     });
 
     $router->put('/{invoiceid}/edit', function($invoiceid) { 
-        (new InvoicesController)->updateInvoice($invoiceid, $_POST);
+        $payload = json_decode(file_get_contents('php://input'), true);
+        (new InvoicesController)->updateInvoice($invoiceid, $payload);
     });    
 
     $router->post('/add', function() { 
@@ -115,7 +117,8 @@ $router->mount('/contacts', function() use ($router){
     });
 
     $router->put('/{contactid}/edit', function($contactid) { 
-        (new ContactsController)->updateContact($contactid, $_POST);
+        $payload = json_decode(file_get_contents('php://input'), true);
+        (new ContactsController)->updateContact($contactid, $payload);
     });
 
     $router->post('/add', function() { 

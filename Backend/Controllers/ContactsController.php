@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use Exception;
 use App\Core\DbConnect;
 use App\Model\ContactModel;
 
@@ -89,8 +90,15 @@ class ContactsController extends DbConnect{
 
     public function updateContact($id, $data){
 
-        (new ContactModel)->editContact($id, $data['name'], intval($data['company_id']), $data['email'], $data['phone']);
-        echo $data['name'] . " a bien été modifiée";
+            try{
+
+            (new ContactModel)->editContact($data["name"], intval($data['company_id']), $data['email'], $data['phone'], $id);
+            echo "worked";
+
+            } catch (Exception) {
+        
+            echo "didn't work";
+            }
 
     }
 

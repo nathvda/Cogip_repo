@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if(count($this->errors) == 0) {
                 try {
                     $idk = new CompanyController();
-                    $idk = add($this->data);
+                    $idk->add($this->data);
                     return $this->data;
                 } catch (Exception){
                     return "didn't work";

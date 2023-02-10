@@ -39,7 +39,7 @@ class CompaniesModel extends DbConnect{
 
     }
 
-    public function editCompany($id, $name,$type,$country,$tva){
+    public function editCompany($name,$type,$country,$tva, $id){
         $sql = "UPDATE companies SET name = ?, types_id = ?, country = ?, tva = ? WHERE companies.id = ?"; 
         
         $stmt =$this->connect()->prepare($sql);
