@@ -9,6 +9,7 @@ import Companies from './Companies/Companies';
 import Invoices from './Invoices/Invoices';
 import Contacts from './Contacts/Contacts';
 import Showcontacts from './Contacts/Showcontacts';
+import ShowInvoices from './Invoices/ShowInvoices';
 import "./styles/index.scss"
 
 const router = createBrowserRouter([
@@ -26,11 +27,15 @@ const router = createBrowserRouter([
     element: <Invoices />
   },
   {
+    path: `/showinvoices/:id`,
+    element: <ShowInvoices />
+  },
+  {
     path: `/contacts`,
     element: <Contacts />
   },
   {
-    path: `/showcontacts`,
+    path: `/showcontacts/:id`,
     element: <Showcontacts />
   }
 ]);

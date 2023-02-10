@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../componentsIndividuals/Footer";
 import Header from "../componentsIndividuals/Header";
@@ -29,7 +30,11 @@ const Invoices = () => {
       <tbody>
         {data.map((item) => (
           <tr key={item.id}>
-            <td>{item.ref}</td>
+            <td>
+              <Link className="invoices__link" to={`/showinvoices/${item.id}`}>
+                {item.ref}
+              </Link>
+              </td>
             <td>{item.date_due}</td>
             <td>{item.id_company}</td>
             <td>{item.created_at}</td>

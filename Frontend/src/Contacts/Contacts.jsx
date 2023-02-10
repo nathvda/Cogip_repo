@@ -14,7 +14,6 @@ const Contacts = () => {
     }).then((res) => setData(res.data));
   }, []);
   //const dataFive = data.slice(0, 10);
-  console.log(data.name);
   return (
     <div>
       <Header />
@@ -30,10 +29,10 @@ const Contacts = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {data.map((item) => ( 
             <tr key={item.id}>
               <td>
-                <Link className="contacts__link" to={"/showcontacts"}>
+                <Link className="contacts__link" to={`/showcontacts/${item.id}`}>
                   {item.name}
                 </Link>
               </td>
