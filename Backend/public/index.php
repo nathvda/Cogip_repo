@@ -12,19 +12,6 @@ $bdd->connect();
 
 ?>
 
-<html>
-<head>
-<script>
-    async function detInfo(){
-        const idk = await fetch('localhost:3000/companies/5/edit')
-        const yolo = await idk.json();
-
-        console.log(yolo);
-    }
-
-    detInfo();
-</script>
-
 <h2>Test add company</h2>
 <form method="post" action="../companies/add">
     <input type="text" name="name">
@@ -35,10 +22,10 @@ $bdd->connect();
 </form>
 
 <h2>Test add invoice</h2>
-<form method="post" action="/invoices/add">
+<form method="post" action="../invoices/add">
     <input type="text" name="ref">
     <input type="date" name="date_due">
-    <input type="number" name="company">
+    <input type="number" name="id_company">
     <button type="submit">send</button>
 </form>
 
@@ -55,7 +42,7 @@ $bdd->connect();
 <h2>Test edit company</h2>
 <b>Doesn't work cause needs JSON and PUT/PATCH function (front)</b>
 
-<form method="post" action="/companies/5/edit">
+<form method="post" action="./test.php">
     <input type="text" name="name">
     <input type="text" name="type">
     <input type="text" name="country">
@@ -66,10 +53,13 @@ $bdd->connect();
 <h2>Test edit invoice</h2>
 <b>Doesn't work cause needs JSON and PUT/PATCH function (front)</b>
 
-<form method="post" action="/invoices/add">
+<form method="post" action="test.php">
+    <label>ref</label>
     <input type="text" name="ref">
+    <label>date_due</label>
     <input type="date" name="date_due">
-    <input type="number" name="company">
+    <label>id_company</label>
+    <input type="number" name="id_company">
     <button type="submit">send</button>
 </form>
 
@@ -123,6 +113,3 @@ $bdd->connect();
     <input type="text" name="password">
     <button type="submit">register</button>
 </form>
-
-</head>
-</html>

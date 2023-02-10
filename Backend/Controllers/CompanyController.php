@@ -42,7 +42,7 @@ class CompanyController extends DbConnect{
 
     public function getCompany($id){
 
-        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Origin: cross-origin");
         header("Content-Type: application/json; charset=UTF-8");
 
         $result = (new CompaniesModel)->fetchCompany($id);

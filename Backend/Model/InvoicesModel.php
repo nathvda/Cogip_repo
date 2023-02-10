@@ -25,6 +25,8 @@ class InvoicesModel extends DbConnect{
         $stmt =$this->connect()->prepare($sql);
         $stmt->execute([$ref,$date,$companyid]);
 
+        return "success";
+
     }
 
     public function fetchInvoice($id){
