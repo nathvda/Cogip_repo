@@ -18,13 +18,13 @@ const ShowInvoices = () => {
       return (
             <div>
                   <Header />
-                  {data.map((item) => (
+                  {data.map((item, index) => (
                         <div>
                               <h1>{item.ref}</h1>
-                              <ul>
-                                    <li key={item.ref}>References : {item.ref}</li>
-                                    <li key={item.date_due}>Date due : {item.date_due}</li>
-                                    <li key={item.id_company}>Company :{item.id_company}</li>
+                              <ul key={index}>
+                                    <li key={'invoicesRef' + data.index}>References : {item.ref}</li>
+                                    <li key={'invoicesDateDue' + data.index}>Date due : {item.date_due}</li>
+                                    <li key={'invoicesIdCompany' + data.index}>Company :{item.id_company}</li>
                               </ul>
                         </div>
         ))}

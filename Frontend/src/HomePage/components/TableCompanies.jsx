@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const TableCompanies = () => {
   const [data, setData] = useState([]);
@@ -25,7 +26,9 @@ const TableCompanies = () => {
       <tbody>
         {dataFive.map((item) => (
           <tr key={item.id}>
-            <td>{item.name}</td>
+            <td><Link className="" to={`/showcompanies/${item.id}`}>
+                  {item.name}
+                </Link></td>
             <td>{item.tva}</td>
             <td>{item.country}</td>
             <td>{item.types_id}</td>

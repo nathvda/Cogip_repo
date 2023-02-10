@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const TableInvoices = () => {
   const [data, setData] = useState([]);
@@ -24,7 +25,9 @@ const TableInvoices = () => {
       <tbody>
         {dataFive.map((item) => (
           <tr key={item.id}>
-            <td>{item.ref}</td>
+            <td><Link className="invoices__link" to={`/showinvoices/${item.id}`}>
+                {item.ref}
+              </Link></td>
             <td>{item.date_due}</td>
             <td>{item.id_company}</td>
             <td>{item.created_at}</td>

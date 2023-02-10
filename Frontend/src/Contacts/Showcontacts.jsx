@@ -18,14 +18,14 @@ const Showcontacts = () => {
   return (
     <div className="showContact">
       <Header />
-      {data.map((item) => ( 
+      {data.map((item, index) => ( 
             <div>
             <h1>{item.name}</h1>
             <ul>
-                  <li key={item.name}>Contact : {item.name}</li>
-                  <li key={item.phone}>Phone : {item.phone}</li>
-                  <li key={item.email}>Mail : {item.email}</li>
-                  <li key={item.company_id}>Company : {item.company_id}</li>
+                  <li key={'contactName' + data.index}>Contact : {item.name}</li>
+                  <li key={'contactPhone' + data.index}>Phone : {item.phone}</li>
+                  <li key={'contactEmail' + data.index}>Mail : {item.email}</li>
+                  <li key={'contactCompanyId' + data.index}>Company : {item.company_id}</li>
             </ul>
             </div>
           ))}

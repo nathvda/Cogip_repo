@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../componentsIndividuals/Footer";
 import Header from "../componentsIndividuals/Header";
+import LastInvoices from "./components/LastInvoices";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -17,17 +18,18 @@ const ShowCompanies = () => {
   return (
     <div className="showCompanies">
       <Header />
-      {data.map((item) => (
+      {data.map((item, index) => (
         <div>
           <h1>{item.name}</h1>
-          <ul>
-            <li key={item.name}>Contact : {item.name}</li>
-            <li key={item.tva}>TVA: {item.tva}</li>
-            <li key={item.country}>Country : {item.country}</li>
-            <li key={item.types_id}>Type : {item.types_id}</li>
+          <ul key={index}>
+            <li key={'CompaniesName' + data.index}>Contact : {item.name}</li>
+            <li key={'CompaniesTVA' + data.index}>TVA: {item.tva}</li>
+            <li key={'CompaniesCountry' + data.index}>Country : {item.country}</li>
+            <li key={'CompaniesType' + data.index}>Type : {item.types_id}</li>
           </ul>
         </div>
       ))}
+      <LastInvoices idCompanies = {id}/>
       <Footer />
     </div>
   );
