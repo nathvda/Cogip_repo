@@ -9,14 +9,14 @@ const Footer = () => {
       <div className="footer__line footer__line--yellow"></div>
       <img
         className="footer__logo"
-        src="./public/assets/img/icons/logo.svg"
+        src="../public/assets/img/icons/logo.svg"
         alt="Logo de cogip"
       />
       <div className="footer__informations">
         <div className="footer__informations__adress">
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Map.svg"
+            src="../public/assets/img/icons/Map.svg"
             alt="localisation"
           />
           <p>Square des Martyrs, 6000 Charleroi</p>
@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="footer__informations__phone">
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Tel.svg"
+            src="../public/assets/img/icons/Tel.svg"
             alt="phone"
           />
           <p>(123) 456-7890</p>
@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="footer__informations__fax">
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Fax.svg"
+            src="../public/assets/img/icons/Fax.svg"
             alt="Fax"
           />
           <p>(123) 456-7890</p>
@@ -41,42 +41,42 @@ const Footer = () => {
           <p>Social Media</p>
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Facebook.svg"
+            src="../public/assets/img/icons/Facebook.svg"
             alt="Facebook"
           />
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Twitter.svg"
+            src="../public/assets/img/icons/Twitter.svg"
             alt="Twitter"
           />
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Linkedin.svg"
+            src="../public/assets/img/icons/Linkedin.svg"
             alt="Linkedin"
           />
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Youtube.svg"
+            src="../public/assets/img/icons/Youtube.svg"
             alt="YouTube"
           />
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Instagram.svg"
+            src="../public/assets/img/icons/Instagram.svg"
             alt="Instagram"
           />
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Googleplus.svg"
+            src="../public/assets/img/icons/Googleplus.svg"
             alt="Goggle+"
           />
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Pinterest.svg"
+            src="../public/assets/img/icons/Pinterest.svg"
             alt="Pinterest"
           />
           <img
             className="footer__informations__icons"
-            src="./public/assets/img/icons/Wifi.svg"
+            src="../public/assets/img/icons/Wifi.svg"
             alt="Wifi"
           />
         </div>

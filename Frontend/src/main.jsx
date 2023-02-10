@@ -1,16 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import HomePage from './HomePage/HomePage';
-import Companies from './Companies/Companies';
-import Invoices from './Invoices/Invoices';
-import Contacts from './Contacts/Contacts';
-import Showcontacts from './Contacts/Showcontacts';
-import ShowInvoices from './Invoices/ShowInvoices';
-import "./styles/index.scss"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./HomePage/HomePage";
+import Companies from "./Companies/Companies";
+import Invoices from "./Invoices/Invoices";
+import Contacts from "./Contacts/Contacts";
+import Showcontacts from "./Contacts/Showcontacts";
+import ShowInvoices from "./Invoices/ShowInvoices";
+import ShowCompanies from "./Companies/ShowCompanies";
+import "./styles/index.scss";
 
 const router = createBrowserRouter([
   {
@@ -20,28 +18,32 @@ const router = createBrowserRouter([
   },
   {
     path: `/companies`,
-    element: <Companies />
+    element: <Companies />,
   },
   {
     path: `/invoices`,
-    element: <Invoices />
+    element: <Invoices />,
   },
   {
     path: `/showinvoices/:id`,
-    element: <ShowInvoices />
+    element: <ShowInvoices />,
   },
   {
     path: `/contacts`,
-    element: <Contacts />
+    element: <Contacts />,
   },
   {
     path: `/showcontacts/:id`,
-    element: <Showcontacts />
-  }
+    element: <Showcontacts />,
+  },
+  {
+    path: `/showcompanies/:id`,
+    element: <ShowCompanies />,
+  },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

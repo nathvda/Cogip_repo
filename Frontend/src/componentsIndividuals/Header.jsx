@@ -11,7 +11,7 @@ const Header = () => {
       <MediaQuery maxWidth={767}>
         <img
           className="header__logo--mobile"
-          src="./public/assets/img/icons/logo.svg"
+          src="../public/assets/img/icons/logo.svg"
           alt="Logo de cogip"
         />
         <button className="header__button--mobile header__button--signup">
@@ -28,7 +28,7 @@ const Header = () => {
       <MediaQuery minWidth={768}>
         <img
           className="header__logo--desktop"
-          src="./public/assets/img/icons/logo.svg"
+          src="../public/assets/img/icons/logo.svg"
           alt="Logo de cogip"
         />
         <div className="header__menu--desktop">

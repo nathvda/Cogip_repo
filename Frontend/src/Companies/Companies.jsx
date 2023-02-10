@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../componentsIndividuals/Footer";
 import Header from "../componentsIndividuals/Header";
@@ -31,7 +32,10 @@ const Companies = () => {
       <tbody>
         {data.map((item) => (
           <tr key={item.id}>
-            <td>{item.name}</td>
+            <td>
+            <Link className="companies__link" to={`/showcompanies/${item.id}`}>
+                  {item.name}
+                </Link></td>
             <td>{item.tva}</td>
             <td>{item.country}</td>
             <td>{item.types_id}</td>
