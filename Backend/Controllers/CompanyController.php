@@ -42,7 +42,7 @@ class CompanyController extends DbConnect{
 
     public function getCompany($id){
 
-        header("Access-Control-Allow-Origin: cross-origin");
+        header("Access-Control-Allow-Origin: *");
         header("Content-Type: application/json; charset=UTF-8");
 
         $result = (new CompaniesModel)->fetchCompany($id);
@@ -100,7 +100,7 @@ class CompanyController extends DbConnect{
 
     public function updateCompany($id, $data){
 
-        (new CompaniesModel)->editCompany($id, $data['name'],intval($data['type']),$data['country'], $data['tva']);
+        (new CompaniesModel)->editCompany($data['name'],intval($data['type']),$data['country'], $data['tva'], $id);
         echo $data['name'] . " a bien été modifiée";
 
     }
