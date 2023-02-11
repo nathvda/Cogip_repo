@@ -16,11 +16,11 @@ class UsersController extends DbConnect{
      * }
      *  */
 
-    public function registerUser($data){
+    public function add($data){
         
         try {
         (new UsersModel)->createUser($data['firstname'], $data['lastname'], $data['email'], $data['password']);
-        return $data;
+        echo "bonjour, " . $data['firstname'];
     }
         catch (Exception $e){
             return $e;

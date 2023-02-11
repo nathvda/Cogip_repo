@@ -31,15 +31,21 @@ class InvoiceValidator {
 
             if(count($this->errors) == 0) {
                   try {
+
                   $idk = new InvoicesController();
                   $idk->add($this->data);
+
                   return $this->data;
 
                   } catch (Exception){
+
                   return "didn't work";
+
                   }
             } else {
+
             return $this->errors;
+            
             }
       }
 

@@ -12,6 +12,7 @@ use App\Controllers\InvoicesController;
 use App\Validators\CompanyValidator;
 use App\Validators\ContactValidator;
 use App\Validators\InvoiceValidator;
+use App\Validators\UserValidator;
 
 
 $router = new Router();
@@ -135,12 +136,13 @@ $router->mount('/contacts', function() use ($router){
 $router->mount('/register', function() use ($router){
 
     $router->post('/', function(){
-        echo "This will be the register page";
-        (new UsersController)->registerUser($_POST);
-
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new UserValidator($payload))->user_validate();
+        return $res;
     });
-    
-});
+}
+);
+
 
 $router->mount('/logout', function() use ($router){
 
