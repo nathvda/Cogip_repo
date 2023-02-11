@@ -6,12 +6,10 @@ use Exception;
 use App\Model\ContactModel;
 use App\Controllers\ContactsController;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     class ContactValidator{
 
         private $data;
-        private static $fields = ['id', 'name', 'company_id', 'email', 'phone'];
+        private static $fields = ['name', 'company_id', 'email', 'phone'];
         private $errors =[];
 
         public function __construct($post_data){
@@ -102,6 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
     }
-}
+
 
 

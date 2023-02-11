@@ -6,11 +6,9 @@ use Exception;
 use App\Model\CompaniesModel;
 use App\Controllers\CompanyController;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     class CompanyValidator {
         private $data;
-        private static $fields = ['id', 'name', 'type_id', 'country', 'tva'];
+        private static $fields = ['name', 'type', 'country', 'tva'];
         private $errors =[];
 
         public function __construct($post_data){
@@ -58,14 +56,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     private function validateType(){
-        $val = trim($this->data['type_id']);
+        $val = trim($this->data['type']);
         if(empty($val)){
-            $this->addError('type_id', 'type cannot be empty');
+            $this->addError('type', 'type cannot be empty');
         } else {
             if(!preg_match('/^[0-9]{1, 50}*$/',$val)){ //check ex
-                $this->addError('type_id', 'type must be a number');
+                $this->addError('type', 'type must be a number');
             } else {
-                $this->data['type_id'] = $val;
+                $this->data['type'] = $val;
                 }
             }
         }
@@ -102,8 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
-
-}
 
 
 

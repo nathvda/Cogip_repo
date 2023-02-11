@@ -9,6 +9,8 @@ use App\Controllers\ContactsController;
 use App\Controllers\UsersController;
 use App\Controllers\InvoicesController;
 
+use App\Validators\CompanyValidator;
+use App\Validators\ContactValidator;
 use App\Validators\InvoiceValidator;
 
 
@@ -46,14 +48,13 @@ $router->put('/{companyid}/edit', function($companyid) {
 });
 
 $router->post('/add', function() { 
-    (new CompanyController)->add($_POST);
+    (new CompanyValidator($_POST))->company_validate();
 });
 
 $router->delete('/{companyid}/delete', function($companyid) { 
     echo $companyid;
     (new CompanyController)->delete($companyid);
 });
-
 
 });
 
@@ -122,7 +123,7 @@ $router->mount('/contacts', function() use ($router){
     });
 
     $router->post('/add', function() { 
-        (new ContactsController)->add($_POST);
+        (new ContactValidator($_POST))->contact_validate();
     });
 
     $router->delete('/{contactid}/delete', function($contactid) { 
