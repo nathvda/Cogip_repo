@@ -21,19 +21,19 @@ const HomePage = () => {
       </section>
       <section className="homepage__sectionInvoices">
         <h1 className="homepage__sectionInvoices__title">Last invoices</h1>
-        <div className="homepage__sectionInvoices__table">
+        <div className="homepage__sectionInvoices__divAll">
           <TableInvoices />
         </div>
       </section>
       <section className="homepage__sectionContacts">
         <h1 className="homepage__sectionContacts__title">Last contacts</h1>
-        <div className="homepage__sectionContacts__table">
+        <div className="homepage__sectionContacts__divAll">
           <TableContacts />
         </div>
       </section>
       <section className="homepage__sectionCompanies">
         <h1 className="homepage__sectionCompanies__title">Last companies</h1>
-        <div className="homepage__sectionCompanies__table">
+        <div className="homepage__sectionCompanies__divAll">
           <TableCompanies />
         </div>
       </section>

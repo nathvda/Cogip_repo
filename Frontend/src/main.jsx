@@ -8,6 +8,10 @@ import Contacts from "./Contacts/Contacts";
 import Showcontacts from "./Contacts/Showcontacts";
 import ShowInvoices from "./Invoices/ShowInvoices";
 import ShowCompanies from "./Companies/ShowCompanies";
+import Dashboard from "./Dashboard/Dashboard";
+import DashInvoices from "./Dashboard/DashInvoices";
+import DashCompanies from "./Dashboard/DashCompanies";
+import DashContacts from "./Dashboard/DashContacts";
 import "./styles/index.scss";
 
 const router = createBrowserRouter([
@@ -39,6 +43,22 @@ const router = createBrowserRouter([
   {
     path: `/showcompanies/:id`,
     element: <ShowCompanies />,
+  },
+  {
+    path: `/dashboard`,
+    element: <Dashboard />,
+  },
+  {
+    path: `/dashinvoices`,
+    element: <DashInvoices />,
+  },
+  {
+    path: `/dashcompanies`,
+    element: <DashCompanies />,
+  },
+  {
+    path: `/dashcontacts`,
+    element: <DashContacts />,
   },
 ]);
 

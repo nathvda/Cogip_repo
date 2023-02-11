@@ -21,12 +21,12 @@ const ShowInvoices = () => {
       {data.map((item) => (
         <div>
           <h1>{item.ref}</h1>
-          <ul key={index}>
-            <li key={"invoicesRef" + id.toString()}>References : {item.ref}</li>
-            <li key={"invoicesDateDue" + id.toString()}>
+          <ul>
+            <li key={"invoicesRef" + item.ref + id.toString()}>References : {item.ref}</li>
+            <li key={"invoicesDateDue" + item.ref + id.toString()}>
               Date due : {item.date_due}
             </li>
-            <li key={"invoicesIdCompany" + id.toString()}>
+            <li key={"invoicesIdCompany" + item.ref + id.toString()}>
               Company :{item.id_company}
             </li>
           </ul>

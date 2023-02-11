@@ -16,18 +16,18 @@ const ShowCompanies = () => {
     }).then((res) => setData(res.data));
   }, []);
   return (
-    <div className="showCompanies">
+    <div>
       <Header />
       {data.map((item) => (
-        <div>
-          <h1>{item.name}</h1>
-          <ul>
-            <li key={"companiesName" + id.toString()}>Contact : {item.name}</li>
-            <li key={"companiesTVA" + id.toString()}>TVA: {item.tva}</li>
-            <li key={"companiesCountry" + id.toString()}>
+        <div className="showCompanies">
+          <h1 className="showCompanies__title">{item.name}</h1>
+          <ul className="showCompanies__list">
+            <li key={"companiesName" + id.toString()} className="showCompanies__list__elem">Contact : {item.name}</li>
+            <li key={"companiesTVA" + id.toString()} className="showCompanies__list__elem">TVA: {item.tva}</li>
+            <li key={"companiesCountry" + id.toString()} className="showCompanies__list__elem">
               Country : {item.country}
             </li>
-            <li key={"CompaniesType" + id.toString()}>
+            <li key={"CompaniesType" + id.toString()} className="showCompanies__list__elem">
               Type : {item.types_id}
             </li>
           </ul>

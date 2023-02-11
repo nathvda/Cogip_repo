@@ -15,35 +15,40 @@ const Companies = () => {
   }, []);
   //const dataFive = data.slice(0, 5);
   return (
-    <div>
+    <div className="companies">
       <Header />
-      <h1>All companies</h1>
+      <h1 className="companies__title">All companies</h1>
 
-      <table>
+      <table className="companies__table">
         <thead>
-          <tr>
-            <th>Name</th>
-            <th>TVA</th>
-            <th>Country</th>
-            <th>Type</th>
-            <th>Created at</th>
+          <tr className="companies__table__head">
+            <th className="companies__table__head--cell">Name</th>
+            <th className="companies__table__head--cell">TVA</th>
+            <th className="companies__table__head--cell">Country</th>
+            <th className="companies__table__head--cell">Type</th>
+            <th className="companies__table__head--cell">Created at</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr key={"tableCompanies" + item.name + item.id}>
-              <td>
+            <tr
+              key={"tableCompanies" + item.name + item.id}
+              className="companies__table__body"
+            >
+              <td className="companies__table__body--cell">
                 <Link
-                  className="companies__link"
+                  className="companies__table__body--link"
                   to={`/showcompanies/${item.id}`}
                 >
                   {item.name}
                 </Link>
               </td>
-              <td>{item.tva}</td>
-              <td>{item.country}</td>
-              <td>{item.types_id}</td>
-              <td>{item.created_at}</td>
+              <td className="companies__table__body--cell">{item.tva}</td>
+              <td className="companies__table__body--cell">{item.country}</td>
+              <td className="companies__table__body--cell">{item.types_id}</td>
+              <td className="companies__table__body--cell">
+                {item.created_at}
+              </td>
             </tr>
           ))}
         </tbody>

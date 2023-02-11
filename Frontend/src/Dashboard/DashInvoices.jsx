@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ShowC = () => {
+const DashInvoices = () => {
       return (
             <div>
-                  
+                  <h1>Invoices</h1>
             </div>
       );
 };
 
-export default ShowC;
+export default DashInvoices;

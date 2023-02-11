@@ -13,28 +13,46 @@ const TableContacts = () => {
   }, []);
   const dataFive = data.slice(0, 5);
   return (
-    <table>
+    <table className="homepage__sectionContacts__table">
       <thead>
-        <tr>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>Mail</th>
-          <th>Company</th>
-          <th>Created at</th>
+        <tr className="homepage__sectionInvoices__table--head">
+          <th className="homepage__sectionContacts__table--headCell">Name</th>
+          <th className="homepage__sectionContacts__table--headCell">Phone</th>
+          <th className="homepage__sectionContacts__table--headCell">Mail</th>
+          <th className="homepage__sectionContacts__table--headCell">
+            Company
+          </th>
+          <th className="homepage__sectionContacts__table--headCell">
+            Created at
+          </th>
         </tr>
       </thead>
       <tbody>
         {dataFive.map((item) => (
-          <tr key={"homepageTableContacts" + item.id}>
-            <td>
-              <Link className="contacts__link" to={`/showcontacts/${item.id}`}>
+          <tr
+            key={"homepageTableContacts" + item.id}
+            className="homepage__sectionContacts__table--body"
+          >
+            <td className="homepage__sectionContacts__table--bodyCell">
+              <Link
+                className="homepage__sectionContacts__table--link"
+                to={`/showcontacts/${item.id}`}
+              >
                 {item.name}
               </Link>
             </td>
-            <td>{item.phone}</td>
-            <td>{item.email}</td>
-            <td>{item.company_id}</td>
-            <td>{item.created_at}</td>
+            <td className="homepage__sectionContacts__table--bodyCell">
+              {item.phone}
+            </td>
+            <td className="homepage__sectionContacts__table--bodyCell">
+              {item.email}
+            </td>
+            <td className="homepage__sectionContacts__table--bodyCell">
+              {item.company_id}
+            </td>
+            <td className="homepage__sectionContacts__table--bodyCell">
+              {item.created_at}
+            </td>
           </tr>
         ))}
       </tbody>
