@@ -27,5 +27,23 @@ class UsersController extends DbConnect{
         }
     }
 
+    public function login($data){
+        
+        try {
+
+        $res = (new UsersModel)->checkUser($data['email']);
+
+        if (password_verify($data['password'], $res[0]['password'])){
+        
+        session_start();
+        $_SESSION['user'] = $res[0]['first_name'];
+        }
+
+    }
+        catch (Exception $e){
+            return $e;
+        }
+    }
+
 }
 

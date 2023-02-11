@@ -143,7 +143,17 @@ $router->mount('/register', function() use ($router){
     $router->post('/', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new UserValidator($payload))->user_validate();
-        return $res;
+        var_dump($res);
+    });
+}
+);
+
+$router->mount('/login', function() use ($router){
+
+    $router->post('/', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new Userscontroller)->login($payload);
+        var_dump($res);
     });
 }
 );

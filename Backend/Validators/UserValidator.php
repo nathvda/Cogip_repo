@@ -48,7 +48,7 @@ use App\Controllers\UsersController;
             if(empty($val)){
                 $this->addError('firstname', 'first name cannot be empty');
             } else {
-                if(!preg_match('/^[\sa-zA-ZÁ-ù-]{1, 50}$/',$val)){
+                if(!preg_match('/^[\sa-zA-ZÁ-ù-]{1,50}$/',$val)){
                     $this->addError('firstname', 'first name can only contain letters');
                 } else {
                     $this->data['firstname'] = $val;
@@ -61,7 +61,7 @@ use App\Controllers\UsersController;
             if(empty($val)){
                 $this->addError('lastname', 'last name cannot be empty');
             } else {
-                if(!preg_match('/^[-\sa-zA-ZÁ-ù]{1, 50}$/',$val)){
+                if(!preg_match('/^[-\sa-zA-ZÁ-ù]{1,50}$/',$val)){
                     $this->addError('lastname', 'last name can only contain letters');
                 } else {
                     $this->data['lastname'] = $val;
@@ -88,7 +88,7 @@ use App\Controllers\UsersController;
             if(empty($val)){
                 $this->addError('password', 'password cannot be empty');
             } else {
-                if(!preg_match('/^[a-zA-Z0-9]{1, 50}$/',$val)){
+                if(!preg_match('/^[a-zA-Z0-9]{1,50}$/',$val)){
                     $this->addError('password', 'password must be between 1 and 50 alphanumeric characters');
                 } else {
                     $this->data['password'] = $val;
