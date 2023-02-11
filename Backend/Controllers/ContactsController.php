@@ -93,11 +93,9 @@ class ContactsController extends DbConnect{
             try{
 
             (new ContactModel)->editContact($data["name"], intval($data['company_id']), $data['email'], $data['phone'], $id);
-            echo "worked";
 
             } catch (Exception) {
-        
-            echo "didn't work";
+                
             }
 
     }

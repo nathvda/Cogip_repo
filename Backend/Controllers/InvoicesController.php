@@ -26,6 +26,11 @@ class InvoicesController extends DbConnect{
         }
     }
 
+    /** 
+     * Generates json data from fetched invoice
+     * @param $id : selected id.
+     */
+
     public function getInvoice($id){
 
         header("Access-Control-Allow-Origin: *");
@@ -46,6 +51,10 @@ class InvoicesController extends DbConnect{
         }
 
     }
+
+    /**
+     * Generates json data from all fetched invoices.
+     */
 
     public function getInvoices(){
         header("Access-Control-Allow-Origin: *");
@@ -70,12 +79,23 @@ class InvoicesController extends DbConnect{
 
     }
 
+    /**
+     * Sends request to data base for update
+     * @param $id : requested id
+     * @param $data : informations returned from the validator.
+     */
+
     public function updateInvoice($id, $data){
 
         (new InvoicesModel)->editInvoice($id, $data['ref'], $data['date_due'], intval($data['company']));
         echo $data['ref'] . " a bien été modifiée";
 
     }
+
+    /**
+     * Deletes a specified invoice from the database
+     * @param $id : requested id
+     */
 
     public function delete($id){
 
