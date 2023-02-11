@@ -1,12 +1,11 @@
 import React from 'react';
+import HeaderDash from './HeaderDash';
 import NavDashboardMobile from './NavDashboardMobile';
 import NavDashboardDesktop from './NavDashboardDesktop';
 
 const Dashboard = () => {
       return (
-            <div>
-                 <h1>Dashboard</h1> 
-            </div>
+            <HeaderDash />
       );
 };
 
