@@ -48,7 +48,7 @@ use App\Controllers\UsersController;
             if(empty($val)){
                 $this->addError('firstname', 'first name cannot be empty');
             } else {
-                if(!preg_match('/^[-\sa-zA-ZÁ-ù]{1, 50}$/',$val)){
+                if(!preg_match('/^[\sa-zA-ZÁ-ù-]{1, 50}$/',$val)){
                     $this->addError('firstname', 'first name can only contain letters');
                 } else {
                     $this->data['firstname'] = $val;

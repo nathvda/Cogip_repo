@@ -68,23 +68,23 @@ We used several libraries such as AXIOS for the HTTP requests, and React Router 
 
 You can use the following endpoints to interact with the database. The data structure of the body is givin in the column.
 
-| Method | Endpoints              | Body                                                                           | Response                           |
-| :----- | :--------------------- | :----------------------------------------------------------------------------- | :--------------------------------- |
-| GET    | /companies             | -                                                                              | All companies                      |
-| GET    | /invoices              | -                                                                              | All invoices                       |
-| GET    | /contacts              | -                                                                              | All contacts                       |
-| GET    | /companies/{id}        | -                                                                              | Return one company with given id   |
-| GET    | /invoices/{id}         | -                                                                              | Return one invoice with given id   |
-| GET    | /contacts/{id}         | -                                                                              | Return one contacts with given id  |
-| POST   | /companies/add         | -                                                                              | Add company                        |
-| POST   | /invoices/add          | -                                                                              | Add invoice                        |
-| POST   | /contacts/add          | -                                                                              | Add contacts                       |
-| PUT    | /companies/{id}/edit   | `{ name: <string>, type: <int>, country : <string>, tva: <string> }`           | Updates one company with given id  |
-| PUT    | /invoices/{id}/edit    | `{ ref: reference <string>,date_due: date <string>,company: company id<int> }` | Updates one invoices with given id |
-| PUT    | /contacts/{id}/edit    | `{ name:<string>,company_id: <int>,email: <string>,phone:<string> }`           | Updates one contacts with given id |
-| DELETE | /companies/{id}/delete | -                                                                              | Deletes one company with given id  |
-| DELETE | /invoices/{id}/delete  | -                                                                              | Deletes one invoices with given id |
-| DELETE | /contacts/{id}/delete  | -                                                                              | Deletes one contacts with given id |
+| Method | Endpoints              | Body                                                                                           | Response                           |
+| :----- | :--------------------- | :--------------------------------------------------------------------------------------------- | :--------------------------------- |
+| GET    | /companies             | -                                                                                              | All companies                      |
+| GET    | /invoices              | -                                                                                              | All invoices                       |
+| GET    | /contacts              | -                                                                                              | All contacts                       |
+| GET    | /companies/{id}        | -                                                                                              | Return one company with given id   |
+| GET    | /invoices/{id}         | -                                                                                              | Return one invoice with given id   |
+| GET    | /contacts/{id}         | -                                                                                              | Return one contacts with given id  |
+| POST   | /companies/add         | `{ name: name <string>, type: company type <int>, country: country <string>, tva: tva <int> }` | Add company                        |
+| POST   | /invoices/add          | `{ ref: reference <string>, date_due: date <string>, id_company: company id <int> }`           | Add invoice                        |
+| POST   | /contacts/add          | `{ name: <string>, company_id:<int>, email:<string>,phone:<int> }`                             | Add contacts                       |
+| PUT    | /companies/{id}/edit   | `{ name: <string>, type: <int>, country : <string>, tva: <string> }`                           | Updates one company with given id  |
+| PUT    | /invoices/{id}/edit    | `{ ref: reference <string>,date_due: date <string>,company: company id <int> }`                | Updates one invoices with given id |
+| PUT    | /contacts/{id}/edit    | `{ name:<string>,company_id: <int>,email: <string>,phone:<string> }`                           | Updates one contacts with given id |
+| DELETE | /companies/{id}/delete | -                                                                                              | Deletes one company with given id  |
+| DELETE | /invoices/{id}/delete  | -                                                                                              | Deletes one invoices with given id |
+| DELETE | /contacts/{id}/delete  | -                                                                                              | Deletes one contacts with given id |
 
 ## Versions
 

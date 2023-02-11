@@ -48,7 +48,7 @@ use App\Controllers\ContactsController;
             if(empty($val)){
                 $this->addError('name', 'name cannot be empty');
             } else {
-                if(!preg_match('/^[a-zA-ZÁ-ù]{1, 50}*$/',$val)){
+                if(!preg_match('/^[a-zA-ZÁ-ù]{1,50}$/',$val)){
                     $this->addError('name', 'name can only contain letters');
                 } else {
                     $this->data['name'] = $val;
@@ -61,7 +61,7 @@ use App\Controllers\ContactsController;
             if(empty($val)){
                 $this->addError('company_id', 'company cannot be empty');
             } else {
-                if(!preg_match('/^[0-9]{1, 50}*$/',$val)){
+                if(!preg_match('/^[0-9]{1,50}$/',$val)){
                     $this->addError('company_id', 'company ID must be a number');
                 } else {
                     $this->data['company_id'] = $val;

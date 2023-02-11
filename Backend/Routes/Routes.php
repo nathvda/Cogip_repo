@@ -49,7 +49,9 @@ $router->put('/{companyid}/edit', function($companyid) {
 });
 
 $router->post('/add', function() { 
-    (new CompanyValidator($_POST))->company_validate();
+    $payload = json_decode(file_get_contents('php://input'), true);
+    $res = (new CompanyValidator($payload))->company_validate();
+    var_dump($res);
 });
 
 $router->delete('/{companyid}/delete', function($companyid) { 
@@ -87,7 +89,8 @@ $router->mount('/invoices', function() use ($router){
     });    
 
     $router->post('/add', function() { 
-        $res = (new InvoiceValidator($_POST))->invoice_validate();
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new InvoiceValidator($payload))->invoice_validate();
         var_dump($res);
     });
 
@@ -124,7 +127,9 @@ $router->mount('/contacts', function() use ($router){
     });
 
     $router->post('/add', function() { 
-        (new ContactValidator($_POST))->contact_validate();
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new ContactValidator($payload))->contact_validate();
+        var_dump($res);
     });
 
     $router->delete('/{contactid}/delete', function($contactid) { 
