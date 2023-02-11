@@ -24,9 +24,9 @@ class CompanyController extends DbConnect{
     public function add($data){
 
         try{ 
-        (new CompaniesModel)->createCompany($data['name'],intval($data['type']),$data['country'], $data['tva']);
+        $res = (new CompaniesModel)->createCompany($data['name'],intval($data['type']),$data['country'], $data['tva']);
         
-        return $data['name'] . " a bien été ajouté à la base de données";
+        return $res;
         
         } catch (Exception) {
 

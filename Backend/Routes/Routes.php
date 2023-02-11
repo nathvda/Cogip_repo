@@ -9,7 +9,10 @@ use App\Controllers\ContactsController;
 use App\Controllers\UsersController;
 use App\Controllers\InvoicesController;
 
+use App\Validators\CompanyValidator;
+use App\Validators\ContactValidator;
 use App\Validators\InvoiceValidator;
+use App\Validators\UserValidator;
 
 
 $router = new Router();
@@ -46,14 +49,14 @@ $router->put('/{companyid}/edit', function($companyid) {
 });
 
 $router->post('/add', function() { 
-    (new CompanyController)->add($_POST);
+    $payload = json_decode(file_get_contents('php://input'), true);
+    $res = (new CompanyValidator($payload))->company_validate();
 });
 
 $router->delete('/{companyid}/delete', function($companyid) { 
     echo $companyid;
     (new CompanyController)->delete($companyid);
 });
-
 
 });
 
@@ -85,8 +88,8 @@ $router->mount('/invoices', function() use ($router){
     });    
 
     $router->post('/add', function() { 
-        $res = (new InvoiceValidator($_POST))->invoice_validate();
-        var_dump($res);
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new InvoiceValidator($payload))->invoice_validate();
     });
 
     $router->delete('/{invoiceid}/delete', function($invoiceid) { 
@@ -122,7 +125,8 @@ $router->mount('/contacts', function() use ($router){
     });
 
     $router->post('/add', function() { 
-        (new ContactsController)->add($_POST);
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new ContactValidator($payload))->contact_validate();
     });
 
     $router->delete('/{contactid}/delete', function($contactid) { 
@@ -134,12 +138,21 @@ $router->mount('/contacts', function() use ($router){
 $router->mount('/register', function() use ($router){
 
     $router->post('/', function(){
-        echo "This will be the register page";
-        (new UsersController)->registerUser($_POST);
-
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new UserValidator($payload))->user_validate();
     });
-    
-});
+}
+);
+
+$router->mount('/login', function() use ($router){
+
+    $router->post('/', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        $res = (new Userscontroller)->login($payload);
+    });
+}
+);
+
 
 $router->mount('/logout', function() use ($router){
 

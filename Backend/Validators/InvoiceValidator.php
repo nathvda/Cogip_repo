@@ -10,7 +10,7 @@ use App\Controllers\InvoicesController;
 class InvoiceValidator {
 
       private $data;
-      static $fields = ['ref', 'date_due', 'id_company'];
+      private static $fields = ['ref', 'date_due', 'id_company'];
       private $errors = [];
 
       public function __construct($post_data){
@@ -31,15 +31,21 @@ class InvoiceValidator {
 
             if(count($this->errors) == 0) {
                   try {
+
                   $idk = new InvoicesController();
                   $idk->add($this->data);
+
                   return $this->data;
 
                   } catch (Exception){
+
                   return "didn't work";
+
                   }
             } else {
+
             return $this->errors;
+
             }
       }
 

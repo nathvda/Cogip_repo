@@ -6,12 +6,10 @@ use Exception;
 use App\Model\CompaniesModel;
 use App\Controllers\CompanyController;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     class CompanyValidator {
         private $data;
-        private static $fields = ['id', 'name', 'type_id', 'country', 'tva'];
-        private $errors =[];
+        static $fields = ['name', 'type', 'country', 'tva'];
+        private $errors = [];
 
         public function __construct($post_data){
             $this->data = $post_data;
@@ -34,11 +32,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 try {
                     $idk = new CompanyController();
                     $idk->add($this->data);
+
                     return $this->data;
+
                 } catch (Exception){
+
                     return "didn't work";
+
                 }
             } else {
+                
                 return $this->errors;
             }
             
@@ -46,10 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     private function validateName(){
         $val = trim($this->data['name']);
+        $val = htmlspecialchars($val);
+        $val = stripslashes($val);
+        
         if(empty($val)){
             $this->addError('name', 'name cannot be empty');
         } else {
-            if(!preg_match('/^[a-zA-ZÁ-ù0-9:]{1, 50}*$/',$val)){
+            if(!preg_match('/^[a-zA-ZÁ-ù0-9:-]{1,50}$/',$val)){
                 $this->addError('name', 'name must be between 1 and 50 alphanumeric characters');
             } else {
                 $this->data['name'] = $val;
@@ -58,24 +64,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     private function validateType(){
-        $val = trim($this->data['type_id']);
+        $val = trim($this->data['type']);
+        $val = htmlspecialchars($val);
+        $val = stripslashes($val);
+
         if(empty($val)){
-            $this->addError('type_id', 'type cannot be empty');
+            $this->addError('type', 'type cannot be empty');
         } else {
-            if(!preg_match('/^[0-9]{1, 50}*$/',$val)){ //check ex
-                $this->addError('type_id', 'type must be a number');
+            if(!preg_match('/^[0-9]{1,50}$/',$val)){ //check ex
+                $this->addError('type', 'type must be a number');
             } else {
-                $this->data['type_id'] = $val;
+                $this->data['type'] = $val;
                 }
             }
         }
 
     private function validateCountry(){
         $val = trim($this->data['country']);
+        $val = htmlspecialchars($val);
+        $val = stripslashes($val);
+
         if(empty($val)){
             $this->addError('country', 'country cannot be empty');
         } else {
-            if(!preg_match('/^[a-zA-Z]{1, 50}*$/',$val)){
+            if(!preg_match('/^[a-zA-Z]{1,50}$/',$val)){
                 $this->addError('country', 'country can only contain letters');
             } else {
                 $this->data['country'] = $val;
@@ -86,14 +98,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     private function validateTva(){
         $val = trim($this->data['tva']);
+
         if(empty($val)){
+
             $this->addError('tva', 'tva cannot be empty');
+
         } else {
-            if(!preg_match('/^[a-zA-Z0-9]{1, 50}*$/',$val)){
+            if(!preg_match('/^[0-9]{1,50}$/',$val)){
+
                 $this->addError('tva', 'tva must be between 1 and 50 alphanumeric characters');
+
             } else {
+
                 $this->data['tva'] = $val;
+
                 }
+
             }
         }
 
@@ -102,8 +122,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
     }
-
-}
 
 
 

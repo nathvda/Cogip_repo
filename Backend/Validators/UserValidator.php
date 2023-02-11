@@ -6,12 +6,10 @@ use Exception;
 use App\Model\UsersModel;
 use App\Controllers\UsersController;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
     class UserValidator{
 
         private $data;
-        private static $fields = ['id', 'first_name', 'role_id', 'last_name', 'email', 'password'];
+        private static $fields = ['firstname', 'lastname', 'email', 'password'];
         private $errors =[];
 
         public function __construct($post_data){
@@ -27,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
             $this->validateFirstName();
-            $this->validateRole();
             $this->validateLastName();
             $this->validateEmail();
             $this->validatePassword();
@@ -47,41 +44,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         private function validateFirstName(){
-            $val = trim($this->data['first_name']);
+            $val = trim($this->data['firstname']);
             if(empty($val)){
-                $this->addError('first_name', 'first name cannot be empty');
+                $this->addError('firstname', 'first name cannot be empty');
             } else {
-                if(!preg_match('/^[-\sa-zA-ZÁ-ù:]{1, 50}*$/',$val)){
-                    $this->addError('first_name', 'first name can only contain letters');
+                if(!preg_match('/^[\sa-zA-ZÁ-ù-]{1,50}$/',$val)){
+                    $this->addError('firstname', 'first name can only contain letters');
                 } else {
-                    $this->data['first_name'] = $val;
+                    $this->data['firstname'] = $val;
                 }
             }
-        }
-
-        private function validateRole(){
-            $val = trim($this->data['role_id']);
-            if(empty($val)){
-                $this->addError('role_id', 'role cannot be empty');
-            } else {
-                if(!preg_match('/^[0-9]*$/',$val)){
-                    $this->addError('role_id', 'role ID should be a number');
-                } else {
-                    $this->data['role_id'] = $val;
-                }
-            }
-
         }
 
         private function validateLastName(){
-            $val = trim($this->data['last_name']);
+            $val = trim($this->data['lastname']);
             if(empty($val)){
-                $this->addError('last_name', 'last name cannot be empty');
+                $this->addError('lastname', 'last name cannot be empty');
             } else {
-                if(!preg_match('/^[-\sa-zA-ZÁ-ù:]{1, 50}*$/',$val)){
-                    $this->addError('last_name', 'last name can only contain letters');
+                if(!preg_match('/^[-\sa-zA-ZÁ-ù]{1,50}$/',$val)){
+                    $this->addError('lastname', 'last name can only contain letters');
                 } else {
-                    $this->data['last_name'] = $val;
+                    $this->data['lastname'] = $val;
                 }
             }
 
@@ -93,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $this->addError('email', 'email cannot be empty');
             } else {
                 if(!filter_var($val, FILTER_VALIDATE_EMAIL)){
-                    $this->addError('first_name', 'email should be a valid email address');
+                    $this->addError('email', 'email should be a valid email address');
                 } else {
                     $this->data['email'] = $val;
                 }
@@ -105,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if(empty($val)){
                 $this->addError('password', 'password cannot be empty');
             } else {
-                if(!preg_match('/^[-a-zA-Z0-9]{1, 50}*$/',$val)){
+                if(!preg_match('/^[a-zA-Z0-9]{1,50}$/',$val)){
                     $this->addError('password', 'password must be between 1 and 50 alphanumeric characters');
                 } else {
                     $this->data['password'] = $val;
@@ -120,6 +103,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }
 
-}
 
 

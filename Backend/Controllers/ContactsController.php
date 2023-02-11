@@ -18,7 +18,7 @@ class ContactsController extends DbConnect{
 
         /**
      * Crée un contact au moyen des informations renvoyées par le validateur
-     * $data → informations renvoyées par le validateur.
+     * @param array $data → informations renvoyées par le validateur.
      */
 
     public function add($data){
@@ -30,7 +30,7 @@ class ContactsController extends DbConnect{
 
     /**
      * Récupère les informations d'un contact selon son identifiant unique
-     * $id → identifiant unique.
+     * @param int $id → identifiant unique.
      */
 
     public function getContact($id){
@@ -83,8 +83,8 @@ class ContactsController extends DbConnect{
 
     /**
      * Mets à jour un contact selon son id et utilise les informations retournées par le validateur.
-     * $id → identifiant unique
-     * $data → informations renvoyées par le validateur
+     * @param int $id → identifiant unique
+     * @param array $data → informations renvoyées par le validateur
      */
 
 
@@ -93,18 +93,16 @@ class ContactsController extends DbConnect{
             try{
 
             (new ContactModel)->editContact($data["name"], intval($data['company_id']), $data['email'], $data['phone'], $id);
-            echo "worked";
 
             } catch (Exception) {
-        
-            echo "didn't work";
+
             }
 
     }
 
     /**
      * Supprime un contact selon son id.
-     * $id = identifiant unique.
+     * @param int $id = identifiant unique.
      */
 
     public function delete($id){

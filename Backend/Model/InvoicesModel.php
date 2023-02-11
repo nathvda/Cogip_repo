@@ -43,7 +43,7 @@ class InvoicesModel extends DbConnect{
     }
 
     public function editInvoice($id, $ref,$date,$companyid){
-        $sql = "UPDATE invoices SET ref = ?, date_due = ?, id_company = ? WHERE invoices.id = ?"; 
+        $sql = "UPDATE invoices SET ref = ?, date_due = ?, id_company = ?, updated_at = CURRENT_TIMESTAMP() WHERE invoices.id = ?"; 
         
         $stmt =$this->connect()->prepare($sql);
         $stmt->execute([$ref,$date,$companyid,$id]);

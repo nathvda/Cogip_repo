@@ -12,6 +12,7 @@ use Exception;
  * getInvoices → récupère tous les éléments
  * updateInvoice → met à jour les informations d'un élément
  * delete → supprime un élément de la base de donnée.
+ * @return array;
  */
 
 class InvoicesController extends DbConnect{
@@ -22,9 +23,13 @@ class InvoicesController extends DbConnect{
         $res = (new InvoicesModel)->createInvoice($data['ref'], $data['date_due'], intval($data['id_company']));
         return $res;
         } catch (Exception $e){
-        var_dump('nope');
         }
     }
+
+    /** 
+     * Generates json data from fetched invoice
+     * @param $id : selected id.
+     */
 
     public function getInvoice($id){
 
@@ -46,6 +51,10 @@ class InvoicesController extends DbConnect{
         }
 
     }
+
+    /**
+     * Generates json data from all fetched invoices.
+     */
 
     public function getInvoices(){
         header("Access-Control-Allow-Origin: *");
@@ -70,12 +79,27 @@ class InvoicesController extends DbConnect{
 
     }
 
+    /**
+     * Sends request to data base for update
+     * @param int $id : requested id
+     * @param array $data {
+     *         @param string ref : reference of the object,
+     *         @param date date_due : date of the invoice,
+     *         @param int company : company id, must be included from the database. 
+     * }
+     */
+
     public function updateInvoice($id, $data){
 
         (new InvoicesModel)->editInvoice($id, $data['ref'], $data['date_due'], intval($data['company']));
         echo $data['ref'] . " a bien été modifiée";
 
     }
+
+    /**
+     * Deletes a specified invoice from the database
+     * @param int $id : requested id
+     */
 
     public function delete($id){
 
