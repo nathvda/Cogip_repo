@@ -51,7 +51,6 @@ $router->put('/{companyid}/edit', function($companyid) {
 $router->post('/add', function() { 
     $payload = json_decode(file_get_contents('php://input'), true);
     $res = (new CompanyValidator($payload))->company_validate();
-    var_dump($res);
 });
 
 $router->delete('/{companyid}/delete', function($companyid) { 
@@ -91,7 +90,6 @@ $router->mount('/invoices', function() use ($router){
     $router->post('/add', function() { 
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new InvoiceValidator($payload))->invoice_validate();
-        var_dump($res);
     });
 
     $router->delete('/{invoiceid}/delete', function($invoiceid) { 
@@ -129,7 +127,6 @@ $router->mount('/contacts', function() use ($router){
     $router->post('/add', function() { 
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new ContactValidator($payload))->contact_validate();
-        var_dump($res);
     });
 
     $router->delete('/{contactid}/delete', function($contactid) { 
@@ -143,7 +140,6 @@ $router->mount('/register', function() use ($router){
     $router->post('/', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new UserValidator($payload))->user_validate();
-        var_dump($res);
     });
 }
 );
@@ -153,7 +149,6 @@ $router->mount('/login', function() use ($router){
     $router->post('/', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new Userscontroller)->login($payload);
-        var_dump($res);
     });
 }
 );

@@ -79,6 +79,8 @@ You can use the following endpoints to interact with the database. The data stru
 | POST   | /companies/add         | `{ name: name <string>, type: company type <int>, country: country <string>, tva: tva <int> }` | Add company                        |
 | POST   | /invoices/add          | `{ ref: reference <string>, date_due: date <string>, id_company: company id <int> }`           | Add invoice                        |
 | POST   | /contacts/add          | `{ name: <string>, company_id:<int>, email:<string>,phone:<int> }`                             | Add contacts                       |
+| POST   | /register              | `{ firstname: <string>, lastname: <string>, email: <string>, password: <string>}`              | Add user                           |
+| POST   | /login                 | `{ email: <string>, password: <string>}`                                                       | Log in                             |
 | PUT    | /companies/{id}/edit   | `{ name: <string>, type: <int>, country : <string>, tva: <string> }`                           | Updates one company with given id  |
 | PUT    | /invoices/{id}/edit    | `{ ref: reference <string>,date_due: date <string>,company: company id <int> }`                | Updates one invoices with given id |
 | PUT    | /contacts/{id}/edit    | `{ name:<string>,company_id: <int>,email: <string>,phone:<string> }`                           | Updates one contacts with given id |

@@ -35,11 +35,13 @@ class UsersController extends DbConnect{
 
         if (password_verify($data['password'], $res[0]['password'])){
         
-        session_start();
-        $_SESSION['user'] = $res[0]['first_name'];
-        }
+        echo json_encode([
+            'message' => "Welcome",
+            'isLogged' => true
+        ]);
 
     }
+}
         catch (Exception $e){
             return $e;
         }

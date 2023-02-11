@@ -25,6 +25,7 @@ class CompanyController extends DbConnect{
 
         try{ 
         $res = (new CompaniesModel)->createCompany($data['name'],intval($data['type']),$data['country'], $data['tva']);
+        
         return $res;
         
         } catch (Exception) {

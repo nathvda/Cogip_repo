@@ -23,7 +23,6 @@ class InvoicesController extends DbConnect{
         $res = (new InvoicesModel)->createInvoice($data['ref'], $data['date_due'], intval($data['id_company']));
         return $res;
         } catch (Exception $e){
-        var_dump('nope');
         }
     }
 
