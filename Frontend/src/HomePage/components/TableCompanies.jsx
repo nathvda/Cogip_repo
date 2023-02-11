@@ -25,10 +25,12 @@ const TableCompanies = () => {
       </thead>
       <tbody>
         {dataFive.map((item) => (
-          <tr key={item.id}>
-            <td><Link className="" to={`/showcompanies/${item.id}`}>
-                  {item.name}
-                </Link></td>
+          <tr key={"homepageTableCompanies" + item.id}>
+            <td>
+              <Link className="" to={`/showcompanies/${item.id}`}>
+                {item.name}
+              </Link>
+            </td>
             <td>{item.tva}</td>
             <td>{item.country}</td>
             <td>{item.types_id}</td>

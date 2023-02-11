@@ -29,10 +29,13 @@ const Contacts = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => ( 
-            <tr key={item.id}>
+          {data.map((item) => (
+            <tr key={"tableContacts" + item.name + item.id}>
               <td>
-                <Link className="contacts__link" to={`/showcontacts/${item.id}`}>
+                <Link
+                  className="contacts__link"
+                  to={`/showcontacts/${item.id}`}
+                >
                   {item.name}
                 </Link>
               </td>

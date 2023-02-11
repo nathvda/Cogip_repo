@@ -24,10 +24,12 @@ const TableInvoices = () => {
       </thead>
       <tbody>
         {dataFive.map((item) => (
-          <tr key={item.id}>
-            <td><Link className="invoices__link" to={`/showinvoices/${item.id}`}>
+          <tr key={"homepageTableInvoices" + item.id}>
+            <td>
+              <Link className="invoices__link" to={`/showinvoices/${item.id}`}>
                 {item.ref}
-              </Link></td>
+              </Link>
+            </td>
             <td>{item.date_due}</td>
             <td>{item.id_company}</td>
             <td>{item.created_at}</td>

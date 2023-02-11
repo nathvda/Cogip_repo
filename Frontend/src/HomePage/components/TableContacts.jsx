@@ -25,10 +25,12 @@ const TableContacts = () => {
       </thead>
       <tbody>
         {dataFive.map((item) => (
-          <tr key={item.id}>
-            <td><Link className="contacts__link" to={`/showcontacts/${item.id}`}>
-                  {item.name}
-                </Link></td>
+          <tr key={"homepageTableContacts" + item.id}>
+            <td>
+              <Link className="contacts__link" to={`/showcontacts/${item.id}`}>
+                {item.name}
+              </Link>
+            </td>
             <td>{item.phone}</td>
             <td>{item.email}</td>
             <td>{item.company_id}</td>

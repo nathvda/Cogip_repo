@@ -20,30 +20,34 @@ const Companies = () => {
       <h1>All companies</h1>
 
       <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>TVA</th>
-          <th>Country</th>
-          <th>Type</th>
-          <th>Created at</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item) => (
-          <tr key={item.id}>
-            <td>
-            <Link className="companies__link" to={`/showcompanies/${item.id}`}>
-                  {item.name}
-                </Link></td>
-            <td>{item.tva}</td>
-            <td>{item.country}</td>
-            <td>{item.types_id}</td>
-            <td>{item.created_at}</td>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>TVA</th>
+            <th>Country</th>
+            <th>Type</th>
+            <th>Created at</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+            <tr key={"tableCompanies" + item.name + item.id}>
+              <td>
+                <Link
+                  className="companies__link"
+                  to={`/showcompanies/${item.id}`}
+                >
+                  {item.name}
+                </Link>
+              </td>
+              <td>{item.tva}</td>
+              <td>{item.country}</td>
+              <td>{item.types_id}</td>
+              <td>{item.created_at}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
       <Footer />
     </div>

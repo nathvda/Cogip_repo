@@ -29,7 +29,7 @@ const Invoices = () => {
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr key={item.id}>
+            <tr key={"tableInvoices" + item.ref + item.id}>
               <td>
                 <Link
                   className="invoices__link"

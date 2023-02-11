@@ -100,7 +100,7 @@ const Footer = () => {
           Privacy Policy
         </Link>
       </nav>
-      <p>Copyright © 2022 • COGIP Inc.</p>
+      <p className="footer__copyright">Copyright © 2022 • COGIP Inc.</p>
     </div>
   );
 };

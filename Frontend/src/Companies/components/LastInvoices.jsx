@@ -25,8 +25,8 @@ const LastInvoices = ({ idCompanies }) => {
         <tbody>
           {data.map((item, index) => {
             if (idCompanies === item.id_company) {
-                  return (
-                <tr key={index}>
+              return (
+                <tr key={"LastInvoices" + item.ref}>
                   <td>{item.ref}</td>
                   <td>{item.date_due}</td>
                   <td>{item.id_company}</td>

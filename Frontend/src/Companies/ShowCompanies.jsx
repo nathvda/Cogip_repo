@@ -18,18 +18,22 @@ const ShowCompanies = () => {
   return (
     <div className="showCompanies">
       <Header />
-      {data.map((item, index) => (
+      {data.map((item) => (
         <div>
           <h1>{item.name}</h1>
-          <ul key={index}>
-            <li key={'CompaniesName' + data.index}>Contact : {item.name}</li>
-            <li key={'CompaniesTVA' + data.index}>TVA: {item.tva}</li>
-            <li key={'CompaniesCountry' + data.index}>Country : {item.country}</li>
-            <li key={'CompaniesType' + data.index}>Type : {item.types_id}</li>
+          <ul>
+            <li key={"companiesName" + id.toString()}>Contact : {item.name}</li>
+            <li key={"companiesTVA" + id.toString()}>TVA: {item.tva}</li>
+            <li key={"companiesCountry" + id.toString()}>
+              Country : {item.country}
+            </li>
+            <li key={"CompaniesType" + id.toString()}>
+              Type : {item.types_id}
+            </li>
           </ul>
         </div>
       ))}
-      <LastInvoices idCompanies = {id}/>
+      <LastInvoices idCompanies={id} />
       <Footer />
     </div>
   );
