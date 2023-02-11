@@ -19,6 +19,10 @@ class DbConnect{
         $this->username = $_ENV['USERNAME'];
     }
 
+
+    /**
+     * return PDO object for connection to db
+     */
     public function connect(){
 
         $bdd = new \PDO("mysql:host=$this->host;dbname=$this->dbname", "$this->username", "$this->password");

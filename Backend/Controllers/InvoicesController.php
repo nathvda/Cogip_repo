@@ -12,6 +12,7 @@ use Exception;
  * getInvoices → récupère tous les éléments
  * updateInvoice → met à jour les informations d'un élément
  * delete → supprime un élément de la base de donnée.
+ * @return array;
  */
 
 class InvoicesController extends DbConnect{
@@ -81,8 +82,12 @@ class InvoicesController extends DbConnect{
 
     /**
      * Sends request to data base for update
-     * @param $id : requested id
-     * @param $data : informations returned from the validator.
+     * @param int $id : requested id
+     * @param array $data {
+     *         @param string ref : reference of the object,
+     *         @param date date_due : date of the invoice,
+     *         @param int company : company id, must be included from the database. 
+     * }
      */
 
     public function updateInvoice($id, $data){
@@ -94,7 +99,7 @@ class InvoicesController extends DbConnect{
 
     /**
      * Deletes a specified invoice from the database
-     * @param $id : requested id
+     * @param int $id : requested id
      */
 
     public function delete($id){
