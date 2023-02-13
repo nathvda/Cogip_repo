@@ -19,15 +19,15 @@ const ShowCompanies = () => {
     <div>
       <Header />
       {data.map((item) => (
-        <div className="showCompanies">
+        <div key={"companies" + id.toString()} className="showCompanies">
           <h1 className="showCompanies__title">{item.name}</h1>
           <ul className="showCompanies__list">
-            <li key={"companiesName" + id.toString()} className="showCompanies__list__elem">Contact : {item.name}</li>
-            <li key={"companiesTVA" + id.toString()} className="showCompanies__list__elem">TVA: {item.tva}</li>
-            <li key={"companiesCountry" + id.toString()} className="showCompanies__list__elem">
+            <li key={"companiesName" + item + id.toString()} className="showCompanies__list__elem">Contact : {item.name}</li>
+            <li key={"companiesTVA" + item + id.toString()} className="showCompanies__list__elem">TVA: {item.tva}</li>
+            <li key={"companiesCountry" + item + id.toString()} className="showCompanies__list__elem">
               Country : {item.country}
             </li>
-            <li key={"CompaniesType" + id.toString()} className="showCompanies__list__elem">
+            <li key={"CompaniesType" + item + id.toString()} className="showCompanies__list__elem">
               Type : {item.types_id}
             </li>
           </ul>

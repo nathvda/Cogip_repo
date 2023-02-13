@@ -19,7 +19,7 @@ const ShowInvoices = () => {
     <div>
       <Header />
       {data.map((item) => (
-        <div>
+        <div key={"invoices" + id.toString()}>
           <h1>{item.ref}</h1>
           <ul>
             <li key={"invoicesRef" + item.ref + id.toString()}>References : {item.ref}</li>

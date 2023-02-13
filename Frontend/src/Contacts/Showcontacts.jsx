@@ -18,13 +18,19 @@ const Showcontacts = () => {
     <div className="showContact">
       <Header />
       {data.map((item) => (
-        <div>
+        <div key={"Contacts" + id.toString()}>
           <h1>{item.name}</h1>
           <ul>
-            <li key={"contactsName" + id.toString()}>Contact : {item.name}</li>
-            <li key={"contactPhone" + id.toString()}>Phone : {item.phone}</li>
-            <li key={"contactEmail" + id.toString()}>Mail : {item.email}</li>
-            <li key={"contactCompanyId" + id.toString()}>
+            <li key={"contactsName" + item + id.toString()}>
+              Contact : {item.name}
+            </li>
+            <li key={"contactPhone" + item + id.toString()}>
+              Phone : {item.phone}
+            </li>
+            <li key={"contactEmail" + item + id.toString()}>
+              Mail : {item.email}
+            </li>
+            <li key={"contactCompanyId" + item + id.toString()}>
               Company : {item.company_id}
             </li>
           </ul>
