@@ -29,6 +29,13 @@ $router->get('/', function() {
  * → /companies/{id}/edit, ex: /companies/1/edit → edit d'une entreprise, accepte GET (pour récupérer les infos) et PUT (pour modifier les infos);
  */
 
+// $router->before('GET|POST|PUT|DELETE', '/.*', function() {
+//     if (!isset($_SESSION['user'])) {
+//         header('location: http://localhost:5174/');
+//         exit();
+//     }
+// });
+
 $router->mount('/companies', function() use ($router){
 
 $router->get('/', function() { 

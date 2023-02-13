@@ -34,13 +34,33 @@ class UsersController extends DbConnect{
         $res = (new UsersModel)->checkUser($data['email']);
 
         if (password_verify($data['password'], $res[0]['password'])){
-        
-        echo json_encode([
-            'message' => "Welcome",
-            'isLogged' => true
-        ]);
 
-    }
+            $key = base64_encode('{
+                "alg":"HS256",
+                "typ": "JWT"
+            }');
+
+            var_dump($key);
+
+            $payload = base64_encode('{
+            
+                "admin": true
+            }');
+
+            var_dump($payload);
+
+            $sign = hash_hmac("sha256", "$key.$payload", $_ENV["SECRET"]);
+            var_dump($sign);
+
+            $fToken = "$key.$payload.$sign";
+            var_dump($fToken);
+
+            return $fToken;
+
+            } else { 
+
+                var_dump("wrong credentials");
+            }
 }
         catch (Exception $e){
             return $e;
