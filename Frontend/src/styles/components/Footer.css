@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+.footer__line {
+  width: 80%;
+  height: 0.5vw;
+  margin: auto;
+}
+.footer__line--yellow {
+  background-color: yellow;
+}
+.footer__line--gray {
+  background-color: gray;
+}
+.footer__logo {
+  border: solid yellow 3px;
+  width: 20%;
+  margin: auto;
+}
+.footer__informations {
+  font-size: 4vw;
+  margin: auto;
+}
+.footer__informations__adress, .footer__informations__fax, .footer__informations__phone {
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=Footer.css.map */
