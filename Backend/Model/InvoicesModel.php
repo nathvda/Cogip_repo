@@ -7,7 +7,7 @@ class InvoicesModel extends DbConnect{
 
     public function getInvoices(){
         
-        $sql = "SELECT invoices.*, companies.name AS id_company FROM invoices INNER JOIN companies ON invoices.id_company = companies.id ORDER BY created_at DESC";
+        $sql = "SELECT invoices.*, invoices.id_company AS comp_id, companies.name AS id_company FROM invoices INNER JOIN companies ON invoices.id_company = companies.id ORDER BY created_at DESC";
         
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
@@ -31,7 +31,7 @@ class InvoicesModel extends DbConnect{
 
     public function fetchInvoice($id){
         
-        $sql = "SELECT invoices.*, companies.name AS id_company FROM invoices INNER JOIN companies ON invoices.id_company = companies.id WHERE invoices.id = ?";
+        $sql = "SELECT invoices.*, invoices.id_company AS comp_id, companies.name AS id_company FROM invoices INNER JOIN companies ON invoices.id_company = companies.id WHERE invoices.id = ?";
         
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$id]);
