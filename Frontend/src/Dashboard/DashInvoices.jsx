@@ -26,33 +26,32 @@ const DashInvoices = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Reference:
+    <form onSubmit={handleSubmit} className="dashInvoices__form">
+  
         <input
           type="text"
           name="reference"
+          placeholder="Reference"
           value={formData.reference}
           onChange={handleInputChange}
+          className="dashInvoices__form--ref"
         />
-      </label>
+  
       <br />
-      <label>
-        Price:
         <input
           type="text"
           name="price"
+          placeholder="Price"
           value={formData.price}
           onChange={handleInputChange}
+          className="dashInvoices__form--price"
         />
-      </label>
       <br />
-      <label>
-        Company Name:
         <select
           name="companyName"
           value={formData.companyName}
           onChange={handleInputChange}
+          className="dashInvoices__form--select"
         >
           <option value="">Select a Company</option>
           {companies.map((company) => (
@@ -61,9 +60,8 @@ const DashInvoices = () => {
             </option>
           ))}
         </select>
-      </label>
       <br />
-      <button type="submit">Save</button>
+      <button type="submit" className="dashInvoices__form--btnSave">Save</button>
     </form>
   );
 };
