@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../componentsIndividuals/Footer";
 import Header from "../componentsIndividuals/Header";
 import LastInvoices from "./components/LastInvoices";
+import Contactpeople from "./components/Contactpeople";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -33,6 +34,7 @@ const ShowCompanies = () => {
           </ul>
         </div>
       ))}
+      <Contactpeople />
       <LastInvoices idCompanies={id} />
       <Footer />
     </div>

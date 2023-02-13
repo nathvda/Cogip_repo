@@ -15,12 +15,12 @@ const Invoices = () => {
   }, []);
   //const dataFive = data.slice(0, 10);
   return (
-    <div>
+    <div className="invoices">
       <Header />
-      <h1>All invoices</h1>
-      <table>
+      <h1 className="invoices__title">All invoices</h1>
+      <table className="invoices__table">
         <thead>
-          <tr>
+          <tr className="invoices__table__head">
             <th>Invoice number</th>
             <th>Dates due</th>
             <th>Company</th>
@@ -29,10 +29,10 @@ const Invoices = () => {
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr key={"tableInvoices" + item.ref + item.id}>
+            <tr key={"tableInvoices" + item.ref + item.id} className="invoices__table__body">
               <td>
                 <Link
-                  className="invoices__link"
+                  className="invoices__table__body--link"
                   to={`/showinvoices/${item.id}`}
                 >
                   {item.ref}

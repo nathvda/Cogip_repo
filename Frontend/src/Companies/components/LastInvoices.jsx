@@ -10,13 +10,11 @@ const LastInvoices = ({ idCompanies }) => {
       responseType: "json",
     }).then((res) => setData(res.data));
   }, []);
-  console.log(idCompanies);
-  //if (idCompanies === data.id_company)
   return (
-    <div>
-      <table>
+    <div className="showCompanies__invoices">
+      <table className="showCompanies__invoices__table">
         <thead>
-          <tr>
+          <tr className="showCompanies__invoices__table--head">
             <th>Invoice number</th>
             <th>Dates due</th>
             <th>Company</th>
@@ -26,11 +24,9 @@ const LastInvoices = ({ idCompanies }) => {
         <tbody>
           {data.map((item) => {
             const newIdCompanies = parseInt(idCompanies, 10);
-            console.log(newIdCompanies);
-            console.log(item.id_company)
             if (newIdCompanies === item.comp_id) {
               return (
-                <tr key={"LastInvoices" + item.ref}>
+                <tr key={"LastInvoices" + item.ref} className="showCompanies__invoices__table--body">
                   <td>{item.ref}</td>
                   <td>{item.date_due}</td>
                   <td>{item.id_company}</td>

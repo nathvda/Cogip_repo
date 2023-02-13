@@ -15,22 +15,34 @@ const Showcontacts = () => {
     }).then((res) => setData(res.data));
   }, []);
   return (
-    <div className="showContact">
+    <div>
       <Header />
       {data.map((item) => (
-        <div key={"Contacts" + id.toString()}>
-          <h1>{item.name}</h1>
-          <ul>
-            <li key={"contactsName" + item + id.toString()}>
+        <div key={"Contact" + id.toString()} className="showContact">
+          <h1 className="showContact__title">{item.name}</h1>
+          <ul className="showContact__list">
+            <li
+              key={"contactName" + item + id.toString()}
+              className="showContact__list__elem"
+            >
               Contact : {item.name}
             </li>
-            <li key={"contactPhone" + item + id.toString()}>
+            <li
+              key={"contactPhone" + item + id.toString()}
+              className="showContact__list__elem"
+            >
               Phone : {item.phone}
             </li>
-            <li key={"contactEmail" + item + id.toString()}>
+            <li
+              key={"contactEmail" + item + id.toString()}
+              className="showContact__list__elem"
+            >
               Mail : {item.email}
             </li>
-            <li key={"contactCompanyId" + item + id.toString()}>
+            <li
+              key={"contactCompanyId" + item + id.toString()}
+              className="showContact__list__elem"
+            >
               Company : {item.company_id}
             </li>
           </ul>

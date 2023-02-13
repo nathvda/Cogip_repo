@@ -15,12 +15,12 @@ const Contacts = () => {
   }, []);
   //const dataFive = data.slice(0, 10);
   return (
-    <div>
+    <div className="contacts">
       <Header />
-      <h1>All contacts</h1>
-      <table>
+      <h1 className="contacts__title">All contacts</h1>
+      <table className="contacts__table">
         <thead>
-          <tr>
+          <tr className="contacts__table__head">
             <th>Name</th>
             <th>Phone</th>
             <th>Mail</th>
@@ -30,10 +30,10 @@ const Contacts = () => {
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr key={"tableContacts" + item.name + item.id}>
+            <tr key={"tableContacts" + item.name + item.id} className="contacts__table__body">
               <td>
                 <Link
-                  className="contacts__link"
+                  className="contacts__table__body--link"
                   to={`/showcontacts/${item.id}`}
                 >
                   {item.name}

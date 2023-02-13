@@ -19,14 +19,25 @@ const ShowInvoices = () => {
     <div>
       <Header />
       {data.map((item) => (
-        <div key={"invoices" + id.toString()}>
-          <h1>{item.ref}</h1>
-          <ul>
-            <li key={"invoicesRef" + item.ref + id.toString()}>References : {item.ref}</li>
-            <li key={"invoicesDateDue" + item.ref + id.toString()}>
+        <div key={"invoices" + id.toString()} className="showInvoice">
+          <h1 className="showInvoice__title">{item.ref}</h1>
+          <ul className="showInvoice__list">
+            <li
+              key={"invoicesRef" + item.ref + id.toString()}
+              className="showInvoice__list__elem"
+            >
+              References : {item.ref}
+            </li>
+            <li
+              key={"invoicesDateDue" + item.ref + id.toString()}
+              className="showInvoice__list__elem"
+            >
               Date due : {item.date_due}
             </li>
-            <li key={"invoicesIdCompany" + item.ref + id.toString()}>
+            <li
+              key={"invoicesIdCompany" + item.ref + id.toString()}
+              className="showInvoice__list__elem"
+            >
               Company :{item.id_company}
             </li>
           </ul>

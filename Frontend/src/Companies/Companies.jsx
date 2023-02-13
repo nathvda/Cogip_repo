@@ -22,11 +22,11 @@ const Companies = () => {
       <table className="companies__table">
         <thead>
           <tr className="companies__table__head">
-            <th className="companies__table__head--cell">Name</th>
-            <th className="companies__table__head--cell">TVA</th>
-            <th className="companies__table__head--cell">Country</th>
-            <th className="companies__table__head--cell">Type</th>
-            <th className="companies__table__head--cell">Created at</th>
+            <th>Name</th>
+            <th>TVA</th>
+            <th>Country</th>
+            <th>Type</th>
+            <th>Created at</th>
           </tr>
         </thead>
         <tbody>
@@ -35,7 +35,7 @@ const Companies = () => {
               key={"tableCompanies" + item.name + item.id}
               className="companies__table__body"
             >
-              <td className="companies__table__body--cell">
+              <td>
                 <Link
                   className="companies__table__body--link"
                   to={`/showcompanies/${item.id}`}
@@ -43,10 +43,10 @@ const Companies = () => {
                   {item.name}
                 </Link>
               </td>
-              <td className="companies__table__body--cell">{item.tva}</td>
-              <td className="companies__table__body--cell">{item.country}</td>
-              <td className="companies__table__body--cell">{item.types_id}</td>
-              <td className="companies__table__body--cell">
+              <td>{item.tva}</td>
+              <td>{item.country}</td>
+              <td>{item.types_id}</td>
+              <td>
                 {item.created_at}
               </td>
             </tr>
