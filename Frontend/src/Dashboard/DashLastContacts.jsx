@@ -2,37 +2,37 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const DashLastInvoices = () => {
+const DashLastContacts = () => {
       const [data, setData] = useState([]);
       useEffect(() => {
         axios({
           method: "get",
-          url: "http://localhost:8080/invoices",
+          url: "http://localhost:8080/contacts",
           responseType: "json",
         }).then((res) => setData(res.data));
       }, []);
       const dataFive = data.slice(0, 5);
       return (
         <div>
-          <h1>Last invoices</h1>
-          <table className = "homepage__sectionInvoices__table">
+          <h1>Last contacts</h1>
+          <table>
       <thead>
         <tr>
-          <th>Invoice number</th>
-          <th>Dates</th>
-          <th >Company</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th >Email</th>
         </tr>
       </thead>
       <tbody>
         {dataFive.map((item) => (
-          <tr key={"dashLastInvoices" + item.id}>
+          <tr key={"dashLastContacts" + item.id}>
             <td>
               <Link to={`/dashboard/${item.id}`}>
-                {item.ref}
+                {item.name}
               </Link>
             </td>
-            <td>{item.date_due}</td>
-            <td>{item.id_company}</td>
+            <td>{item.phone}</td>
+            <td>{item.email}</td>
           </tr>
         ))}
       </tbody>
@@ -41,4 +41,4 @@ const DashLastInvoices = () => {
       );
     };
 
-export default DashLastInvoices;
+export default DashLastContacts;
