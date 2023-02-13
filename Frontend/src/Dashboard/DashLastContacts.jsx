@@ -26,11 +26,7 @@ const DashLastContacts = () => {
       <tbody>
         {dataFive.map((item) => (
           <tr key={"dashLastContacts" + item.id}>
-            <td>
-              <Link to={`/dashboard/${item.id}`}>
-                {item.name}
-              </Link>
-            </td>
+            <td>{item.name}</td>
             <td>{item.phone}</td>
             <td>{item.email}</td>
           </tr>

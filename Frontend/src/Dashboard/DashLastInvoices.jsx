@@ -26,11 +26,7 @@ const DashLastInvoices = () => {
       <tbody>
         {dataFive.map((item) => (
           <tr key={"dashLastInvoices" + item.id}>
-            <td>
-              <Link to={`/dashboard/${item.id}`}>
-                {item.ref}
-              </Link>
-            </td>
+            <td>{item.ref}</td>
             <td>{item.date_due}</td>
             <td>{item.id_company}</td>
           </tr>
