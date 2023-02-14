@@ -1,9 +1,12 @@
-.dashHeader{
-      img{
-            width: 30%;
+.dashHeader{      
+      @include fontAssistant(3vw, 900, black);
+      &__Img--div{
+            background-color: $violet;
+      }
+     &__Img{
+            width: 40%;
             position: relative;
             left: 60%;
-            background-color: $violet;
-
+            
       }
-}
+} 
