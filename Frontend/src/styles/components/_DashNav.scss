@@ -1,6 +1,14 @@
-.dash{
-&__nav--closed{
-display: flex;
-flex-direction: column;
-}
-}
+nav{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+    .dash__nav--open {
+        position: absolute;
+        display: flex;
+        align-items: end;
+        align-items: center;
+        width: 100vh;
+        height: 30%;
+    }
