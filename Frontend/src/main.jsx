@@ -47,10 +47,12 @@ const router = createBrowserRouter([
   {
     path: `/dashboard`,
     element: <Dashboard />,
-  },
-  {
-    path: `/dashinvoices`,
-    element: <DashInvoices />,
+    children: [
+      {
+        path: `/dashboard/dashinvoices`,
+        element: <DashInvoices />,
+      }
+    ]
   },
   {
     path: `/dashcompanies`,
