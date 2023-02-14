@@ -9,28 +9,18 @@ const Header = () => {
   return (
     <div className="header">
       <MediaQuery maxWidth={767}>
-        <img
-          className="header__logo--mobile"
-          src="../public/assets/img/icons/logo.svg"
-          alt="Logo de cogip"
-        />
-        <button className="header__button--mobile header__button--signup">
-          Sign up
-        </button>
-        <button className="header__button--mobile header__button--login">
-          Login
-        </button>
+        <p className="header__logo--mobile">COGIP</p>
+        <div className="header__button--mobile">
+          <button className="header__button--signup">Sign up</button>
+          <button className="header__button--login">Login</button>
+        </div>
         <div className="header__menu--mobile">
           <NavigationMobile />
         </div>
       </MediaQuery>
 
       <MediaQuery minWidth={768}>
-        <img
-          className="header__logo--desktop"
-          src="../public/assets/img/icons/logo.svg"
-          alt="Logo de cogip"
-        />
+        <p className="header__logo--desktop">COGIP</p>
         <div className="header__menu--desktop">
           <NavigationDesktop />
         </div>
