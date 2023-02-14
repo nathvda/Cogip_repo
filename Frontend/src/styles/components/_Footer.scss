@@ -1,14 +1,14 @@
 .footer {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
 
       &__line {
             width: 80%;
-            height: 0.5vw;
+            height: 0.3vw;
             margin: auto;
 
             &--yellow {
-                  background-color: yellow;
+                  background-color: $yellow;
             }
 
             &--gray {
@@ -17,9 +17,10 @@
       }
 
       &__logo {
-            border: solid yellow 3px;
+            border: solid $yellow 0.5vw;
+            //margin: auto;
             width: 20%;
-            margin: auto;
+            @include fontRoboto(4.5vw, 900, black);
       }
 
       &__informations {
