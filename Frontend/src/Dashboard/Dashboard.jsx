@@ -1,10 +1,10 @@
 import React from 'react';
-import HeaderDash from './components/HeaderDash';
-import DashLastInvoices from './components/DashLastInvoices';
-import DashLastContacts from './components/DashLastContacts';
-import DashLastCompanies from './components/DashLastCompanies';
-import NavDashboardMobile from './components/NavDashboardMobile'
-import NavDashboardDesktop from './components/NavDashboardDesktop';
+import HeaderDash from './HeaderDash';
+import DashLastInvoices from './DashLastInvoices';
+import DashLastContacts from './DashLastContacts';
+import DashLastCompanies from './DashLastCompanies';
+import NavDashboardMobile from './NavDashboardMobile'
+import NavDashboardDesktop from './NavDashboardDesktop';
 
 
 const Dashboard = () => {
