@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, isLoggedin } from 'react';
+import axios from 'axios';
 
 
 const DashLogout = () => {
@@ -17,18 +18,16 @@ const DashLogout = () => {
         }).then((res) => setData(res.data));
       }, [email, password]);
            
-
-/*const login = (e) => {
+/*
+const login = (e) => {
 	e.preventDefault();
-	console.log(name, email, password);
+	console.log(email, password);
 	const userData = {
-	name,
 	email,
 	password,
 	};
 	localStorage.setItem('token-info', JSON.stringify(userData));
 	setIsLoggedin(true);
-	setName('');
 	setEmail('');
 	setPassword('');
 };
@@ -56,14 +55,14 @@ return (
 				value={password}
 				placeholder="Password"
 			/>
-			<button type="submit" onClick={login}>
+			/*<button type="submit" onClick={login}>
 				Login
 			</button>
 			</form>
 		</>
 		) : (
 		<>
-			<h1>User is logged in</h1>
+		
 			<button onClickCapture={logout}>Logout</button>
 		</>
 		)}
