@@ -7,11 +7,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__line footer__line--yellow"></div>
-      <img
-        className="footer__logo"
-        src="../public/assets/img/icons/logo.svg"
-        alt="Logo de cogip"
-      />
+      <p className="footer__logo">COGIP</p>
       <div className="footer__informations">
         <div className="footer__informations__adress">
           <img
