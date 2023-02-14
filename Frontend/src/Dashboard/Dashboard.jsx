@@ -10,8 +10,12 @@ import NavDashboardDesktop from './components/NavDashboardDesktop';
 const Dashboard = () => {
       return (
             <div className='dash'>  
-            <div className='dash__nav--mobile'><NavDashboardMobile /></div>
-            <div className='dash__nav--desktop'><NavDashboardDesktop /></div>
+            <div className='dash__nav--mobile'>
+                  <NavDashboardMobile />
+            </div>
+            <div className='dash__nav--desktop'>
+                  <NavDashboardDesktop />
+            </div>
             <HeaderDash />
             <DashLastInvoices />
             < DashLastContacts />
