@@ -11,12 +11,17 @@ const HomePage = () => {
       <Header />
       <section className="homepage__sectionTop">
         <h1 className="homepage__sectionTop__title">
-          MANAGE YOUR CUSTOMERS AND INVOICES EASLY
+          MANAGE YOUR CUSTOMERS AND INVOICES EASILY
         </h1>
         <img
           className="homepage__sectionTop__img"
           src="./public/assets/img/1.illustration_home_header.png"
           alt="Illustration"
+        />
+        <img
+          className="homepage__sectionTop__rect"
+          src="./public/assets/img/miseenpageRect.png"
+          alt="mise en forme"
         />
       </section>
       <section className="homepage__sectionInvoices">
@@ -45,6 +50,11 @@ const HomePage = () => {
           className="homepage__sectionBottom__img"
           src="./public/assets/img/2_illustration_home_footer.png"
           alt="Illustration"
+        />
+        <img
+          className="homepage__sectionBottom__rect"
+          src="./public/assets/img/miseenpageRect17.svg"
+          alt="mise en forme"
         />
       </section>
       <Footer />

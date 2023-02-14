@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../componentsIndividuals/Footer";
 import Header from "../componentsIndividuals/Header";
+import RectHeader from "../componentsIndividuals/RectHeader";
 
 const Invoices = () => {
   const [data, setData] = useState([]);
@@ -17,6 +18,7 @@ const Invoices = () => {
   return (
     <div className="invoices">
       <Header />
+      <RectHeader />
       <h1 className="invoices__title">All invoices</h1>
       <table className="invoices__table">
         <thead>
@@ -29,7 +31,10 @@ const Invoices = () => {
         </thead>
         <tbody>
           {data.map((item) => (
-            <tr key={"tableInvoices" + item.ref + item.id} className="invoices__table__body">
+            <tr
+              key={"tableInvoices" + item.ref + item.id}
+              className="invoices__table__body"
+            >
               <td>
                 <Link
                   className="invoices__table__body--link"

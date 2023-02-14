@@ -4,28 +4,67 @@
             background-color: $yellow;
             align-items: center;
             justify-content: space-around;
+            height: 48.5vw;
+            z-index: 5;
+            margin-top: -15%;
 
             &__title {
                   @include fontInter(5vw, 900, black);
                   width: 50%;
-                  margin-left: 3%;
+                  margin-left: 7%;
             }
 
             &__img {
-                  width: 50%;
+                  width: 55%;
+            }
+
+            &__rect {
+                  position: absolute;
+                  z-index: 10;
+                  top: 30%;
+                  background-color: $yellow;
+                  width: 90%;
+            }
+      }
+
+      &__sectionInvoices {
+            &__title {
+                  @include fontInter(4vw, 900, black);
+                  margin-left: 10%;
+            }
+      }
+
+      &__sectionContacts {
+            &__title {
+                  @extend .homepage__sectionInvoices__title;
+            }
+      }
+
+      &__sectionCompanies {
+            &__title {
+                  @extend .homepage__sectionInvoices__title;
             }
       }
 
       &__sectionBottom {
             display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 43.1vw;
 
             &__title {
-                  font-size: 5vw;
-                  width: 50%;
+                  @extend .homepage__sectionTop__title;
             }
 
             &__img {
                   width: 50%;
+            }
+
+            &__rect {
+                  width: 50%;
+                  position: absolute;
+                  z-index: -1;
+                  right: 0;
             }
       }
 }

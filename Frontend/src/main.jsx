@@ -60,6 +60,7 @@ const router = createBrowserRouter([
     path: `/dashcontacts`,
     element: <DashContacts />,
   },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

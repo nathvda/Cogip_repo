@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import DashLogout from './DashLogout';
 
 const NavDashboardMobile = () => {
       const [isOpen, setIsOpen] = useState(false)
@@ -17,7 +18,9 @@ const NavDashboardMobile = () => {
                         <Link className='dash__nav__link' to={`/dashcompanies`}>Companies</Link>
                         <Link className='dash__nav__link' to={`/dashcontacts`}>Contacts</Link>    
                   </div>
-                  <button className="dash__button--mobile dash__button--logout">Logout</button>
+                  <button className="dash__button--mobile dash__button--logout">
+                        <DashLogout />
+                  </button>
             </nav>
       ) : (
             <div className='dash__nav--closed'>
