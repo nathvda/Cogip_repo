@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import Companies from "./Companies/Companies";
 import Invoices from "./Invoices/Invoices";
@@ -14,56 +14,24 @@ import DashCompanies from "./Dashboard/DashCompanies";
 import DashContacts from "./Dashboard/DashContacts";
 import "./styles/index.scss";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomePage />,
-    errorElement: <HomePage />,
-  },
-  {
-    path: `/companies`,
-    element: <Companies />,
-  },
-  {
-    path: `/invoices`,
-    element: <Invoices />,
-  },
-  {
-    path: `/showinvoices/:id`,
-    element: <ShowInvoices />,
-  },
-  {
-    path: `/contacts`,
-    element: <Contacts />,
-  },
-  {
-    path: `/showcontacts/:id`,
-    element: <Showcontacts />,
-  },
-  {
-    path: `/showcompanies/:id`,
-    element: <ShowCompanies />,
-  },
-  {
-    path: `/dashboard`,
-    element: <Dashboard />,
-    children: [
-      {
-        path: `/dashboard/dashinvoices`,
-        element: <DashInvoices />,
-      }
-    ]
-  },
-  {
-    path: `/dashcompanies`,
-    element: <DashCompanies />,
-  },
-  {
-    path: `/dashcontacts`,
-    element: <DashContacts />,
-  },
-
-]);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<HomePage />} />
+      <Route path="invoices" element={<Invoices />} />
+      <Route path="contacts" element={<Contacts />} />
+      <Route path="companies" element={<Companies />} />
+      <Route path="showcontacts/:id" element={<Showcontacts />} />
+      <Route path="showinvoices/:id" element={<ShowInvoices />} />
+      <Route path="showcompanies/:id" element={<ShowCompanies />} />
+      <Route path="dashboard" element={<Dashboard />}>
+        <Route path="dash/companies" element={<DashCompanies />} />
+        <Route path="dash/contacts" element={<DashContacts />} />
+        <Route path="dash/invoices" element={<DashInvoices />} />
+      </Route>
+    </>
+  )
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

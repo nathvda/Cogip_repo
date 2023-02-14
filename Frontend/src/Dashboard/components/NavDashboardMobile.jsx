@@ -13,10 +13,9 @@ const NavDashboardMobile = () => {
                         <div className='dash__nav__line dash__nav__line--bottom'></div>
                   </button>
                   <div className='dash__nav--style'>
-                        <Link className='dash__nav__link' to={`/dashboard`}><img src="./public/assets/img/icons/dashboard/Icon_dashboard.svg" alt="Icon nav dashboard" /></Link>
-                        <Link className='dash__nav__link' to={`/dashboard/dashinvoices`}><img src="./public/assets/img/icons/dashboard/Icon_Invoices.svg" alt="Icon nav dashboard invoices" /></Link>
-                        <Link className='dash__nav__link' to={`/dashcompanies`}><img src="./public/assets/img/icons/dashboard/Icon_Companies.svg" alt="Icon nav dashboard companies" /></Link>
-                        <Link className='dash__nav__link' to={`/dashcontacts`}><img src="./public/assets/img/icons/dashboard/Icon_contact.svg" alt="Icon nav dashboard contact" /></Link>    
+                        <Link className='dash__nav__link' to={`dash/invoices`}><img src="./public/assets/img/icons/dashboard/Icon_Invoices.svg" alt="Icon nav dashboard invoices" /></Link>
+                        <Link className='dash__nav__link' to={`dash/companies`}><img src="./public/assets/img/icons/dashboard/Icon_Companies.svg" alt="Icon nav dashboard companies" /></Link>
+                        <Link className='dash__nav__link' to={`dash/contacts`}><img src="./public/assets/img/icons/dashboard/Icon_contact.svg" alt="Icon nav dashboard contact" /></Link>    
                   </div>
                   <button className="dash__button--mobile dash__button--logout">
                         <DashLogout />
