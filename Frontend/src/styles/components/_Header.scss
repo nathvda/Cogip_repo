@@ -213,6 +213,9 @@
                 height: 7vw;
                 @include SlideInNav;
                 margin-right: 40%;
+                @include fontRoboto(3.5vw, 400, black);
+                padding-left: 5%;
+                padding-right: 5%;
             }
 
             &--submit {
@@ -223,6 +226,7 @@
                 background-color: $lightGray;
                 border-style: none;
                 @include SlideInNav;
+                @include fontRoboto(3.5vw, 600, black);
             }
         }
     }
