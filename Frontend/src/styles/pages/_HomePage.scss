@@ -75,8 +75,13 @@
                   }
 
                   &--bodyCell {
-                        padding: 2vw 2vw;
+                        padding: 2vw 4vw;
                         padding-right: 5%;
+                  }
+
+                  &--link {
+                        text-decoration: none;
+                        @include fontRoboto(3vw, 600, black);
                   }
             }
       }

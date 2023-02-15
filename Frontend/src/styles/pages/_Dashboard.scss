@@ -1,0 +1,11 @@
+.dash {
+  &__sectionTop {
+
+    &__title {      
+      display: flex;
+      align-items: center;
+     z-index: 2;
+
+    }
+  }
+}
