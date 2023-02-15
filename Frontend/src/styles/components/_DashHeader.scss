@@ -1,25 +1,30 @@
-.dashHeader{      
-      display: flex;
-            align-items: center;
-            justify-content: space-around;
-            height: 48.5vw;
-            margin-top: -10%;
-            margin-left: 15%;
-            z-index: 5;
-      
-      &__HeyMsg{
-            background-color: $violet;
-            height: 30vw;
-            @include fontInter(2.5vw, 900, rgb(255, 255, 255));
-            p{
-                  @include fontInter(2.5vw, 400, rgb(255, 255, 255));
-                  width: 70%;
-            }
-      }
-      
-      &__Img{
-            width: 50%;
-            z-index: 2;
-            top: 30%;
-      }
-} 
+.dashHeader {
+  @include fontAssistant(3vw, 900, black);
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+  height: 48.5vw;
+  margin-top: 15%;
+
+  &__HeyMsg {
+    background-color: $violet;
+    width: 80%;
+    height: 30vw;
+    margin-left: 13%;
+    padding: 2%;
+    @include fontInter(2vw, 900, rgb(255, 255, 255));
+    p {
+      @include fontInter(2.5vw, 400, rgb(255, 255, 255));
+      width: 40%;
+     
+    }
+  }
+
+  &__Img {
+    width: 40%;
+    position: absolute;
+    left: 57%;
+    bottom: 75%;
+  }
+}

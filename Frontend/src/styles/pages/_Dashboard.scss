@@ -2,10 +2,60 @@
   &__sectionTop {
 
     &__title {      
-      display: flex;
-      align-items: center;
-     z-index: 2;
+      margin: -18% 14% ;
+
 
     }
   }
+
+&__sectionStat{
+      margin: 5% auto;
+      width: 70%;
 }
+
+  &__sectionMiddle{
+      margin: 5% auto;
+      width: 70%;
+      &__divAll {
+            overflow-x: auto;
+      }
+      &__table {
+            border-collapse: collapse;
+            table-layout: auto;
+            width: 100%;
+            @include fontRoboto(3vw, 600, black);
+
+            &--head {
+                  white-space: nowrap;
+                  background-color: $yellow;
+                  height: 4vh;
+                  //width: 100%;
+            }
+
+            &--headCell {
+                  padding: 2vw 2vw;
+                  margin-right: 5%;
+            }
+
+            &--body {
+                  white-space: nowrap;
+
+                  tr {
+                        &.odd {
+                              background-color: $lightGray;
+                        }
+                  }
+            }
+
+            &--bodyCell {
+                  padding: 2vw 4vw;
+                  padding-right: 5%;
+            }
+
+            &--link {
+                  text-decoration: none;
+                  @include fontRoboto(3vw, 600, black);
+            }
+      }
+}
+  }
