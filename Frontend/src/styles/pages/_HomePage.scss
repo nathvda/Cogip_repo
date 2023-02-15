@@ -37,8 +37,7 @@
 
 
             &__title {
-                  @include fontInter(4.5vw, 900, black);
-                  margin-left: 10%;
+                  @include titleTable;
                   margin-bottom: 2.5%;
             }
 

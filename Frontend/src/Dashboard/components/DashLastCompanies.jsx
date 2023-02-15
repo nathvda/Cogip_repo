@@ -13,22 +13,22 @@ const DashLastCompanies = () => {
   }, []);
   const dataFive = data.slice(0, 5);
   return (
-      <div className="dLastCompanies">
-          <h1>Last companies</h1>
-    <table  className="dLastCompanies__table">
+      <div className="dash__sectionMiddle">
+          <h1 className="dash__sectionMiddle__title">Last companies</h1>
+    <table  className="dash__sectionMiddle__table">
       <thead>
-        <tr className="dLastCompanies__table--head">
-          <th className="dLastCompanies__table--headCell">Name</th>
-          <th className="dLastCompanies__table--headCell">TVA</th>
-          <th className="dLastCompanies__table--headCell">Country</th>
+        <tr className="dash__sectionMiddle__table--head">
+          <th className="dash__sectionMiddle__table--headCell">Name</th>
+          <th className="dash__sectionMiddle__table--headCell">TVA</th>
+          <th className="dash__sectionMiddle__table--headCell">Country</th>
         </tr>
       </thead>
       <tbody>
         {dataFive.map((item) => (
-          <tr key={"dashLastCompanies" + item.id} className="dLastCompanies__table--body">
-            <td className="dLastCompanies__table--bodyCell">{item.name}</td>
-            <td className="dLastCompanies__table--bodyCell">{item.tva}</td>
-            <td className="dLastCompanies__table--bodyCell">{item.country}</td>
+          <tr key={"dashLastCompanies" + item.id} className="dash__sectionMiddle__table--body">
+            <td className="dash__sectionMiddle__table--bodyCell">{item.name}</td>
+            <td className="dash__sectionMiddle__table--bodyCell">{item.tva}</td>
+            <td className="dash__sectionMiddle__table--bodyCell">{item.country}</td>
           </tr>
         ))}
       </tbody>

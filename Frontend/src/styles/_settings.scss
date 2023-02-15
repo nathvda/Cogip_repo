@@ -40,6 +40,11 @@ $violet : #9698D6;
       animation-delay: 0.5s;
 }
 
+@mixin titleTable {
+      @include fontInter(4.5vw, 900, black);
+      margin-left: 10%;
+}
+
 //reset
 * {
       padding: 0;

@@ -13,22 +13,22 @@ const DashLastInvoices = () => {
   }, []);
   const dataFive = data.slice(0, 5);
   return (
-    <div className="dLastInvoices">
-      <h1>Last invoices</h1>
-      <table className="dLastInvoices__table">
+    <div className="dash__sectionMiddle">
+      <h1 className="dash__sectionMiddle__title">Last invoices</h1>
+      <table className="dash__sectionMiddle__table">
         <thead>
-          <tr className="dLastInvoices__table--head">
-            <th className="dLastInvoices__table--headCell">Invoice number</th>
-            <th className="dLastInvoices__table--headCell">Dates</th>
-            <th className="dLastInvoices__table--headCell">Company</th>
+          <tr className="dash__sectionMiddle__table--head">
+            <th className="dash__sectionMiddle__table--headCell">Invoice number</th>
+            <th className="dash__sectionMiddle__table--headCell">Dates</th>
+            <th className="dash__sectionMiddle__table--headCell">Company</th>
           </tr>
         </thead>
         <tbody>
           {dataFive.map((item) => (
-            <tr key={"dashLastInvoices" + item.id} className="dLastInvoices__table--body">
-              <td className="dLastInvoices__table--bodyCell">{item.ref}</td>
-              <td className="dLastInvoices__table--bodyCell">{item.date_due}</td>
-              <td className="dLastInvoices__table--bodyCell">{item.id_company}</td>
+            <tr key={"dashLastInvoices" + item.id} className="dash__sectionMiddle__table--body">
+              <td className="dash__sectionMiddle__table--bodyCell">{item.ref}</td>
+              <td className="dash__sectionMiddle__table--bodyCell">{item.date_due}</td>
+              <td className="dash__sectionMiddle__table--bodyCell">{item.id_company}</td>
             </tr>
           ))}
         </tbody>

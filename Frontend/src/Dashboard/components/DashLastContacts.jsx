@@ -13,22 +13,22 @@ const DashLastContacts = () => {
       }, []);
       const dataFive = data.slice(0, 5);
       return (
-        <div className="dLastContacts">
-          <h1>Last contacts</h1>
-          <table className="dLastContacts__table">
+        <div className="dash__sectionMiddle">
+          <h1 className="dash__sectionMiddle__title">Last contacts</h1>
+          <table className="dash__sectionMiddle__table">
       <thead>
-        <tr className="dLastContacts__table--head">
-          <th className="dLastContacts__table--headCell">Name</th>
-          <th className="dLastContacts__table--headCell">Phone</th>
-          <th className="dLastContacts__table--headCell">Email</th>
+        <tr className="dash__sectionMiddle__table--head">
+          <th className="dash__sectionMiddle__table--headCell">Name</th>
+          <th className="dash__sectionMiddle__table--headCell">Phone</th>
+          <th className="dash__sectionMiddle__table--headCell">Email</th>
         </tr>
       </thead>
       <tbody>
         {dataFive.map((item) => (
-          <tr key={"dashLastContacts" + item.id} className="dLastContacts__table--body">
-            <td className="dLastContacts__table--bodyCell">{item.name}</td>
-            <td className="dLastContacts__table--bodyCell">{item.phone}</td>
-            <td className="dLastContacts__table--bodyCell">{item.email}</td>
+          <tr key={"dashLastContacts" + item.id} className="dash__sectionMiddle__table--body">
+            <td className="dash__sectionMiddle__table--bodyCell">{item.name}</td>
+            <td className="dash__sectionMiddle__table--bodyCell">{item.phone}</td>
+            <td className="dash__sectionMiddle__table--bodyCell">{item.email}</td>
           </tr>
         ))}
       </tbody>

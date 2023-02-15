@@ -2,7 +2,7 @@ import React from 'react';
 
 const DashStatistics = () => {
       return (
-           <h1>Statistics</h1>
+           <h1 className="dash__sectionMiddle__title">Statistics</h1>
       );
 };
 

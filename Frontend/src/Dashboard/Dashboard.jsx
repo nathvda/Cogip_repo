@@ -26,8 +26,10 @@ const Dashboard = () => {
         <HeaderDash />
       </section>
 
-      <section className="dash__sectionStat">
+      <section className="dash__sectionMiddle">
+      <div className="dash__sectionMiddle__divAll">
         <DashStatistics />
+        </div>
       </section>
       <section className="dash__sectionMiddle">
         <div className="dash__sectionMiddle__divAll">
@@ -35,10 +37,14 @@ const Dashboard = () => {
         </div>
       </section>
       <section className="dash__sectionMiddle">
+      <div className="dash__sectionMiddle__divAll">
         <DashLastContacts />
+        </div>
       </section>
       <section className="dash__sectionMiddle">
+      <div className="dash__sectionMiddle__divAll">
         <DashLastCompanies />
+         </div>
       </section>
 
       <section className="dash__sectionOutlet">
