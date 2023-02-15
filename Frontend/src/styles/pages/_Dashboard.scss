@@ -1,60 +1,28 @@
 .dash {
   &__sectionTop {
-
-    &__title {      
-      margin: -18% 14% ;
-
-
+    &__title {
+      margin: -18% 14%;
+      @include fontRoboto(4.5vw, 900, black);
     }
   }
 
-&__sectionStat{
-      margin: 5% auto;
-      width: 70%;
-}
+  &__sectionStat {
+    margin: 5% auto;
+    width: 70%;
+    @include fontRoboto(2vw, 600, black);
+  }
 
-  &__sectionMiddle{
-      margin: 5% auto;
-      width: 70%;
-      &__divAll {
-            overflow-x: auto;
-      }
-      &__table {
-            border-collapse: collapse;
-            table-layout: auto;
-            width: 100%;
-            @include fontRoboto(3vw, 600, black);
-
-            &--head {
-                  white-space: nowrap;
-                  height: 4vh;
-                  //width: 100%;
-            }
-
-            &--headCell {
-                  padding: 2vw 2vw;
-                  margin-right: 5%;
-            }
-
-            &--body {
-                  white-space: nowrap;
-
-                  tr {
-                        &.odd {
-                              background-color: $lightGray;
-                        }
-                  }
-            }
-
-            &--bodyCell {
-                  padding: 2vw 4vw;
-                  padding-right: 5%;
-            }
-
-            &--link {
-                  text-decoration: none;
-                  @include fontRoboto(3vw, 600, black);
-            }
-      }
+  &__sectionMiddle {
+    margin: 5% auto;
+    width: 70%; 
+    &__title {
+      @include fontRoboto(2vw, 600, black);
+      margin-left: 10%;
+      margin-bottom: 1.5%;
+    }
+    &__divAll {
+      overflow-x: auto;
 }
   }
+
+}
