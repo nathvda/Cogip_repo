@@ -3,7 +3,7 @@ import React from 'react';
 const DashCompanies = () => {
       return (
             <div>
-                  <h1>Companies</h1>
+                  <h1 className="dash__sectionTop__title">Companies</h1>
             </div>
       );
 };
