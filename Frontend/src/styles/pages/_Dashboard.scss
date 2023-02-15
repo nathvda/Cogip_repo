@@ -3,7 +3,7 @@
   &__sectionTop {
     &__title {
       margin: -25% 14%;
-      @include fontRoboto(4.5vw, 900, black);
+      @include fontInter(4.5vw, 900, black);
     }
   }
 
@@ -15,7 +15,7 @@
      border-radius: 10px;
 
     &__title {
-      @include fontRoboto(3.5vw, 900, black);
+      @include fontInter(3.5vw, 900, black);
     }
     &__divAll {
       overflow-x: auto;
@@ -32,7 +32,7 @@
         text-align: left
       }
       &--headCell {
-        @include fontRoboto(2.5vw, 900, black);
+        @include fontInter(2.5vw, 900, black);
         padding: 2vw 0vw 2vw 2vw;
         margin-right: 5%;
         text-align: left
@@ -43,7 +43,7 @@
         padding-right: 0.1%;
         text-align: left
       }
-      @include fontRoboto(2.5vw, 400, black);
+      @include fontInter(2.5vw, 400, black);
     }
   }
     }
