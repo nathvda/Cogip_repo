@@ -1,43 +1,104 @@
 .footer {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
 
       &__line {
             width: 80%;
             height: 0.3vw;
-            margin: auto;
+            margin: 5% auto;
 
             &--yellow {
                   background-color: $yellow;
             }
 
             &--gray {
-                  background-color: gray;
+                  background-color: $lightBlue;
+                  opacity: 0.2;
             }
       }
 
+      &__logoAndinformations {
+            display: flex;
+            flex-direction: row;
+      }
+
       &__logo {
-            border: solid $yellow 0.5vw;
-            //margin: auto;
-            width: 20%;
+            border: solid $yellow 0.8vw;
+            margin: auto;
+            justify-content: center;
+            width: 17%;
+            height: 20%;
+            text-align: center;
             @include fontRoboto(4.5vw, 900, black);
+
       }
 
       &__informations {
-            font-size: 4vw;
             margin: auto;
+            width: 50%;
+            @include fontInter(2vw, 400, $gray);
+
+            p {
+                  margin-left: 3%;
+            }
 
             &__adress {
                   display: flex;
                   flex-direction: row;
+                  margin-bottom: 2%;
+            }
+
+            &__phoneAndfax {
+                  display: flex;
+                  flex-direction: row;
+                  margin-bottom: 7%;
             }
 
             &__phone {
                   @extend .footer__informations__adress;
+                  width: 50%
             }
 
             &__fax {
                   @extend .footer__informations__adress;
+                  width: 50%;
             }
+
+            &__icons {
+                  width: 2.5vw;
+                  margin: auto 2%;
+            }
+      }
+
+      &__socialMedia {
+            @extend .footer__informations__adress;
+
+            p {
+                  margin-right: 3%;
+            }
+      }
+
+      &__navAndcopyright {
+            display: flex;
+            flex-direction: row;
+            @include fontInter(2vw, 400, $gray);
+            margin-bottom: 8%;
+      }
+
+      &__nav {
+            width: 80%;
+            margin-left: 8%;
+
+            &__link {
+                  text-decoration: none;
+                  color: $gray;
+                  margin-right: 3%;
+            }
+      }
+
+      &__copyright {
+            text-align: end;
+            width: 20%;
+            margin-right: 8%;
       }
 }
