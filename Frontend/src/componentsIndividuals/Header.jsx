@@ -4,6 +4,7 @@ import React from "react";
 import NavigationMobile from "./NavigationMobile";
 import MediaQuery from "react-responsive";
 import NavigationDesktop from "./NavigationDesktop";
+import Login from "./Login";
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
         <p className="header__logo--mobile">COGIP</p>
         <div className="header__button--mobile">
           <button className="header__button--signup">Sign up</button>
-          <button className="header__button--login">Login</button>
+          <Login />
         </div>
         <div className="header__menu--mobile">
           <NavigationMobile />
@@ -24,12 +25,10 @@ const Header = () => {
         <div className="header__menu--desktop">
           <NavigationDesktop />
         </div>
-        <button className="header__button--desktop header__button--signup">
-          Sign up
-        </button>
-        <button className="header__button--desktop header__button--login">
-          Login
-        </button>
+        <div className="header__button--desktop">
+          <button className="header__button--signup">Sign up</button>
+          <Login />
+        </div>
       </MediaQuery>
     </div>
   );
