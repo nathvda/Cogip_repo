@@ -91,6 +91,8 @@
     //header button login et button signup
     &__button {
         &--mobile {
+            display: flex;
+            flex-direction: row;
             margin-left: 17.5vw;
         }
 
@@ -177,10 +179,7 @@
         padding: 2vw 0;
         margin-right: 40%;
         border-bottom: solid black 1px;
-        opacity: 0;
-        transition: color 0.3s ease-in-out;
-        animation: 1s slideIn forwards;
-        animation-delay: 0.5s;
+        @include SlideInNav;
     }
 
     &__img {
@@ -191,6 +190,40 @@
             z-index: 0;
             top: 11.2%;
             left: 5%;
+        }
+    }
+
+    &__login {
+        &--open {
+            @extend .header__nav--open;
+            flex-direction: column;
+            margin-top: 20vw;
+            background-color: $yellow;
+
+            label {
+                @include fontRoboto(3.5vw, 600, black);
+                margin: 5% auto;
+                @include SlideInNav;
+                margin-right: 40%;
+            }
+
+            input {
+                border-radius: 5vw;
+                border-style: none;
+                height: 7vw;
+                @include SlideInNav;
+                margin-right: 40%;
+            }
+
+            &--submit {
+                height: 7vw;
+                width: 20vw;
+                margin-top: 5%;
+                margin: auto;
+                background-color: $lightGray;
+                border-style: none;
+                @include SlideInNav;
+            }
         }
     }
 

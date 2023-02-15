@@ -33,6 +33,13 @@ $violet : #9698D6;
       color: $color;
 }
 
+@mixin SlideInNav {
+      opacity: 0;
+      transition: color 0.3s ease-in-out;
+      animation: 1s slideIn forwards;
+      animation-delay: 0.5s;
+}
+
 //reset
 * {
       padding: 0;
