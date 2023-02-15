@@ -24,21 +24,21 @@ const HomePage = () => {
           alt="mise en forme"
         />
       </section>
-      <section className="homepage__sectionInvoices">
-        <h1 className="homepage__sectionInvoices__title">Last invoices</h1>
-        <div className="homepage__sectionInvoices__divAll">
+      <section className="homepage__sectionMiddle">
+        <h1 className="homepage__sectionMiddle__title">Last invoices</h1>
+        <div className="homepage__sectionMiddle__divAll">
           <TableInvoices />
         </div>
       </section>
-      <section className="homepage__sectionContacts">
-        <h1 className="homepage__sectionContacts__title">Last contacts</h1>
-        <div className="homepage__sectionContacts__divAll">
+      <section className="homepage__sectionMiddle">
+        <h1 className="homepage__sectionMiddle__title">Last contacts</h1>
+        <div className="homepage__sectionMiddle__divAll">
           <TableContacts />
         </div>
       </section>
-      <section className="homepage__sectionCompanies">
-        <h1 className="homepage__sectionCompanies__title">Last companies</h1>
-        <div className="homepage__sectionCompanies__divAll">
+      <section className="homepage__sectionMiddle">
+        <h1 className="homepage__sectionMiddle__title">Last companies</h1>
+        <div className="homepage__sectionMiddle__divAll">
           <TableCompanies />
         </div>
       </section>

@@ -27,24 +27,50 @@
             }
       }
 
-      &__sectionInvoices {
+      &__sectionMiddle {
+            margin: 5% auto;
+            width: 90%;
+
+
             &__title {
-                  @include fontInter(4vw, 900, black);
+                  @include fontInter(4.5vw, 900, black);
                   margin-left: 10%;
+                  margin-bottom: 2.5%;
+            }
+
+            &__divAll {
+                  overflow-x: auto;
+            }
+
+            &__table {
+                  border-collapse: collapse;
+                  table-layout: auto;
+                  width: 100%;
+                  @include fontRoboto(3vw, 600, black);
+
+                  &--head {
+                        white-space: nowrap;
+                        background-color: $yellow;
+                        height: 4vh;
+                        //width: 100%;
+                  }
+
+                  &--headCell {
+                        padding: 2% 2%;
+                        margin-right: 5%;
+                  }
+
+                  &--body {
+                        white-space: nowrap;
+                  }
+
+                  &--bodyCell {
+                        padding: 2% 2%;
+                        padding-right: 5%;
+                  }
             }
       }
 
-      &__sectionContacts {
-            &__title {
-                  @extend .homepage__sectionInvoices__title;
-            }
-      }
-
-      &__sectionCompanies {
-            &__title {
-                  @extend .homepage__sectionInvoices__title;
-            }
-      }
 
       &__sectionBottom {
             display: flex;
