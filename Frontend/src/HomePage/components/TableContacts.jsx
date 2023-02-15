@@ -25,11 +25,11 @@ const TableContacts = () => {
           </th>
         </tr>
       </thead>
-      <tbody>
-        {dataFive.map((item) => (
+      <tbody className="homepage__sectionMiddle__table--body">
+        {dataFive.map((item, index) => (
           <tr
             key={"homepageTableContacts" + item.id}
-            className="homepage__sectionMiddle__table--body"
+            className={index % 2 === 0 ? "even" : "odd"}
           >
             <td className="homepage__sectionMiddle__table--bodyCell">
               <Link
