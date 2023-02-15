@@ -1,4 +1,7 @@
+//Layout of the home page and its components
 .homepage {
+
+      //First section of the homepage
       &__sectionTop {
             display: flex;
             background-color: $yellow;
@@ -27,6 +30,7 @@
             }
       }
 
+      //Second section of the homepage with tables of the last 5 invoices, contacts and companies.
       &__sectionMiddle {
             margin: 5% auto;
             width: 90%;
@@ -56,22 +60,28 @@
                   }
 
                   &--headCell {
-                        padding: 2% 2%;
+                        padding: 2vw 2vw;
                         margin-right: 5%;
                   }
 
                   &--body {
                         white-space: nowrap;
+
+                        tr {
+                              &.odd {
+                                    background-color: $lightGray;
+                              }
+                        }
                   }
 
                   &--bodyCell {
-                        padding: 2% 2%;
+                        padding: 2vw 2vw;
                         padding-right: 5%;
                   }
             }
       }
 
-
+      //Third section of the homepage
       &__sectionBottom {
             display: flex;
             align-items: center;
