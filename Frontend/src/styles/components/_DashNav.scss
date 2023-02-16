@@ -63,7 +63,7 @@
   100% {
     transform: translateX(0px) translateY(7px) rotate(-45deg);
     transform-origin: top left;
-    margin-top: 5px;
+    //margin-top: 5px;
   }
 }
 
@@ -74,7 +74,7 @@
       opacity: 0.9;
       display: flex;
       align-items: center;
-      width: 50%;
+      width: 40%;
       height: 20%;
       animation: 1s appaer forwards;
     }
@@ -82,8 +82,8 @@
   &__nav__button{
     &--open {
       position: absolute;
-      top: 2vw;
-      left: 1.2vw;
+      top: -3vw;
+      left: 2vw;
       width: 10vw;
       height: 10vw;
       border-style: none;
@@ -91,7 +91,9 @@
   }
 
   &--closed {
-      @extend .dash__nav__button--open
+      @extend .dash__nav__button--open;
+      top:2vw;
+
   }
 }
   
@@ -124,11 +126,13 @@
   }
   &__nav__link{
     text-decoration: none;
-    @include fontInter(5vw,900, black);
+    @include fontInter(5vw,600, black);
     padding: 2vw 0;
-    margin-left: 30%;
+    margin-left: 40%;
     border-bottom: solid black 1px;
     @include SlideInNav;
+    display: flex;
+align-items: center;
   }
 
 }
