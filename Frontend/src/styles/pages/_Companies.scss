@@ -1,0 +1,52 @@
+.companies {
+      &__title {
+            @include titleTable;
+            margin-bottom: 5%;
+      }
+
+      &__divTable {
+            overflow-x: auto;
+            width: 90%;
+            margin: auto;
+      }
+
+      &__table {
+            border-collapse: collapse;
+            table-layout: auto;
+            width: 100%;
+            @include fontRoboto(3vw, 600, black);
+
+            &__head {
+                  white-space: nowrap;
+                  background-color: $yellow;
+                  height: 4vh;
+
+                  //width: 100%;
+                  th {
+                        padding: 2vw 2vw;
+                        margin-right: 5%;
+                  }
+            }
+
+            &__body {
+                  white-space: nowrap;
+
+                  tr {
+                        &.odd {
+                              background-color: $lightGray;
+                        }
+                  }
+
+                  td {
+                        padding: 2vw 4vw;
+                        padding-right: 5%;
+                  }
+
+                  &--link {
+                        text-decoration: none;
+                        @include fontRoboto(3vw, 600, black);
+                  }
+            }
+
+      }
+}
