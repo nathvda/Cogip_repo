@@ -18,7 +18,7 @@ const DashLastContacts = () => {
           <table className="dash__sectionMiddle__table">
       <thead>
         <tr className="dash__sectionMiddle__table--head">
-          <th className="dash__sectionMiddles__table--headCell">Name</th>
+          <th className="dash__sectionMiddle__table--headCell">Name</th>
           <th className="dash__sectionMiddle__table--headCell">Phone</th>
           <th className="dash__sectionMiddle__table--headCell">Email</th>
         </tr>

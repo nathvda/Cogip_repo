@@ -19,8 +19,8 @@ const DashLastCompanies = () => {
       <thead>
         <tr className="dash__sectionMiddle__table--head">
           <th className="dash__sectionMiddle__table--headCell">Name</th>
-          <th className="dash__sectionMiddle--headCell">TVA</th>
-          <th className="dash__sectionMiddle--headCell">Country</th>
+          <th className="dash__sectionMiddle__table--headCell">TVA</th>
+          <th className="dash__sectionMiddle__table--headCell">Country</th>
         </tr>
       </thead>
       <tbody>
