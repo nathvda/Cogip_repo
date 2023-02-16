@@ -21,10 +21,11 @@ const NavDashboardMobile = () => {
                         <Link className='dash__nav__link' to={`dash/invoices`}><img src="../public/assets/img/icons/dashboard/Icon_Invoices.svg" alt="Icon nav dashboard invoices" /></Link>
                         <Link className='dash__nav__link' to={`dash/companies`}><img src="../public/assets/img/icons/dashboard/Icon_Companies.svg" alt="Icon nav dashboard companies" /></Link>
                         <Link className='dash__nav__link' to={`dash/contacts`}><img src="../public/assets/img/icons/dashboard/Icon_contact.svg" alt="Icon nav dashboard contact" /></Link>    
-                  </div>
-                  <button className="dash__nav__logout">
+                  <button className='dash__nav__link--button'>
                         Logout
-                  </button>
+                  </button> 
+                  </div>
+                 
             </nav>
       ) : (
             <div className="dash__nav--closed">
