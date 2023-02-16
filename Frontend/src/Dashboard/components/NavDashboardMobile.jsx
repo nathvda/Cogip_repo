@@ -1,7 +1,7 @@
-import React from 'react';
-import DashLogout from './DashLogout';
-import {Link} from "react-router-dom";
-import { useState } from 'react';
+import React from "react";
+import DashLogout from "./DashLogout";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const NavDashboardMobile = () => {
       const [isOpen, setIsOpen] = useState(false);
