@@ -1,8 +1,11 @@
 .dash {
-  background-color: $lightGray;
+  &__navAndHeader{
+     background-color: $lightGray;
+  }
+ 
   &__sectionTop {
     &__title {
-      margin: 5% 18%;
+      padding: 5% 18%;
       @include fontInter(4.5vw, 900, black);
     }
   }
@@ -19,6 +22,7 @@
     }
     &__divAll {
       overflow-x: auto;
+      background-color: aqua;
     }
 
     &__table {
