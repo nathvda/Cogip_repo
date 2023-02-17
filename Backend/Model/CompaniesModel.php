@@ -24,6 +24,8 @@ class CompaniesModel extends DbConnect{
         $stmt =$this->connect()->prepare($sql);
         $stmt->execute([$name,$type,$country,$tva]);
 
+        return "failed";
+
     }
 
     public function fetchCompany($id){
