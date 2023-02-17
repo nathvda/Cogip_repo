@@ -11,7 +11,7 @@ const DashInvoices = () => {
   useEffect(() => {
     axios({
       method: "get",
-      url: "http://localhost:8080/invoices",
+      url: "http://localhost:8080//invoices/add",
       responseType: "json",
     }).then((res) => setData(res.data));
   }, []);
