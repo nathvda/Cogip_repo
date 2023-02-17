@@ -214,8 +214,8 @@ $router->mount('/login', function() use ($router){
     $router->post('/', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new Userscontroller)->login($payload);
-        var_dump($res);
-        (new UsersController)->checkToken($res, $_ENV['SECRET']);
+        // (new UsersController)->checkToken($res, $_ENV['SECRET']);
+        return $res;
     });
 }
 );
