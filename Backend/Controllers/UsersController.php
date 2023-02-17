@@ -49,7 +49,7 @@ class UsersController extends DbConnect{
 
             $token = JWT::encode($token,$key, 'HS256');
 
-            return $token;
+            echo json_encode(['token' => $token]);
 
             } else { 
 
@@ -66,8 +66,9 @@ class UsersController extends DbConnect{
 
         $header = $this->getHeaders($token);
         $payload = $this->getPayload($token);
+        $token = $header + $payload;
         
-        $verifToken = JWT::encode($header, $payload,$secret,0);
+        $verifToken = JWT::encode($header, $secret, 'HS256');
 
         return $verifToken === $token;
 
@@ -77,7 +78,7 @@ class UsersController extends DbConnect{
 
         $array = explode('.',$token);
 
-        $header = json_decode(base64_decode($array[0], true));
+        $header = (array) json_decode(base64_decode($array[0], true));
 
         return $header;
 
@@ -87,7 +88,7 @@ class UsersController extends DbConnect{
 
         $array = explode('.',$token);
 
-        $payload = json_decode(base64_decode($array[1], true));
+        $payload = (array) json_decode(base64_decode($array[1], true));
 
         return $payload;
 

@@ -1,10 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    setEmail(data.Email);
+    setPassword(data.Password);
+    axios
+      .post("http://localhost:8080/login", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+      })
+      .catch((data) => {
+        console.log("no such user");
+      });
+  };
+
   const [isOpen, setIsOpen] = useState(false);
   return isOpen ? (
-    <nav className="header__login">
+    <div className="header__login">
       <button
         className="header__button--login"
         onClick={() => setIsOpen(false)}
@@ -12,17 +38,23 @@ const Login = () => {
         Login
       </button>
       <div className="header__login--open">
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" name="username" required />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" required />
-        <input
-          className="header__login--open--submit"
-          type="submit"
-          value="Log in"
-        />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label htmlFor="emailLogin">Email</label>
+          <input
+            type="email"
+            required
+            {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+          />
+          <label htmlFor="passwordLogin">Password</label>
+          <input
+            type="password"
+            required
+            {...register("Password", { required: true })}
+          />
+          <input className="header__login--open--submit" type="submit" />
+        </form>
       </div>
-    </nav>
+    </div>
   ) : (
     <button className="header__button--login" onClick={() => setIsOpen(true)}>
       Login
