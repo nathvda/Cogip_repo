@@ -1,0 +1,110 @@
+//Layout of the home page and its components
+.homepage {
+
+      //First section of the homepage
+      &__sectionTop {
+            display: flex;
+            background-color: $yellow;
+            align-items: center;
+            justify-content: space-around;
+            height: 48.5vw;
+            z-index: 5;
+            margin-top: -15%;
+
+            &__title {
+                  @include fontInter(5vw, 900, black);
+                  width: 50%;
+                  margin-left: 7%;
+            }
+
+            &__img {
+                  width: 55%;
+            }
+
+            &__rect {
+                  position: absolute;
+                  z-index: 10;
+                  top: 30%;
+                  background-color: $yellow;
+                  width: 90%;
+            }
+      }
+
+      //Second section of the homepage with tables of the last 5 invoices, contacts and companies.
+      &__sectionMiddle {
+            margin: 5% auto;
+            width: 90%;
+
+
+            &__title {
+                  @include titleTable;
+                  margin-bottom: 2.5%;
+            }
+
+            &__divAll {
+                  overflow-x: auto;
+            }
+
+            &__table {
+                  border-collapse: collapse;
+                  table-layout: auto;
+                  width: 100%;
+                  @include fontRoboto(3vw, 600, black);
+
+                  &--head {
+                        white-space: nowrap;
+                        background-color: $yellow;
+                        height: 4vh;
+                        //width: 100%;
+                  }
+
+                  &--headCell {
+                        padding: 2vw 2vw;
+                        margin-right: 5%;
+                  }
+
+                  &--body {
+                        white-space: nowrap;
+
+                        tr {
+                              &.odd {
+                                    background-color: $lightGray;
+                              }
+                        }
+                  }
+
+                  &--bodyCell {
+                        padding: 2vw 4vw;
+                        padding-right: 5%;
+                  }
+
+                  &--link {
+                        text-decoration: none;
+                        @include fontRoboto(3vw, 600, black);
+                  }
+            }
+      }
+
+      //Third section of the homepage
+      &__sectionBottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 43.1vw;
+
+            &__title {
+                  @extend .homepage__sectionTop__title;
+            }
+
+            &__img {
+                  width: 50%;
+            }
+
+            &__rect {
+                  width: 50%;
+                  position: absolute;
+                  z-index: -1;
+                  right: 0;
+            }
+      }
+}

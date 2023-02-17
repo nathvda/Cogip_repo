@@ -1,0 +1,234 @@
+//animation
+@keyframes slideIn {
+    0% {
+        transform: translateX(-2%);
+        opacity: 0.1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(25%);
+        opacity: 1;
+    }
+}
+
+@keyframes shrink {
+    0% {
+        width: 95%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes appaer {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 30%;
+    }
+}
+
+@keyframes crossLineTop {
+    0% {}
+
+    100% {
+        transform: translateX(1px) translateY(2.5px) rotate(45deg);
+        transform-origin: top left;
+        margin-bottom: 5px;
+    }
+}
+
+@keyframes crossLineMiddle {
+    0% {}
+
+    100% {
+        opacity: 0;
+        transform: translateX(-16px);
+    }
+}
+
+@keyframes crossLineBottom {
+    0% {}
+
+    100% {
+        transform: translateX(0px) translateY(7px) rotate(-45deg);
+        transform-origin: top left;
+        margin-top: 5px;
+    }
+}
+
+//mise en page
+//header global
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $yellow;
+    height: 15.5vh;
+    padding-top: 2.5%;
+    padding-bottom: 10%;
+
+    //header logo
+    &__logo {
+        &--mobile {
+            //margin-top: 2.5%;
+            margin-left: 3%;
+            width: 20%;
+            @include fontRoboto(4.5vw, 900, black);
+        }
+
+        &--desktop {}
+    }
+
+    //header button login et button signup
+    &__button {
+        &--mobile {
+            display: flex;
+            flex-direction: row;
+            margin-left: 17.5vw;
+        }
+
+        &--signup {
+            padding: 1.5vw 3vw;
+            background-color: white;
+            margin-right: 2vw;
+            border-style: none;
+            border-radius: 2vw;
+            @include fontRoboto(3.5vw, 600, black);
+        }
+
+        &--login {
+            @extend .header__button--signup;
+            background-color: $yellow;
+        }
+    }
+
+
+    //navigation
+    &__nav {
+        &--open {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-Index: 15;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            width: 50%;
+            height: 20%;
+            animation: 1s appaer forwards;
+        }
+    }
+
+    &__nav__button {
+        &--open {
+            position: absolute;
+            top: 4.5vw;
+            right: 1vw;
+            width: 10vw;
+            height: 10vw;
+            border-style: none;
+            background: $yellow;
+        }
+
+        &--closed {
+            @extend .header__nav__button--open
+        }
+    }
+
+    &__nav__line {
+        width: 90%;
+        height: 2px;
+        background: gray;
+        margin: 2vw auto;
+
+        &--top {
+            animation: 0.8s crossLineTop forwards;
+        }
+
+        &--middle {
+            animation: 0.8s crossLineMiddle forwards;
+        }
+
+        &--bottom {
+            animation: 0.8s crossLineBottom forwards;
+        }
+    }
+
+    &__nav--style {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background: $yellow;
+        margin-top: 30vw;
+        width: 100%;
+        height: 90%;
+    }
+
+    &__nav__link {
+        text-decoration: none;
+        @include fontRoboto(5vw, 600, black);
+        padding: 2vw 0;
+        margin-right: 40%;
+        border-bottom: solid black 1px;
+        @include SlideInNav;
+    }
+
+    &__img {
+        &--mobile {
+            position: absolute;
+            background-color: $yellow;
+            width: 90%;
+            z-index: 0;
+            top: 11.2%;
+            left: 5%;
+        }
+    }
+
+    &__login {
+        &--open {
+            @extend .header__nav--open;
+            flex-direction: column;
+            margin-top: 20vw;
+            background-color: $yellow;
+
+            label {
+                @include fontRoboto(3.5vw, 600, black);
+                margin: 5% auto;
+                @include SlideInNav;
+                margin-right: 40%;
+            }
+
+            input {
+                border-radius: 5vw;
+                border-style: none;
+                height: 7vw;
+                @include SlideInNav;
+                margin-right: 40%;
+                @include fontRoboto(3.5vw, 400, black);
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            &--submit {
+                height: 7vw;
+                width: 20vw;
+                margin-top: 5%;
+                margin: auto;
+                background-color: $lightGray;
+                border-style: none;
+                @include SlideInNav;
+                @include fontRoboto(3.5vw, 600, black);
+            }
+        }
+    }
+
+}

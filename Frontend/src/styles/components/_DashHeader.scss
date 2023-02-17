@@ -1,0 +1,30 @@
+.dashHeader {
+  @include fontAssistant(3vw, 900, black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vw;
+  margin-top: 10%;
+
+  &__HeyMsg {
+    background-color: $violet;
+    width: 90%;
+    height: 35vw;
+    padding: 3%;
+    border-radius: 10px;
+    @include fontInter(3vw, 900, rgb(255, 255, 255));
+    p {
+      @include fontInter(3vw, 400, rgb(255, 255, 255));
+      width: 45%;
+      padding: 2%;
+     
+    }
+  }
+
+  &__Img {
+    width: 35%;
+    position: absolute;
+    left: 57%;
+    bottom: 72%;
+  }
+}
