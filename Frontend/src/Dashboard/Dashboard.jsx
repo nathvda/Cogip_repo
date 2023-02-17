@@ -12,6 +12,7 @@ import MediaQuery from "react-responsive";
 const Dashboard = () => {
   return (
     <div className="dash">
+      <div className="dash__navAndHeader">
       <div className="dash__nav--mobile">
         <NavDashboardMobile />
       </div>
@@ -25,6 +26,7 @@ const Dashboard = () => {
         <h1 className="dash__sectionTop__title">Dashboard</h1>
         <HeaderDash />
       </section>
+      </div>
 
       <section className="dash__sectionMiddle">
       <div className="dash__sectionMiddle__divAll">

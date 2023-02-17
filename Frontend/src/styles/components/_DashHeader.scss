@@ -1,22 +1,20 @@
 .dashHeader {
   @include fontAssistant(3vw, 900, black);
   display: flex;
-
   align-items: center;
-  justify-content: space-around;
-  height: 48.5vw;
-  margin-top: 17%;
+  justify-content: center;
+  height: 30vw;
+  margin-top: 10%;
 
   &__HeyMsg {
     background-color: $violet;
-    width: 75%;
-    height: 25vw;
-    margin-left: 17%;
+    width: 90%;
+    height: 35vw;
     padding: 3%;
     border-radius: 10px;
-    @include fontInter(2.2vw, 900, rgb(255, 255, 255));
+    @include fontInter(3vw, 900, rgb(255, 255, 255));
     p {
-      @include fontInter(2.6vw, 400, rgb(255, 255, 255));
+      @include fontInter(3vw, 400, rgb(255, 255, 255));
       width: 45%;
       padding: 2%;
      
@@ -26,7 +24,7 @@
   &__Img {
     width: 35%;
     position: absolute;
-    left: 60%;
-    bottom: 85%;
+    left: 57%;
+    bottom: 72%;
   }
 }

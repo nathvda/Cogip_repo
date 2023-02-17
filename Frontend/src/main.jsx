@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Route, createRoutesFromElements } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import Companies from "./Companies/Companies";
 import Invoices from "./Invoices/Invoices";
@@ -25,9 +30,9 @@ const router = createBrowserRouter(
       <Route path="showinvoices/:id" element={<ShowInvoices />} />
       <Route path="showcompanies/:id" element={<ShowCompanies />} />
       <Route path="dashboard" element={<Dashboard />}>
-        <Route path="dash/companies" element={<DashCompanies />} />
-        <Route path="dash/contacts" element={<DashContacts />} />
-        <Route path="dash/invoices" element={<DashInvoices />} />
+        <Route path="companies" element={<DashCompanies />} />
+        <Route path="contacts" element={<DashContacts />} />
+        <Route path="invoices" element={<DashInvoices />} />
       </Route>
     </>
   )
