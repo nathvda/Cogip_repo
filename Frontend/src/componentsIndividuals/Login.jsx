@@ -11,21 +11,21 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    setEmail(data.Email);
-    setPassword(data.Password);
-    axios
-      .post("http://localhost:8080/login", {
+  const onSubmit = async (data) => {
+    try {
+      const email = data.Email;
+      const password = data.Password;
+      setEmail(email);
+      setPassword(password);
+      const response = await axios.post("http://localhost:8080/login", {
         email: email,
         password: password,
-      })
-      .then((response) => {
-        const data = response.data;
-        console.log(data);
-      })
-      .catch((data) => {
-        console.log("no such user");
       });
+      const responseData = response.data;
+      console.log(responseData);
+    } catch (error) {
+      console.log("no such user");
+    }
   };
 
   const [isOpen, setIsOpen] = useState(false);
