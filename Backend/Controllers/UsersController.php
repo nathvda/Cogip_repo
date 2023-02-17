@@ -53,7 +53,7 @@ class UsersController extends DbConnect{
 
             } else { 
 
-                var_dump("wrong credentials");
+                echo json_encode(['message' => "wrong credentials"]);
             }
 }
         catch (Exception $e){
