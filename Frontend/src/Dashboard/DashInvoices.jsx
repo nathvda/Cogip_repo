@@ -4,73 +4,86 @@ import axios from "axios";
 
 const DashInvoices = () => {
 
-  const [ref, setRef] = useState([]);
-  const [date_due, setDate_due] = useState([]);
-  const [id_company, setId_companies] = useState([]);
-  const { onSubmit, register} = useForm();
+  const [companies, setCompanies] = useState([]); // Correction : `id_company` a été changé en `companies`
+  const [reference, setReference] = useState(''); // Correction : Utilisation du nom correct de l'état
+  const [date, setDate] = useState(''); // Correction : Utilisation du nom correct de l'état
+  const [chosenCompany, setChosenCompany] = useState(0);
+  const { register, handleSubmit, formState: { errors } } = useForm(); // Correction : Ajout de la fonction `handleSubmit`
 
-  
-  useEffect (() =>
-  async function sendForm(){
+  const onSubmit = async () => { // Correction : Déplacement de la fonction d'envoi du formulaire dans la fonction principale
 
-  try{
-
-    await axios({
-      method: "POST",
-      url: "http://localhost:8080/invoices/add",
-      responseType: "json",
-      data: {
-        reference: ref,
-        date: date_due,
-        companies: id_company
+    try {
+      await axios({
+        method: "POST",
+        url: "http://localhost:8080/invoices/add",
+        responseType: "json",
+        data: {
+          ref: reference,
+          date_due: date,
+          id_company: chosenCompany
+        }
+      }).then(res => console.log(res))
+    } catch (error) {
+      console.log(error);
     }
-  }).then(res => console.log(res))
 
-} catch (error){
+  }
 
-  console.log(error);
-}
+  useEffect(() => {
+    const getCompanies = async () => { // Correction : Déplacement de la fonction de récupération des entreprises dans la fonction principale
+      try {
+        const res = await axios.get('http://localhost:8080/companies');
+        const data = await res.data;
+        setCompanies(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getCompanies();
+  }, []);
+console.log(companies);
 
-}
-, [] );
+  return (
+    <>
+      <h2>New invoice</h2>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          name="reference"
+          type="text"
+          value={reference} // Correction : Ajout de la valeur de l'état dans l'élément d'entrée
+          onChange={(e) => setReference(e.target.value)}
+          required
+          placeholder="Reference"
+          {...register("Reference", { required: true, maxLength: 80, minLength: 10 })} // Correction : Ajout des règles de validation
+       />
+        {errors.Reference && <span>This field is required and must be between 10 and 80 characters long</span> } 
+        
 
+        <input
+          name="date"
+          type="date"
+          value={date} // Correction : Ajout de la valeur de l'état dans l'élément d'entrée
+          onChange={(e) => setDate(e.target.value)}
+          required
+          {...register("Date", { required: true })}
+        />
+        {errors.Date && <span>This field is required</span>}
 
+        <select
+          value={chosenCompany} // Correction : Ajout de la valeur de l'état dans l'élément de sélection
+          onChange={(e) => setChosenCompany(e.target.value)}
+          {...register("Company name", { required: true })}
+        >
+          <option value="0">Company name</option>
+          {companies.map((company, index) => ( // Correction : Utilisation de la liste des entreprises pour créer les options
+            <option key={index} value={company.id}>{company.name}</option>
+          ))}
+        </select>
+        {errors["Company name"] && <span>This field is required</span>}
 
-return (
-  <>
-  <h2> new invoice</h2>
-  <form method="post" onSubmit={(e) => e.preventDefault()}>
-            <label htmlFor="title"></label>
-            <input name="title" 
-            type="text" 
-            onChange={(e) => setRef(e.target.value)}
-            required
-            placeholder="Reference"
-            {...register("Reference", {required: true, max: 20, min: 10, maxLength: 80})}
-            />
-            <label htmlFor="date"></label>
-            <input name="date" 
-            type="date" 
-            onChange={(e) => setDate_due(e.target.value)}
-            required
-            {...register("Date", {required: true, maxLength: 100})}
-            />
-            <label htmlFor="companies"></label>
-            <select 
-            onChange={(e) => setId_companies(e.target.value)}
-            {...register("Select a companies", { required: true })}>
-                <option value="0">Select a companies</option>
-                {
-                id_company.map((a,index) => <option key={index} value={a.id_company}></option>
-                )
-            }
-            </select>
-            <button type="submit" onClick={(e) => sendForm()}>Create</button>
-            </form>  
-        </>
-);
-
-
-
-}
+        <button type="submit">Create</button>
+      </form>
+      </>
+   )
+};
 export default DashInvoices;
