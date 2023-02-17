@@ -214,7 +214,7 @@ $router->mount('/login', function() use ($router){
     $router->post('/', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new Userscontroller)->login($payload);
-        echo $res;
+        return json_encode($res);
     });
 }
 );
