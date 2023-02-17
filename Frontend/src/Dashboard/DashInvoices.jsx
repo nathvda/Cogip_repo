@@ -1,69 +1,76 @@
 import React, { useState, useEffect } from "react";
+import { useForm } from 'react-hook-form';
 import axios from "axios";
 
 const DashInvoices = () => {
-  const [formData, setData] = useState({
-    reference: "",
-    price: "",
-    companyName: "",
-  });
-  const [companies, setCompanies] = useState([]);
-  useEffect(() => {
-    axios({
-      method: "get",
-      url: "http://localhost:8080//invoices/add",
+
+  const [ref, setRef] = useState([]);
+  const [date_due, setDate_due] = useState([]);
+  const [id_company, setId_companies] = useState([]);
+  const { onSubmit, register} = useForm();
+
+  
+  useEffect (() =>
+  async function sendForm(){
+
+  try{
+
+    await axios({
+      method: "POST",
+      url: "http://localhost:8080/invoices/add",
       responseType: "json",
-    }).then((res) => setData(res.data));
-  }, []);
+      data: {
+        reference: ref,
+        date: date_due,
+        companies: id_company
+    }
+  }).then(res => console.log(res))
 
-  const handleInputChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
+} catch (error){
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formData);
-  };
+  console.log(error);
+}
 
-  return (
-    <form onSubmit={handleSubmit} className="dashInvoices__form">
-  
-        <input
-          type="text"
-          name="reference"
-          placeholder="Reference"
-          value={formData.reference}
-          onChange={handleInputChange}
-          className="dashInvoices__form--ref"
-        />
-  
-      <br />
-        <input
-          type="text"
-          name="price"
-          placeholder="Price"
-          value={formData.price}
-          onChange={handleInputChange}
-          className="dashInvoices__form--price"
-        />
-      <br />
-        <select
-          name="companyName"
-          value={formData.companyName}
-          onChange={handleInputChange}
-          className="dashInvoices__form--select"
-        >
-          <option value="">Select a Company</option>
-          {companies.map((company) => (
-            <option key={company.id} value={company.name}>
-              {company.name}
-            </option>
-          ))}
-        </select>
-      <br />
-      <button type="submit" className="dashInvoices__form--btnSave">Save</button>
-    </form>
-  );
-};
+}
+, [] );
 
+
+
+return (
+  <>
+  <h2> new invoice</h2>
+  <form method="post" onSubmit={(e) => e.preventDefault()}>
+            <label htmlFor="title"></label>
+            <input name="title" 
+            type="text" 
+            onChange={(e) => setRef(e.target.value)}
+            required
+            placeholder="Reference"
+            {...register("Reference", {required: true, max: 20, min: 10, maxLength: 80})}
+            />
+            <label htmlFor="date"></label>
+            <input name="date" 
+            type="date" 
+            onChange={(e) => setDate_due(e.target.value)}
+            required
+            {...register("Date", {required: true, maxLength: 100})}
+            />
+            <label htmlFor="companies"></label>
+            <select 
+            onChange={(e) => setId_companies(e.target.value)}
+            {...register("Select a companies", { required: true })}>
+                <option value="0">Select a companies</option>
+                {
+                id_company.map((a,index) => <option key={index} value={a.id_company}></option>
+                )
+            }
+            </select>
+            <button type="submit" onClick={(e) => sendForm()}>Create</button>
+            </form>  
+        </>
+);
+
+
+
+}
 export default DashInvoices;

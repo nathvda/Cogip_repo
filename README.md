@@ -91,3 +91,13 @@ You can use the following endpoints to interact with the database. The data stru
 ## Versions
 
 As of today, February 10th 2023 , there is no completed version of this application yet.
+
+## Known Issues
+
+- [ ] Contact validation returns an error
+- [ ] Token doesn't work properly yet
+
+## Planned changes
+
+- [ ] Adding authentification
+- [ ] Working forms
