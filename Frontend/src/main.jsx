@@ -22,6 +22,7 @@ import "./styles/index.scss";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
+      <Route path="*" element={<HomePage />} />
       <Route path="/" element={<HomePage />} />
       <Route path="invoices" element={<Invoices />} />
       <Route path="contacts" element={<Contacts />} />

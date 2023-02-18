@@ -22,7 +22,14 @@ const Login = () => {
         password: password,
       });
       const responseData = response.data;
-      console.log(responseData);
+      const token = responseData.token;
+      console.log(token);
+      if (!token) {
+        alert("Unable to login. Please try after some time");
+        return;
+      }
+      localStorage.clear();
+      localStorage.setItem("user-token", token);
     } catch (error) {
       console.log("no such user");
     }
