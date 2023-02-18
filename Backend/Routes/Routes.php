@@ -214,7 +214,13 @@ $router->mount('/login', function() use ($router){
     $router->post('/', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
         $res = (new Userscontroller)->login($payload);
-        return json_encode($res);
+        return $res;
+    });
+
+    $router->post('/ok', function(){
+        $payload = json_decode(file_get_contents('php://input'), true);
+        echo $payload["token"];
+        echo "token reçu";
     });
 }
 );
