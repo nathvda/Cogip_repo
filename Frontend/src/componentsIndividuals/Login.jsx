@@ -49,8 +49,8 @@ const Login = () => {
       >
         Login
       </button>
-      <div className="header__login--open">
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)} className="header__login--open">
           <label htmlFor="emailLogin">Email</label>
           <input
             type="email"

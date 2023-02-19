@@ -27,23 +27,23 @@ const PaginationInvoices = ({ saveTable }) => {
     <div>
       <FullTableInvoices currentItems={currentItems} />
       <ReactPaginate
-        nextLabel="next >"
+        nextLabel=">"
         onPageChange={handlePageClick}
         pageRangeDisplayed={2}
         marginPagesDisplayed={2}
         pageCount={pageCount}
-        previousLabel="< previous"
-        //   pageClassName="page-item"
-        //   pageLinkClassName="page-link"
-        //   previousClassName="page-item"
-        //   previousLinkClassName="page-link"
-        //   nextClassName="page-item"
-        //   nextLinkClassName="page-link"
-        breakLabel="..."
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
+        previousLabel="<"
         containerClassName="pagination"
-        activeClassName="active"
+        pageClassName="pagination__item"
+        pageLinkClassName="pagination__link"
+        previousClassName="pagination__item"
+        previousLinkClassName="pagination__link pagination__link--previous"
+        nextClassName="pagination__item"
+        nextLinkClassName="pagination__link pagination__link--next"
+        breakLabel="..."
+        breakClassName="pagination__item"
+        breakLinkClassName="pagination__link"
+        activeLinkClassName="pagination--active"
         renderOnZeroPageCount={null}
       />
     </div>
