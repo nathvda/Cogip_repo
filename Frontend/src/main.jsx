@@ -5,6 +5,8 @@ import {
   RouterProvider,
   Route,
   createRoutesFromElements,
+  useNavigate,
+  useLocation,
 } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import Companies from "./Companies/Companies";
@@ -18,6 +20,7 @@ import DashInvoices from "./Dashboard/DashInvoices";
 import DashCompanies from "./Dashboard/DashCompanies";
 import DashContacts from "./Dashboard/DashContacts";
 import "./styles/index.scss";
+import ProtectedRoute from "./componentsIndividuals/ProtectedRoute";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +33,14 @@ const router = createBrowserRouter(
       <Route path="showcontacts/:id" element={<Showcontacts />} />
       <Route path="showinvoices/:id" element={<ShowInvoices />} />
       <Route path="showcompanies/:id" element={<ShowCompanies />} />
-      <Route path="dashboard" element={<Dashboard />}>
+      <Route
+        path="dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      >
         <Route path="companies" element={<DashCompanies />} />
         <Route path="contacts" element={<DashContacts />} />
         <Route path="invoices" element={<DashInvoices />} />

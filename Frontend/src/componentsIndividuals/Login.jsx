@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { redirect } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -30,8 +31,12 @@ const Login = () => {
       }
       localStorage.clear();
       localStorage.setItem("user-token", token);
+      setTimeout(() => {
+        redirect("/");
+      }, 500);
     } catch (error) {
       console.log("no such user");
+      alert("Oops ! Some error occured.");
     }
   };
 

@@ -14,27 +14,25 @@ const DashInvoices = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    try{  
-    setChosenCompany(data.chosenCompany);
-    setRef(data.reference);
-    setDate(data.date);
+    try {
+      setChosenCompany(data.chosenCompany);
+      setRef(data.reference);
+      setDate(data.date);
 
-    await axios
-      .post("http://localhost:8080/invoices/add", {
+      const response = await axios;
+      post("http://localhost:8080/invoices/add", {
         ref: reference,
         date_due: date,
         id_company: chosenCompany,
-      })
-      .then((res) => {
-        const data = res.data;
+      });
+      then((res) => {
+        const responseData = response.data;
         console.log(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
- };
-  
-  
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const getCompanies = async () => {
@@ -48,8 +46,6 @@ const DashInvoices = () => {
     };
     getCompanies();
   }, []);
-
-
 
   return (
     <>
