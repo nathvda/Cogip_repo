@@ -1,0 +1,31 @@
+.dash_sectionMiddle__stats {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      padding: 0.9rem;
+}
+
+.dash_sectionMiddle__stats div {
+      width: 5rem;
+      display: grid;
+      place-content: center;
+      height: 5rem;
+      text-align: center;
+      border-radius: 10rem;
+      color: white;
+      font-family: roboto;
+      padding: 1rem;
+      font-size: 0.8rem;
+}
+
+.dash_sectionMiddle__stats--invoices {
+      background-color: hsla(241, 39%, 49%, 1);
+}
+
+.dash_sectionMiddle__stats--contacts {
+      background-color: hsla(238, 44%, 71%, 1);
+}
+
+.dash_sectionMiddle__stats--companies {
+      background-color: hsla(355, 100%, 75%, 1);
+}
