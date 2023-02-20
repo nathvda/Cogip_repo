@@ -1,9 +1,7 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import DashTableCompanies from "./components/DashTableCompanies";
-
-
 
 const DashCompanies = () => {
   const [name, setName] = useState("");
@@ -43,7 +41,8 @@ const DashCompanies = () => {
     <>
       <h2 className="newcompany__form__title">New company</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input className="newcompany__form__input--name"
+        <input
+          className="newcompany__form__input--name"
           name="name"
           type="text"
           required
@@ -57,7 +56,8 @@ const DashCompanies = () => {
           })}
         />
 
-        <input className="newcompany__form__input--country"
+        <input
+          className="newcompany__form__input--country"
           name="country"
           id="country"
           type="text"
@@ -71,7 +71,8 @@ const DashCompanies = () => {
             minLength: 2,
           })}
         />
-        <input className="newcompany__form__input--tva"
+        <input
+          className="newcompany__form__input--tva"
           name="tva"
           id="tva"
           type="text"
@@ -85,9 +86,9 @@ const DashCompanies = () => {
             minLength: 2,
           })}
         />
-      
 
-        <input className="newcompany__form__input--type"
+        <input
+          className="newcompany__form__input--type"
           name="type"
           id="client"
           type="radio"
@@ -99,7 +100,8 @@ const DashCompanies = () => {
         />
         <label for="client">Client</label>
 
-        <input className="newcompany__form__input--type"
+        <input
+          className="newcompany__form__input--type"
           name="type"
           id="seller"
           type="radio"
@@ -111,9 +113,11 @@ const DashCompanies = () => {
         />
         <label for="seller">Seller</label>
 
-        <button type="submit" className="newcompany__form__btn">Create</button>
+        <button type="submit" className="newcompany__form__btn">
+          Create
+        </button>
       </form>
-      < DashTableCompanies />
+      <DashTableCompanies />
     </>
   );
 };

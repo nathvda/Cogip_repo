@@ -99,7 +99,7 @@ const DashContacts = () => {
 
         <button type="submit">Create</button>
       </form>
-      < DashTableContacts />
+      <DashTableContacts />
     </>
   );
 };
