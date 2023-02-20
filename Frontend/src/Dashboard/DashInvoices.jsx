@@ -15,16 +15,18 @@ const DashInvoices = () => {
 
   const onSubmit = async (data) => {
     try {
-      setChosenCompany(data.chosenCompany);
-      setRef(data.reference);
-      setDate(data.date);
+      const newCompany = data.chosenCompany;
+      const newRef= data.reference;
+      const newDate = data.date;
+      setChosenCompany(newCompany);
+      setRef(newRef);
+      setDate(newDate);
 
       const response = await axios.post("http://localhost:8080/invoices/add", {
         ref: reference,
         date_due: date,
         id_company: chosenCompany,
       });
-      
         const responseData = response.data;
         console.log(responseData);
       
