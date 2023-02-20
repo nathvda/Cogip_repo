@@ -3,9 +3,10 @@
 
       &__title {
             @include titleTable;
+            position: relative;
 
             &::after {
-                  @include afterElement(30vw, 1.5vh, 17%, 21.2%);
+                  @include afterElement(30vw, 1.5vh, 10%, 55%);
             }
       }
 

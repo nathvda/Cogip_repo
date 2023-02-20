@@ -1,0 +1,24 @@
+.showCompanies__contacts {
+      margin-top: 10%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      ul {
+            background-color: $lightGray;
+            margin: 5%;
+            width: 40%;
+
+            li {
+                  display: flex;
+                  flex-wrap: wrap;
+
+                  // @include fontRoboto;
+
+                  img {
+                        width: 40%;
+                        border-radius: 50%;
+                  }
+            }
+      }
+}

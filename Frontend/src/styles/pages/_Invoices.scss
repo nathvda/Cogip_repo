@@ -2,9 +2,10 @@
       &__title {
             @include titleTable;
             margin-bottom: 5%;
+            position: relative;
 
             &::after {
-                  @include afterElement(25vw, 1.5vh, 22%, 17.3%);
+                  @include afterElement(25vw, 1.5vh, 11%, 55%);
             }
       }
 

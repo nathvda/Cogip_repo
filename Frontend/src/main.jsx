@@ -31,14 +31,7 @@ const router = createBrowserRouter(
       <Route path="showcontacts/:id" element={<Showcontacts />} />
       <Route path="showinvoices/:id" element={<ShowInvoices />} />
       <Route path="showcompanies/:id" element={<ShowCompanies />} />
-      <Route
-        path="dashboard"
-        element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        }
-      >
+      <Route path="dashboard" element={<Dashboard />}>
         <Route path="companies" element={<DashCompanies />} />
         <Route path="contacts" element={<DashContacts />} />
         <Route path="invoices" element={<DashInvoices />} />
