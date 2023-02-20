@@ -1,7 +1,9 @@
 import React, { useState} from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import DashTableCompanies from "./DashTableCompanies";
+import DashTableCompanies from "./components/DashTableCompanies";
+
+
 
 const DashCompanies = () => {
   const [name, setName] = useState("");
