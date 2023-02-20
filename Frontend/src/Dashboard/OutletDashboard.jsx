@@ -1,8 +1,8 @@
 import React from "react";
-import DashStatistics from "./components/DashStatistics";
-import DashLastInvoices from "./DashInvoices/components/DashLastInvoices";
-import DashLastContacts from "./DashContacts/components/DashLastContacts";
-import DashLastCompanies from "./DashCompanies/components/DashLastCompanies"
+import DashStatistics from "./components/DashStatistics"
+import DashLastInvoices from "./components/DashLastInvoices";
+import DashLastContacts from "./components/DashLastContacts";
+import DashLastCompanies from "./components/DashLastCompanies"
 
 const OutletDashboard = () => {
   return (
