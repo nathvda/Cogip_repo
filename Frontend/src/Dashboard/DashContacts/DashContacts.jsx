@@ -52,7 +52,6 @@ const DashContacts = () => {
   }, []);
 
   return (
-    <>
     <div className="forms">
       <h2>New contact</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -100,9 +99,8 @@ const DashContacts = () => {
 
         <button type="submit">Create</button>
       </form>
+      <DashTableContacts />
     </div>
-      < DashTableContacts />
-      </>
   );
 };
 
