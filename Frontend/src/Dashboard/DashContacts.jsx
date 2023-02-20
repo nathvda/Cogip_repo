@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 
 const DashContacts = () => {
-  const [name, setname] = useState("");
+  const [name, setName] = useState("");
   const [company_id, setCompany_id] = useState([]);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState([]);
@@ -21,7 +21,7 @@ const DashContacts = () => {
     const chosenCompany = data.chosenCompany;
 
     try {
-      setname(name);
+      setName(name);
       setEmail(email);
       setPhone(phone);
       setChosenCompany(chosenCompany);
