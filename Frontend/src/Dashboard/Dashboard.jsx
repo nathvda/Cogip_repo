@@ -7,6 +7,7 @@ import DashLastContacts from "./components/DashLastContacts";
 import DashLastCompanies from "./components/DashLastCompanies";
 import NavDashboardMobile from "./components/NavDashboardMobile";
 import NavDashboardDesktop from "./components/NavDashboardDesktop";
+
 import MediaQuery from "react-responsive";
 
 const Dashboard = () => {
@@ -34,7 +35,7 @@ const Dashboard = () => {
       <section className="dash__sectionMiddle">
     
           <DashLastInvoices />
-       
+          
       </section>
       <section className="dash__sectionMiddle">
       

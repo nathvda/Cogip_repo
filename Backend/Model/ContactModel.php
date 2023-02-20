@@ -8,7 +8,7 @@ class ContactModel extends DbConnect{
 
     public function getContacts(){
         
-        $sql = "SELECT contacts.*, companies.name AS company_id FROM contacts INNER JOIN companies ON contacts.company_id = companies.id ORDER BY contacts.name ASC";
+        $sql = "SELECT contacts.*, companies.id AS comp_id, companies.name AS company_id FROM contacts INNER JOIN companies ON contacts.company_id = companies.id ORDER BY contacts.name ASC";
         
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
