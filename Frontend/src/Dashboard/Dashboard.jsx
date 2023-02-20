@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet, redirect } from "react-router-dom";
 import HeaderDash from "./components/HeaderDash";
-import OutletDashboard from "./OutletDashboard";
 import NavDashboardMobile from "./components/NavDashboardMobile";
 import NavDashboardDesktop from "./components/NavDashboardDesktop";
 
