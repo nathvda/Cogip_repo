@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Contactpeople = ({ idCompanies }) => {
   const [data, setData] = useState([]);
+  const [newData, setnewData] = useState([]);
   useEffect(() => {
     axios({
       method: "get",
@@ -10,12 +11,26 @@ const Contactpeople = ({ idCompanies }) => {
       responseType: "json",
     }).then((res) => setData(res.data));
   }, []);
+
+  useEffect(() => {
+    const newData = [];
+    data.map((item) => {
+      const newIdCompanies = parseInt(idCompanies, 10);
+      if (newIdCompanies === item.comp_id) {
+        return newData.push(item);
+      }
+    });
+    setnewData(newData);
+  }, [data]);
+
   return (
     <div className="showCompanies__contacts">
-      {data.map((item, index) => {
-        const newIdCompanies = parseInt(idCompanies, 10);
-        if (newIdCompanies === item.comp_id) {
-          return (
+      <h2 className="showCompanies__h2">Contact people</h2>
+      <div className="showCompanies__contacts--wrap">
+        {newData.length === 0 ? (
+          <p>No contact</p>
+        ) : (
+          newData.map((item, index) => (
             <ul key={index}>
               <li>
                 <img
@@ -27,9 +42,9 @@ const Contactpeople = ({ idCompanies }) => {
               </li>
               <li>{item.name}</li>
             </ul>
-          );
-        }
-      })}
+          ))
+        )}
+      </div>
     </div>
   );
 };
