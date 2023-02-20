@@ -4,27 +4,39 @@
   align-items: center;
   justify-content: center;
   height: 30vw;
-  margin-top: 10%;
+  margin-top: 3%;
 
   &__HeyMsg {
     background-color: $violet;
     width: 90%;
-    height: 35vw;
     padding: 3%;
     border-radius: 10px;
-    @include fontInter(3vw, 900, rgb(255, 255, 255));
+    position: relative;
+
+    @include fontInter(1.3rem, 900, rgb(255, 255, 255));
+
     p {
       @include fontInter(3vw, 400, rgb(255, 255, 255));
       width: 45%;
       padding: 2%;
-     
+      position: relative;
+
     }
   }
 
   &__Img {
     width: 35%;
     position: absolute;
-    left: 57%;
-    bottom: 72%;
+    right: -1rem;
+    top: -1rem;
+  }
+}
+
+.dash__sectionTop {
+  h4 {
+    padding: 0 9rem;
+    width: 80%;
+    font-family: inter;
+    font-weight: 400;
   }
 }

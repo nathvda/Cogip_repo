@@ -1,8 +1,10 @@
 .dash {
-  &__navAndHeader{
-     background-color: $lightGray;
+  background-color: $lightGray;
+
+  &__navAndHeader {
+    background-color: $lightGray;
   }
- 
+
   &__sectionTop {
     &__title {
       padding: 5% 18%;
@@ -14,15 +16,12 @@
     margin: 5% auto;
     margin-right: 5%;
     width: 90%;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 10px;
+    overflow-x: auto;
 
     &__title {
       @include fontInter(3.5vw, 900, black);
-    }
-    &__divAll {
-      overflow-x: auto;
-      background-color: aqua;
     }
 
     &__table {
@@ -34,6 +33,7 @@
         height: 4vh;
         text-align: left;
       }
+
       &--headCell {
         @include fontInter(2.5vw, 900, black);
         padding: 2vw 0vw 2vw 2vw;
@@ -45,7 +45,35 @@
         padding: 2vw 2vw;
         padding-right: 0.1%;
         text-align: left;
+
       }
+
+      &__bodyCellContent {
+
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          background: transparent;
+          opacity: 0;
+          border: 0;
+          color: #cccccc;
+          height: 100%;
+
+
+        }
+
+
+      }
+
+      &--body:hover {
+
+        button {
+          opacity: 1;
+        }
+
+      }
+
       @include fontInter(2.5vw, 400, black);
     }
   }

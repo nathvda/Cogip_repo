@@ -1,69 +1,96 @@
 import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 import axios from "axios";
+import DashTableInvoices from "./components/DashTableInvoices";
 
 const DashInvoices = () => {
-  const [formData, setData] = useState({
-    reference: "",
-    price: "",
-    companyName: "",
-  });
-  const [companies, setCompanies] = useState([]);
+  const [id_company, setId_company] = useState([]);
+  const [reference, setRef] = useState("");
+  const [date, setDate] = useState("");
+  const [chosenCompany, setChosenCompany] = useState(0);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  async function onSubmit(data) {
+    const chosenCompany = data.chosenCompany;
+    const reference = data.reference;
+    const date = data.date;
+
+    try {
+      setChosenCompany(chosenCompany);
+      setRef(reference);
+      setDate(date);
+
+      const response = await axios.post("http://localhost:8080/invoices/add", {
+        ref: reference,
+        date_due: date,
+        id_company: chosenCompany,
+      });
+      //const responseData = response.data;
+      //console.log(responseData);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    axios({
-      method: "get",
-      url: "http://localhost:8080/invoices",
-      responseType: "json",
-    }).then((res) => setData(res.data));
+    const getCompanies = async () => {
+      try {
+        const res = await axios.get("http://localhost:8080/companies");
+        const data = await res.data;
+        setId_company(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getCompanies();
   }, []);
 
-  const handleInputChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formData);
-  };
-
   return (
-    <form onSubmit={handleSubmit} className="dashInvoices__form">
-  
-        <input
-          type="text"
-          name="reference"
-          placeholder="Reference"
-          value={formData.reference}
-          onChange={handleInputChange}
-          className="dashInvoices__form--ref"
-        />
-  
-      <br />
-        <input
-          type="text"
-          name="price"
-          placeholder="Price"
-          value={formData.price}
-          onChange={handleInputChange}
-          className="dashInvoices__form--price"
-        />
-      <br />
-        <select
-          name="companyName"
-          value={formData.companyName}
-          onChange={handleInputChange}
-          className="dashInvoices__form--select"
-        >
-          <option value="">Select a Company</option>
-          {companies.map((company) => (
-            <option key={company.id} value={company.name}>
-              {company.name}
-            </option>
-          ))}
-        </select>
-      <br />
-      <button type="submit" className="dashInvoices__form--btnSave">Save</button>
-    </form>
+    <>
+      <div className="forms">
+        <h2>New invoice</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            name="reference"
+            type="text"
+            required
+            minLength="10"
+            maxLength="80"
+            placeholder="Reference"
+            {...register("reference", {
+              required: true,
+              maxLength: 80,
+              minLength: 10,
+            })}
+          />
+
+          <input
+            name="date"
+            type="date"
+            required
+            {...register("date", { required: true })}
+          />
+
+          <select {...register("chosenCompany", { required: true })}>
+            <option value="0">Company name</option>
+            {id_company.map((company, index) => (
+              <option key={index} value={company.id}>
+                {company.name}
+              </option>
+            ))}
+          </select>
+          {errors["Company name"] && <span>This field is required</span>}
+
+        <button type="submit">Create</button>
+      </form>
+      </div>
+      <DashTableInvoices />
+    </>
   );
-};
+  };
 
 export default DashInvoices;

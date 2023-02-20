@@ -3,6 +3,7 @@ namespace App\Controllers;
 use Exception;
 use App\Core\DbConnect;
 use App\Model\UsersModel;
+use Firebase\JWT\JWT;
 
 class UsersController extends DbConnect{
 
@@ -35,37 +36,62 @@ class UsersController extends DbConnect{
 
         if (password_verify($data['password'], $res[0]['password'])){
 
-            $key = base64_encode('{
-                "alg":"HS256",
-                "typ": "JWT"
-            }');
+            $user = $res[0]['id'];
+            $key = $_ENV["SECRET"];
+            $token = [
+                'user_id' => $user,
+                'user_first' => $res[0]['first_name'],
+                'user_last' => $res[0]['last_name'],
+                'role' => $res[0]['role_id'],
+                'exp' => time() + 2400
+            ];
 
-            var_dump($key);
 
-            $payload = base64_encode('{
-            
-                "admin": true
-            }');
+            $token = JWT::encode($token,$key, 'HS256');
 
-            var_dump($payload);
-
-            $sign = hash_hmac("sha256", "$key.$payload", $_ENV["SECRET"]);
-            var_dump($sign);
-
-            $fToken = "$key.$payload.$sign";
-            var_dump($fToken);
-
-            return $fToken;
+            echo json_encode(['token' => $token]);
 
             } else { 
 
-                var_dump("wrong credentials");
+                echo json_encode(['message' => "wrong credentials"]);
             }
 }
         catch (Exception $e){
             return $e;
         }
     }
+
+    public function checkToken(string $token) : bool
+    {
+
+        $header = $this->getHeaders($token);
+        $payload = $this->getPayload($token);
+        
+        $verifToken = JWT::encode($payload, $_ENV['SECRET'], 'HS256');
+
+        return $verifToken == $token;
+    }
+
+    private function getHeaders(string $token){
+
+        $array = explode('.',$token);
+
+        $header = (array) json_decode(base64_decode($array[0], true));
+
+        return $header;
+
+    }
+
+    private function getPayload(string $token){
+
+        $array = explode('.',$token);
+
+        $payload = (array) json_decode(base64_decode($array[1], true));
+
+        return $payload;
+
+    }
+
 
 }
 

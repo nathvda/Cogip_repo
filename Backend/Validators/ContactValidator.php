@@ -48,7 +48,7 @@ use App\Controllers\ContactsController;
             if(empty($val)){
                 $this->addError('name', 'name cannot be empty');
             } else {
-                if(!preg_match('/^[a-zA-ZÁ-ù]{1,50}$/',$val)){
+                if(!preg_match('/^[s\a-zA-ZÁ-ù]{1,50}$/',$val)){
                     $this->addError('name', 'name can only contain letters');
                 } else {
                     $this->data['name'] = $val;

@@ -1,0 +1,26 @@
+.showUnique {
+      margin-top: 7%;
+
+      &__title {
+            @include titleTable;
+            position: relative;
+
+            &::after {
+                  @include afterElement(30vw, 1.5vh, 10%, 55%);
+            }
+      }
+
+      &__list {
+            margin-left: 10%;
+            margin-top: 5%;
+
+            &__elem {
+                  @include fontRoboto (3vw, 700, black);
+
+                  &--bold {
+                        font-weight: 900;
+                  }
+            }
+      }
+
+}

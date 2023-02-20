@@ -4,6 +4,7 @@ import Header from "../componentsIndividuals/Header";
 import TableContacts from "./components/TableContacts";
 import TableInvoices from "./components/TableInvoices";
 import TableCompanies from "./components/TableCompanies";
+import ProtectedRoute from "../componentsIndividuals/ProtectedRoute";
 
 const HomePage = () => {
   return (

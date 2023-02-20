@@ -1,0 +1,33 @@
+.pagination {
+      display: flex;
+      flex-direction: row;
+      margin: 5% auto;
+      justify-content: space-around;
+      width: 50%;
+
+      &__item {
+            margin: 2.5% 7%;
+      }
+
+      &__link {
+            padding: 50% 70%;
+            border: 2px solid #DFE3E8;
+            border-radius: 1vw;
+            @include fontRoboto (3vw, 700, #212B36);
+
+            &--previous {
+                  border-color: #919EAB;
+                  background-color: #919EAB;
+                  color: $yellow;
+            }
+
+            &--next {
+                  color: $yellow;
+            }
+      }
+
+      &--active {
+            color: $yellow;
+            border-color: $yellow;
+      }
+}

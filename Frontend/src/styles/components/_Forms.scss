@@ -1,0 +1,76 @@
+.forms {
+      width: 21rem;
+      background-color: hsla(0, 0%, 100%, 1);
+      margin: auto;
+      margin-top: 2rem;
+      padding: 1rem;
+      border-radius: 0.4rem;
+      box-shadow: rgba(0, 0, 0, 0.05) 0 0 1.3rem;
+
+      h2 {
+            font-size: 0.9rem;
+            font-family: roboto;
+            border-bottom: 0.1rem solid #efefef;
+            margin-bottom: 1rem;
+            padding: 0.3rem;
+      }
+
+      form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1.4rem;
+
+            button {
+                  background-color: hsl(238.2, 44.2%, 71.2%);
+                  border: 0;
+                  padding: 0.6rem;
+                  border-radius: 0.2rem;
+                  color: white;
+            }
+
+      }
+
+      input,
+      select {
+            background-color: #efefef;
+            border: none;
+            padding: 0.7rem;
+            color: #696969;
+            border-radius: 0.2rem;
+      }
+
+      input[type="radio"] {
+            position: absolute;
+            display: none;
+      }
+
+      input[type="radio"]+label {
+            color: #696969;
+            background-color: #efefef;
+            padding: 0.5rem;
+            border-radius: 0.2rem;
+            font-family: roboto;
+            width: 48%;
+      }
+
+      input:checked+label {
+            color: white;
+            background-color: #9597d6;
+            padding: 0.5rem;
+            border-radius: 0.2rem;
+            font-family: roboto;
+      }
+
+      legend {
+            font-family: roboto;
+            font-size: 0.9rem;
+      }
+
+      fieldset {
+            border: 0;
+            padding: 1rem 0 0;
+            display: flex;
+            justify-content: space-between;
+      }
+
+}
