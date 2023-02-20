@@ -1,6 +1,7 @@
 import React, { useState} from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import DashTableCompanies from "./DashTableCompanies";
 
 const DashCompanies = () => {
   const [name, setName] = useState("");
@@ -46,7 +47,7 @@ const DashCompanies = () => {
           required
           minLength="3"
           maxLength="80"
-          placeholder="Name"
+          placeholder="ex: Chocopie"
           {...register("name", {
             required: true,
             maxLength: 80,
@@ -61,7 +62,7 @@ const DashCompanies = () => {
           required
           minLength="2"
           maxLength="10"
-          placeholder="Country"
+          placeholder="ex: Belgium"
           {...register("country", {
             required: true,
             maxLength: 10,
@@ -110,6 +111,7 @@ const DashCompanies = () => {
 
         <button type="submit" className="newcompany__form__btn">Create</button>
       </form>
+      < DashTableCompanies />
     </>
   );
 };

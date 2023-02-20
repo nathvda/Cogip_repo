@@ -58,7 +58,7 @@ const DashInvoices = () => {
           required
           minLength="10"
           maxLength="80"
-          placeholder="Reference"
+          placeholder="FXXXXXXXX-XXX"
           {...register("reference", {
             required: true,
             maxLength: 80,
