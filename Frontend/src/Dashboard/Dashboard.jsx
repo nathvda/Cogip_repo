@@ -34,7 +34,7 @@ const Dashboard = () => {
       <section className="dash__sectionMiddle">
     
           <DashLastInvoices />
-       
+          
       </section>
       <section className="dash__sectionMiddle">
       
