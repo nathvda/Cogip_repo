@@ -38,9 +38,9 @@ const DashCompanies = () => {
 
   return (
     <>
-      <h2>New company</h2>
+      <h2 className="newcompany__form__title">New company</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
+        <input className="newcompany__form__input--name"
           name="name"
           type="text"
           required
@@ -54,7 +54,7 @@ const DashCompanies = () => {
           })}
         />
 
-        <input
+        <input className="newcompany__form__input--country"
           name="country"
           id="country"
           type="text"
@@ -68,7 +68,7 @@ const DashCompanies = () => {
             minLength: 2,
           })}
         />
-        <input
+        <input className="newcompany__form__input--tva"
           name="tva"
           id="tva"
           type="text"
@@ -84,7 +84,7 @@ const DashCompanies = () => {
         />
       
 
-        <input
+        <input className="newcompany__form__input--type"
           name="type"
           id="client"
           type="radio"
@@ -96,7 +96,7 @@ const DashCompanies = () => {
         />
         <label for="client">Client</label>
 
-        <input
+        <input className="newcompany__form__input--type"
           name="type"
           id="seller"
           type="radio"
@@ -108,7 +108,7 @@ const DashCompanies = () => {
         />
         <label for="seller">Seller</label>
 
-        <button type="submit">Create</button>
+        <button type="submit" className="newcompany__form__btn">Create</button>
       </form>
     </>
   );

@@ -1,10 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import HeaderDash from "./components/HeaderDash";
-import DashStatistics from "./components/DashStatistics";
-import DashLastInvoices from "./components/DashLastInvoices";
-import DashLastContacts from "./components/DashLastContacts";
-import DashLastCompanies from "./components/DashLastCompanies";
+import OutletDashboard from "./OutletDashboard";
 import NavDashboardMobile from "./components/NavDashboardMobile";
 import NavDashboardDesktop from "./components/NavDashboardDesktop";
 
@@ -29,23 +26,8 @@ const Dashboard = () => {
       </section>
       </div>
 
-      <section className="dash__sectionMiddle">
-        <DashStatistics />
-      </section>
-      <section className="dash__sectionMiddle">
-    
-          <DashLastInvoices />
-          
-      </section>
-      <section className="dash__sectionMiddle">
-      
-        <DashLastContacts />
-        
-      </section>
-      <section className="dash__sectionMiddle">
-      
-        <DashLastCompanies />
-        
+      <section>
+        < OutletDashboard />
       </section>
 
       <section className="dash__sectionOutlet">
