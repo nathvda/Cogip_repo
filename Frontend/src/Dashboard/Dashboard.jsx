@@ -3,6 +3,7 @@ import { Outlet, redirect } from "react-router-dom";
 import HeaderDash from "./components/HeaderDash";
 import NavDashboardMobile from "./components/NavDashboardMobile";
 import NavDashboardDesktop from "./components/NavDashboardDesktop";
+import axios from "axios";
 
 import MediaQuery from "react-responsive";
 
@@ -12,6 +13,12 @@ const Dashboard = () => {
 
   if (token === null) {
     window.location.replace("/");
+  } else {
+    axios
+      .post("http://localhost:8080/login/ok", {
+        token: token,
+      })
+      .then((res) => console.log(res.data));
   }
 
   return (

@@ -219,8 +219,16 @@ $router->mount('/login', function() use ($router){
 
     $router->post('/ok', function(){
         $payload = json_decode(file_get_contents('php://input'), true);
-        echo $payload["token"];
+        $res = (new UsersController)->checkToken($payload["token"]);
         echo "token reçu";
+        
+        if($res === false){
+            echo "token invalide";
+        } else { 
+            echo "token ok";
+        }        
+        
+        var_dump($res);
     });
 }
 );
