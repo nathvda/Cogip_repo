@@ -15,11 +15,12 @@ const DashInvoices = () => {
   } = useForm();
 
   async function onSubmit (data) {
-      const chosenCompany = data.chosenCompany;
-      const reference= data.reference;
-      const date = data.date;
+    
+    const chosenCompany = data.chosenCompany;
+    const reference = data.reference;
+    const date = data.date;
 
-      try {
+    try {
       setChosenCompany(chosenCompany);
       setRef(reference);
       setDate(date);
@@ -29,14 +30,12 @@ const DashInvoices = () => {
         date_due: date,
         id_company: chosenCompany,
       });
-        //const responseData = response.data;
-        //console.log(responseData);
-      
+      //const responseData = response.data;
+      //console.log(responseData);
     } catch (error) {
       console.log(error);
     }
-  };
-  
+  }
 
   useEffect(() => {
     const getCompanies = async () => {
@@ -50,8 +49,6 @@ const DashInvoices = () => {
     };
     getCompanies();
   }, []);
-
-
 
   return (
     <> 
