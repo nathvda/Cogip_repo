@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DashLogout from "./DashLogout";
 
 const NavDashboardDesktop = () => {
   return (
@@ -18,8 +19,8 @@ const NavDashboardDesktop = () => {
         Contacts
       </Link>
       <button className="dash__button--desktop dash__button--logout">
-          Logout
-        </button>
+        <DashLogout />
+      </button>
     </nav>
   );
 };

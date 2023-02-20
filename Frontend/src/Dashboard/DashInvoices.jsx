@@ -50,41 +50,43 @@ const DashInvoices = () => {
 
   return (
     <>
-      <h2>New invoice</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          name="reference"
-          type="text"
-          required
-          minLength="10"
-          maxLength="80"
-          placeholder="Reference"
-          {...register("reference", {
-            required: true,
-            maxLength: 80,
-            minLength: 10,
-          })}
-        />
+      <div className="forms">
+        <h2>New invoice</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            name="reference"
+            type="text"
+            required
+            minLength="10"
+            maxLength="80"
+            placeholder="Reference"
+            {...register("reference", {
+              required: true,
+              maxLength: 80,
+              minLength: 10,
+            })}
+          />
 
-        <input
-          name="date"
-          type="date"
-          required
-          {...register("date", { required: true })}
-        />
+          <input
+            name="date"
+            type="date"
+            required
+            {...register("date", { required: true })}
+          />
 
-        <select {...register("chosenCompany", { required: true })}>
-          <option value="0">Company name</option>
-          {id_company.map((company, index) => (
-            <option key={index} value={company.id}>
-              {company.name}
-            </option>
-          ))}
-        </select>
-        {errors["Company name"] && <span>This field is required</span>}
+          <select {...register("chosenCompany", { required: true })}>
+            <option value="0">Company name</option>
+            {id_company.map((company, index) => (
+              <option key={index} value={company.id}>
+                {company.name}
+              </option>
+            ))}
+          </select>
+          {errors["Company name"] && <span>This field is required</span>}
 
-        <button type="submit">Create</button>
-      </form>
+          <button type="submit">Create</button>
+        </form>
+      </div>
     </>
   );
 };

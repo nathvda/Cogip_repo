@@ -8,10 +8,16 @@ const DashLastInvoices = () => {
     console.log("clicked");
     console.log(id);
 
-    await axios({
-      method: "DELETE",
-      url: `http:localhost:8080/invoices/${id}/delete`,
-    }).then(console.log("youhou"));
+    try {
+      await axios({
+        method: "DELETE",
+        url: `http://localhost:8080/invoices/${id}/delete`,
+      }).then(console.log("youhou"));
+    } catch (error) {
+      console.log(error);
+    }
+
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -49,8 +55,7 @@ const DashLastInvoices = () => {
               </td>
               <td className="dash__sectionMiddle__table--bodyCell">
                 {item.id_company}
-                <form
-                  action=""
+                <form className="bin"
                   onSubmit={(e) => {
                     e.preventDefault();
                     deleteOne(item.id);

@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -38,78 +38,88 @@ const DashCompanies = () => {
 
   return (
     <>
-      <h2 className="newcompany__form__title">New company</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input className="newcompany__form__input--name"
-          name="name"
-          type="text"
-          required
-          minLength="3"
-          maxLength="80"
-          placeholder="Name"
-          {...register("name", {
-            required: true,
-            maxLength: 80,
-            minLength: 3,
-          })}
-        />
+      <div className="forms">
+        <h2 className="newcompany__form__title">New company</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            className="newcompany__form__input--name"
+            name="name"
+            type="text"
+            required
+            minLength="3"
+            maxLength="80"
+            placeholder="Name"
+            {...register("name", {
+              required: true,
+              maxLength: 80,
+              minLength: 3,
+            })}
+          />
 
-        <input className="newcompany__form__input--country"
-          name="country"
-          id="country"
-          type="text"
-          required
-          minLength="2"
-          maxLength="10"
-          placeholder="Country"
-          {...register("country", {
-            required: true,
-            maxLength: 10,
-            minLength: 2,
-          })}
-        />
-        <input className="newcompany__form__input--tva"
-          name="tva"
-          id="tva"
-          type="text"
-          required
-          minLength="11"
-          maxLength="80"
-          placeholder="TVA"
-          {...register("tva", {
-            required: true,
-            maxLength: 80,
-            minLength: 2,
-          })}
-        />
-      
+          <input
+            className="newcompany__form__input--country"
+            name="country"
+            id="country"
+            type="text"
+            required
+            minLength="2"
+            maxLength="10"
+            placeholder="Country"
+            {...register("country", {
+              required: true,
+              maxLength: 10,
+              minLength: 2,
+            })}
+          />
+          <input
+            className="newcompany__form__input--tva"
+            name="tva"
+            id="tva"
+            type="text"
+            required
+            minLength="11"
+            maxLength="80"
+            placeholder="TVA"
+            {...register("tva", {
+              required: true,
+              maxLength: 80,
+              minLength: 2,
+            })}
+          />
 
-        <input className="newcompany__form__input--type"
-          name="type"
-          id="client"
-          type="radio"
-          value="Client"
-          required
-          {...register("type", {
-            required: true,
-          })}
-        />
-        <label for="client">Client</label>
+          <fieldset>
+            <legend>Company type</legend>{" "}
+            <input
+              className="newcompany__form__input--type"
+              name="type"
+              id="client"
+              type="radio"
+              value="2"
+              required
+              {...register("type", {
+                required: true,
+              })}
+            />
+            <label for="client">Client</label>
+            <input
+              className="newcompany__form__input--type"
+              name="type"
+              id="supplier"
+              type="radio"
+              value="1"
+              required
+              {...register("type", {
+                required: true,
+              })}
+            />
+            <label for="supplier">Supplier</label>
+          </fieldset>
 
-        <input className="newcompany__form__input--type"
-          name="type"
-          id="seller"
-          type="radio"
-          value="Seller"
-          required
-          {...register("type", {
-            required: true,
-          })}
-        />
-        <label for="seller">Seller</label>
-
-        <button type="submit" className="newcompany__form__btn">Create</button>
-      </form>
+          <button type="submit" className="newcompany__form__btn">
+            Create
+          </button>
+        </form>
+      </div>
     </>
   );
 };

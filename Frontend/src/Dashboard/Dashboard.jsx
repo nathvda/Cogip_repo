@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, redirect } from "react-router-dom";
 import HeaderDash from "./components/HeaderDash";
 import OutletDashboard from "./OutletDashboard";
 import NavDashboardMobile from "./components/NavDashboardMobile";
@@ -8,6 +8,13 @@ import NavDashboardDesktop from "./components/NavDashboardDesktop";
 import MediaQuery from "react-responsive";
 
 const Dashboard = () => {
+  let token = localStorage.getItem("user-token");
+  console.log(token);
+
+  if (token === null) {
+    window.location.replace("/");
+  }
+
   return (
     <div className="dash">
       <div className="dash__navAndHeader">
