@@ -5,8 +5,6 @@ import {
   RouterProvider,
   Route,
   createRoutesFromElements,
-  useNavigate,
-  useLocation,
 } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import Companies from "./Companies/Companies";
