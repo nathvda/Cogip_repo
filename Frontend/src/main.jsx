@@ -19,6 +19,7 @@ import DashCompanies from "./Dashboard/DashCompanies";
 import DashContacts from "./Dashboard/DashContacts";
 import "./styles/index.scss";
 import ProtectedRoute from "./componentsIndividuals/ProtectedRoute";
+import OutletDashboard from "./Dashboard/OutletDashboard";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
       <Route path="showinvoices/:id" element={<ShowInvoices />} />
       <Route path="showcompanies/:id" element={<ShowCompanies />} />
       <Route path="dashboard" element={<Dashboard />}>
+        <Route path="" element={<OutletDashboard />} />
         <Route path="companies" element={<DashCompanies />} />
         <Route path="contacts" element={<DashContacts />} />
         <Route path="invoices" element={<DashInvoices />} />

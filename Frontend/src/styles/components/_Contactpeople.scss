@@ -13,7 +13,7 @@
                   display: flex;
                   flex-wrap: wrap;
 
-                  // @include fontRoboto;
+                  @include fontRoboto (4vw, 900, black);
 
                   img {
                         width: 40%;
