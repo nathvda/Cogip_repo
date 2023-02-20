@@ -3,6 +3,7 @@ import axios from "axios";
 
 const DashTableCompanies = () => {
       const [data, setData] = useState([]);
+
       useEffect(() => {
         axios({
           method: "get",
@@ -25,7 +26,7 @@ const DashTableCompanies = () => {
                   </tr>
                 </thead>
                 <tbody className="dashcompanies__table__body">
-                  {currentItems.map((item, index) => (
+                  {currentItems.map((item) => (
                     <tr
                       key={"tableDashCompanies" + item.name + item.id}>
                       <td> {item.name}</td>

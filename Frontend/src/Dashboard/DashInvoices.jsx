@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import DashTableInvoices from "./components/DashTableInvoices";
 
 const DashInvoices = () => {
   const [id_company, setId_company] = useState([]);
@@ -84,10 +85,12 @@ const DashInvoices = () => {
           </select>
           {errors["Company name"] && <span>This field is required</span>}
 
-          <button type="submit">Create</button>
-        </form>
+        <button type="submit">Create</button>
+      </form>
       </div>
+      <DashTableInvoices />
     </>
   );
-};
+  };
+
 export default DashInvoices;
