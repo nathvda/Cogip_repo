@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import HeaderDash from "./components/HeaderDash";
-import DashStatistics from "./DashStatistics";
+import DashStatistics from "./components/DashStatistics";
 import DashLastInvoices from "./components/DashLastInvoices";
 import DashLastContacts from "./components/DashLastContacts";
 import DashLastCompanies from "./components/DashLastCompanies";
@@ -29,24 +29,22 @@ const Dashboard = () => {
       </div>
 
       <section className="dash__sectionMiddle">
-      <div className="dash__sectionMiddle__divAll">
         <DashStatistics />
-        </div>
       </section>
       <section className="dash__sectionMiddle">
-        <div className="dash__sectionMiddle__divAll">
+    
           <DashLastInvoices />
-        </div>
+       
       </section>
       <section className="dash__sectionMiddle">
-      <div className="dash__sectionMiddle__divAll">
+      
         <DashLastContacts />
-        </div>
+        
       </section>
       <section className="dash__sectionMiddle">
-      <div className="dash__sectionMiddle__divAll">
+      
         <DashLastCompanies />
-         </div>
+        
       </section>
 
       <section className="dash__sectionOutlet">

@@ -19,20 +19,20 @@ const DashInvoices = () => {
       setRef(data.reference);
       setDate(data.date);
 
-      const response = await axios;
-      post("http://localhost:8080/invoices/add", {
+      const response = await axios.post("http://localhost:8080/invoices/add", {
         ref: reference,
         date_due: date,
         id_company: chosenCompany,
       });
-      then((res) => {
+      
         const responseData = response.data;
-        console.log(res.data);
-      });
+        console.log(responseData);
+      
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   useEffect(() => {
     const getCompanies = async () => {
@@ -46,6 +46,8 @@ const DashInvoices = () => {
     };
     getCompanies();
   }, []);
+
+
 
   return (
     <>
