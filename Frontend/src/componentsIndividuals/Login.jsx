@@ -29,7 +29,7 @@ const Login = () => {
         alert("Unable to login. Please try after some time");
         return;
       }
-      localStorage.clear();
+      //localStorage.clear();
       localStorage.setItem("user-token", token);
       setTimeout(() => {
         redirect("/");

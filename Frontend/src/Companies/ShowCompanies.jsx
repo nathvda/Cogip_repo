@@ -5,6 +5,7 @@ import LastInvoices from "./components/LastInvoices";
 import Contactpeople from "./components/Contactpeople";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import RectHeader from "../componentsIndividuals/RectHeader";
 
 const ShowCompanies = () => {
   const { id } = useParams();
@@ -19,22 +20,39 @@ const ShowCompanies = () => {
   return (
     <div>
       <Header />
+      <RectHeader />
       {data.map((item) => (
-        <div key={"companies" + id.toString()} className="showCompanies">
-          <h1 className="showCompanies__title">{item.name}</h1>
-          <ul className="showCompanies__list">
-            <li key={"companiesName" + item + id.toString()} className="showCompanies__list__elem">Contact : {item.name}</li>
-            <li key={"companiesTVA" + item + id.toString()} className="showCompanies__list__elem">TVA: {item.tva}</li>
-            <li key={"companiesCountry" + item + id.toString()} className="showCompanies__list__elem">
+        <div key={"companies" + id.toString()} className="showUnique">
+          <h1 className="showUnique__title">{item.name}</h1>
+          <ul className="showUnique__list">
+            <li
+              key={"companiesName" + item + id.toString()}
+              className="showUnique__list__elem"
+            >
+              Contact : {item.name}
+            </li>
+            <li
+              key={"companiesTVA" + item + id.toString()}
+              className="showUnique__list__elem"
+            >
+              TVA: {item.tva}
+            </li>
+            <li
+              key={"companiesCountry" + item + id.toString()}
+              className="showUnique__list__elem"
+            >
               Country : {item.country}
             </li>
-            <li key={"CompaniesType" + item + id.toString()} className="showCompanies__list__elem">
+            <li
+              key={"CompaniesType" + item + id.toString()}
+              className="showUnique__list__elem"
+            >
               Type : {item.types_id}
             </li>
           </ul>
         </div>
       ))}
-      <Contactpeople />
+      <Contactpeople idCompanies={id} />
       <LastInvoices idCompanies={id} />
       <Footer />
     </div>

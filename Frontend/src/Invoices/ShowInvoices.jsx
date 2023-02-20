@@ -3,6 +3,7 @@ import Header from "../componentsIndividuals/Header";
 import Footer from "../componentsIndividuals/Footer";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import RectHeader from "../componentsIndividuals/RectHeader";
 
 const ShowInvoices = () => {
   const { id } = useParams();
@@ -18,27 +19,31 @@ const ShowInvoices = () => {
   return (
     <div>
       <Header />
+      <RectHeader />
       {data.map((item) => (
-        <div key={"invoices" + id.toString()} className="showInvoice">
-          <h1 className="showInvoice__title">{item.ref}</h1>
-          <ul className="showInvoice__list">
+        <div key={"invoices" + id.toString()} className="showUnique">
+          <h1 className="showUnique__title">{item.ref}</h1>
+          <ul className="showUnique__list">
             <li
               key={"invoicesRef" + item.ref + id.toString()}
-              className="showInvoice__list__elem"
+              className="showUnique__list__elem"
             >
-              References : {item.ref}
+              <span className="showUnique__list__elem--bold">References :</span>{" "}
+              {item.ref}
             </li>
             <li
               key={"invoicesDateDue" + item.ref + id.toString()}
-              className="showInvoice__list__elem"
+              className="showUnique__list__elem"
             >
-              Date due : {item.date_due}
+              <span className="showUnique__list__elem--bold">Date due :</span>{" "}
+              {item.date_due}
             </li>
             <li
               key={"invoicesIdCompany" + item.ref + id.toString()}
-              className="showInvoice__list__elem"
+              className="showUnique__list__elem"
             >
-              Company :{item.id_company}
+              <span className="showUnique__list__elem--bold">Company :</span>
+              {item.id_company}
             </li>
           </ul>
         </div>
