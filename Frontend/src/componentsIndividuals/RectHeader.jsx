@@ -5,7 +5,7 @@ const RectHeader = () => {
     <div>
       <img
         className="header__img--mobile"
-        src="./public/assets/img/miseenpageRect.png"
+        src="../public/assets/img/miseenpageRect.png"
         alt="mise en forme"
       />
     </div>
