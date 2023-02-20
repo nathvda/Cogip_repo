@@ -66,9 +66,8 @@ class UsersController extends DbConnect{
 
         $header = $this->getHeaders($token);
         $payload = $this->getPayload($token);
-        $tok = $header + $payload;
         
-        $verifToken = JWT::encode($tok, $_ENV['SECRET'], 'HS256');
+        $verifToken = JWT::encode($payload, $_ENV['SECRET'], 'HS256');
 
         return $verifToken == $token;
     }
