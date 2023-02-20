@@ -3,8 +3,6 @@ import axios from "axios";
 
 const DashTableCompanies = () => {
       const [data, setData] = useState([]);
-      const [currentPage, setCurrentPage] = useState(1);
-      const [itemsPerPage, setItemsPerPage] = useState(10);
 
       useEffect(() => {
         axios({

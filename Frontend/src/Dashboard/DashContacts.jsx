@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import DashTableContacts from "./components/DashTableContacts";
 
 const DashContacts = () => {
   const [name, setName] = useState("");
@@ -98,6 +99,7 @@ const DashContacts = () => {
 
         <button type="submit">Create</button>
       </form>
+      < DashTableContacts />
     </>
   );
 };

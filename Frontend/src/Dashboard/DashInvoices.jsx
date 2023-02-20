@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import DashTableInvoices from "./components/DashTableInvoices";
 
 const DashInvoices = () => {
   const [id_company, setId_company] = useState([]);
@@ -85,6 +86,7 @@ const DashInvoices = () => {
 
         <button type="submit">Create</button>
       </form>
+      <DashTableInvoices />
     </>
   );
 };
