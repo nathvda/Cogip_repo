@@ -120,8 +120,8 @@ const DashCompanies = () => {
             Create
           </button>
         </form>
-        <DashTableCompanies />
       </div>
+      <DashTableCompanies />
     </>
   );
 };

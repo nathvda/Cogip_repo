@@ -52,6 +52,8 @@ const DashLastContacts = () => {
                 {item.phone}
               </td>
               <td className="dash__sectionMiddle__table--bodyCell">
+              <div class="dash__sectionMiddle__table__bodyCellContent">
+
                 {item.email}
                 <form className="bin"
                   onSubmit={(e) => {
@@ -72,6 +74,7 @@ const DashLastContacts = () => {
                     </svg>
                   </button>
                 </form>
+                </div>
               </td>
             </tr>
           ))}
