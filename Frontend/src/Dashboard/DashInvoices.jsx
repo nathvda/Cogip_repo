@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
+
 const DashInvoices = () => {
   const [id_company, setId_company] = useState([]);
   const [reference, setRef] = useState("");
@@ -50,7 +51,7 @@ const DashInvoices = () => {
   }, []);
 
   return (
-    <>
+    <> 
       <h2>New invoice</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -86,7 +87,10 @@ const DashInvoices = () => {
 
         <button type="submit">Create</button>
       </form>
+      
+
     </>
+   
   );
 };
 export default DashInvoices;
