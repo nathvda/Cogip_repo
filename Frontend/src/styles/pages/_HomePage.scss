@@ -9,7 +9,8 @@
             justify-content: space-around;
             height: 48.5vw;
             z-index: 5;
-            margin-top: -15%;
+            margin-top: -8%;
+            position: relative;
 
             &__title {
                   @include fontInter(5vw, 900, black);
@@ -24,7 +25,7 @@
             &__rect {
                   position: absolute;
                   z-index: 10;
-                  top: 30%;
+                  top: 84.5%;
                   background-color: $yellow;
                   width: 90%;
             }
@@ -112,14 +113,14 @@
 @media only screen and (max-width: 1024px) and (min-width: 768px) {
       .homepage {
             &__sectionTop {
-                  margin-top: -12.5%;
+                  margin-top: -8%;
 
                   &__img {
                         width: 55%;
                   }
 
                   &__rect {
-                        top: 35.2%;
+                        top: 84.4%;
                   }
             }
       }
