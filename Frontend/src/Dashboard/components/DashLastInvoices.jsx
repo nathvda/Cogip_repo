@@ -29,7 +29,7 @@ const DashLastInvoices = () => {
   }, []);
   const dataFive = data.slice(0, 5);
   return (
-    <div className="dash__sectionMiddle">
+    <div className="dash__sectionMiddle dash__sectionMiddleDiv">
       <h1 className="dash__sectionMiddle__title">Last invoices</h1>
       <table className="dash__sectionMiddle__table">
         <thead>
