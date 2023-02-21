@@ -21,7 +21,11 @@
     overflow-x: auto;
 
     &__title {
+      border-bottom: 0.1rem #efefef solid;
+      padding: 0 0 0.7rem 0;
+      margin-bottom: 0.2rem;
       @include fontInter(3.5vw, 900, black);
+
     }
 
     &__table {
@@ -77,4 +81,12 @@
       @include fontInter(2.5vw, 400, black);
     }
   }
+}
+
+.logout button {
+  padding: 0.3rem;
+  background-color: #9698d6;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
 }

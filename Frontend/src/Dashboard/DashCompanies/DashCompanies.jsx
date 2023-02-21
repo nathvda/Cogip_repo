@@ -8,6 +8,17 @@ const DashCompanies = () => {
   const [country, setCountry] = useState("");
   const [tva, setTva] = useState([]);
   const [type, setType] = useState();
+  /*
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+      [e.target.country]: e.target.value,
+      [e.target.tva]: e.target.value,
+      [e.target.type]: e.target.value,
+    });
+  };
+*/
   const {
     register,
     handleSubmit,
@@ -49,7 +60,9 @@ const DashCompanies = () => {
             required
             minLength="3"
             maxLength="80"
-            placeholder="Name"
+            placeholder="ex: Chocopie"
+           // value={data.name}  
+           // onChange={handleChange}
             {...register("name", {
               required: true,
               maxLength: 80,
@@ -65,7 +78,9 @@ const DashCompanies = () => {
             required
             minLength="2"
             maxLength="10"
-            placeholder="Country"
+            placeholder="ex: Belgium"
+            //value={data.country}  
+           // onChange={handleChange}
             {...register("country", {
               required: true,
               maxLength: 10,
@@ -81,6 +96,8 @@ const DashCompanies = () => {
             minLength="11"
             maxLength="80"
             placeholder="TVA"
+            //value={data.tva}  
+            //onChange={handleChange}
             {...register("tva", {
               required: true,
               maxLength: 80,
@@ -89,33 +106,33 @@ const DashCompanies = () => {
           />
 
           <fieldset>
-            <legend>Company type</legend>{" "}
+            <legend>Company type</legend>
             <input
               className="newcompany__form__input--type"
               name="type"
               id="client"
               type="radio"
-              value="2"
+              value="Client"
               required
               {...register("type", {
                 required: true,
               })}
             />
             <label for="client">Client</label>
+
             <input
               className="newcompany__form__input--type"
               name="type"
-              id="supplier"
+              id="seller"
               type="radio"
-              value="1"
+              value="Seller"
               required
               {...register("type", {
                 required: true,
               })}
             />
-            <label for="supplier">Supplier</label>
+            <label for="seller">Seller</label>
           </fieldset>
-
           <button type="submit" className="newcompany__form__btn">
             Create
           </button>

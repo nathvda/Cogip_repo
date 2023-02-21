@@ -40,7 +40,7 @@ const Dashboard = () => {
 
         <MediaQuery minWidth={768}>
           <div className="dash__nav--desktop">
-            <NavDashboardDesktop />
+            <NavDashboardDesktop name={user.user_first} />
           </div>
         </MediaQuery>
         <section className="dash__sectionTop">

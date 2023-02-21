@@ -31,3 +31,20 @@
             border-color: $yellow;
       }
 }
+
+@media only screen and (min-width: 1025px) {
+      .pagination {
+            margin: 2.5% auto;
+            width: 25%;
+
+            &__item {
+                  margin: 2% 4%;
+            }
+
+            &__link {
+                  padding: 25% 35%;
+                  border-radius: 0.5vw;
+                  font-size: 1.5vw;
+            }
+      }
+}
