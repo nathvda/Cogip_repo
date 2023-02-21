@@ -64,7 +64,11 @@ const Login = () => {
             required
             {...register("Password", { required: true })}
           />
-          <input className="header__login--open--submit" type="submit" />
+          <input
+            className="header__login--open--submit"
+            type="submit"
+            value="Connect me"
+          />
         </form>
       </div>
     </div>

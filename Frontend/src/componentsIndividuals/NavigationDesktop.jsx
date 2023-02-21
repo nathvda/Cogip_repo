@@ -1,22 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavigationDesktop = () => {
   return (
     <nav className="header__nav--desktop">
-      <Link className="header__nav--desktop--link" to={"/"}>
+      <NavLink
+        className={(nav) =>
+          (nav.isActive ? "nav-active" : "") + " header__nav--desktop--link"
+        }
+        to={"/"}
+      >
         Home
-      </Link>
-      <Link className="header__nav--desktop--link" to={`/invoices`}>
+      </NavLink>
+      <NavLink
+        className={(nav) =>
+          (nav.isActive ? "nav-active" : "") + " header__nav--desktop--link"
+        }
+        to={`/invoices`}
+      >
         Invoices
-      </Link>
-      <Link className="header__nav--desktop--link" to={`/companies`}>
+      </NavLink>
+      <NavLink
+        className={(nav) =>
+          (nav.isActive ? "nav-active" : "") + " header__nav--desktop--link"
+        }
+        to={`/companies`}
+      >
         Companies
-      </Link>
+      </NavLink>
 
-      <Link className="header__nav--desktop--link" to={`/contacts`}>
+      <NavLink
+        className={(nav) =>
+          (nav.isActive ? "nav-active" : "") + " header__nav--desktop--link"
+        }
+        to={`/contacts`}
+      >
         Contacts
-      </Link>
+      </NavLink>
     </nav>
   );
 };

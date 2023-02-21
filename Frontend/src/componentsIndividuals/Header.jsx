@@ -20,7 +20,18 @@ const Header = () => {
         </div>
       </MediaQuery>
 
-      <MediaQuery minWidth={768}>
+      <MediaQuery minWidth={768} maxWidth={1024}>
+        <p className="header__logo--desktop">COGIP</p>
+        <div className="header__menu--desktop">
+          <NavigationDesktop />
+        </div>
+        <div className="header__button--desktop">
+          <button className="header__button--signup">Sign up</button>
+          <Login />
+        </div>
+      </MediaQuery>
+
+      <MediaQuery minWidth={1025}>
         <p className="header__logo--desktop">COGIP</p>
         <div className="header__menu--desktop">
           <NavigationDesktop />
