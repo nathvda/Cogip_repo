@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import DashTableCompanies from "./components/DashTableCompanies";
 
 const DashModificationCompanies = () => {
       const [name, setName] = useState("");
@@ -26,7 +25,7 @@ const DashModificationCompanies = () => {
           setTva(tva);
           setType(type);
     
-          const response = await axios.post("http://localhost:8080/companies/add", {
+          const response = await axios.put(`http://localhost:8080/companies/${id}/edit`, {
             name: name,
             country: country,
             tva: tva,
@@ -40,7 +39,7 @@ const DashModificationCompanies = () => {
       return (
         <>
           <div className="forms">
-            <h2 className="newcompany__form__title">New company</h2>
+            <h2 className="newcompany__form__title">Modify company</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 className="newcompany__form__input--name"
@@ -49,7 +48,7 @@ const DashModificationCompanies = () => {
                 required
                 minLength="3"
                 maxLength="80"
-                placeholder="ex: Chocopie"
+                placeholder="Name"
                 {...register("name", {
                   required: true,
                   maxLength: 80,
@@ -65,7 +64,7 @@ const DashModificationCompanies = () => {
                 required
                 minLength="2"
                 maxLength="10"
-                placeholder="ex: Belgium"
+                placeholder="Country"
                 {...register("country", {
                   required: true,
                   maxLength: 10,
@@ -121,7 +120,6 @@ const DashModificationCompanies = () => {
               </button>
             </form>
           </div>
-          <DashTableCompanies />
         </>
       );
     };
