@@ -22,7 +22,7 @@ const HomePage = () => {
         <img
           className="homepage__sectionTop__rect"
           src="./public/assets/img/miseenpageRect.png"
-          alt="mise en forme"
+          alt="formatting"
         />
       </section>
       <section className="homepage__sectionMiddle">
@@ -31,12 +31,22 @@ const HomePage = () => {
           <TableInvoices />
         </div>
       </section>
+      <img
+        className="homepage__sectionMiddle__img1"
+        src="./public/assets/img/4.illustration_form.png"
+        alt="hand with note folder"
+      />
       <section className="homepage__sectionMiddle">
         <h1 className="homepage__sectionMiddle__title">Last contacts</h1>
         <div className="homepage__sectionMiddle__divAll">
           <TableContacts />
         </div>
       </section>
+      <img
+        className="homepage__sectionMiddle__img2"
+        src="./public/assets/img/3.illustration_light.png"
+        alt="hand with note folder"
+      />
       <section className="homepage__sectionMiddle">
         <h1 className="homepage__sectionMiddle__title">Last companies</h1>
         <div className="homepage__sectionMiddle__divAll">

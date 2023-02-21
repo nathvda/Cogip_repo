@@ -41,9 +41,9 @@ const NavDashboardMobile = () => {
             alt="Icon nav dashboard contact"
           />
         </Link>
-        <button className="dash__nav__link--button">
+        <div className="dash__nav__link--button">
           <DashLogout />
-        </button>
+        </div>
       </div>
     </nav>
   ) : (

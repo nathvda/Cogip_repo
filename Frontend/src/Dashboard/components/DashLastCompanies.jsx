@@ -30,7 +30,7 @@ const DashLastCompanies = () => {
   const dataFive = data.slice(0, 5);
   return (
     <div className="dash__sectionMiddle">
-      <h1 className="dash__sectionMiddle__title">Last companies</h1>
+      <h3 className="dash__sectionMiddle__title">Last companies</h3>
       <table className="dash__sectionMiddle__table">
         <thead>
           <tr className="dash__sectionMiddle__table--head">

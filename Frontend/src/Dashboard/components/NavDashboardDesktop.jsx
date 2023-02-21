@@ -18,9 +18,9 @@ const NavDashboardDesktop = () => {
       <Link className="dash__nav--desktop--link" to={`contacts`}>
         Contacts
       </Link>
-      <button className="dash__button--desktop dash__button--logout">
+      <div className="dash__button--desktop dash__button--logout">
         <DashLogout />
-      </button>
+      </div>
     </nav>
   );
 };

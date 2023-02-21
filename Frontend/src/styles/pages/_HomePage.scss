@@ -36,6 +36,19 @@
             margin: 5% auto;
             width: 90%;
 
+            &__img1 {
+                  position: absolute;
+                  width: 15%;
+                  right: -2%;
+            }
+
+            &__img2 {
+                  position: absolute;
+                  width: 15%;
+                  left: -3.5%;
+                  transform: rotate(45deg);
+            }
+
 
             &__title {
                   @include titleTable;
@@ -147,6 +160,11 @@
                   margin: 10% auto;
                   width: 80%;
 
+                  &__img1 {
+                        position: absolute;
+                        width: 15%;
+                        bottom: -100%;
+                  }
 
                   &__title {
                         font-size: 3vw;
