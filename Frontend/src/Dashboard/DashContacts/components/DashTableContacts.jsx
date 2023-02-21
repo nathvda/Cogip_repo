@@ -14,10 +14,10 @@ const DashTableContacts = () => {
 
       const currentItems = data;
       return (
-            <div className="dashcontacts__divTable">
-              <table className="dashcontacts__table">
+            <div className="dashTable__divTable">
+              <table className="dashTable__table">
                 <thead>
-                  <tr className="dashcontacts__table__head">
+                  <tr className="dashTable__table__head">
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Mail</th>
@@ -25,7 +25,7 @@ const DashTableContacts = () => {
                     <th>Created at</th>
                   </tr>
                 </thead>
-                <tbody className="dashcontacts__table__body">
+                <tbody className="dashTable__table__body">
                   {currentItems.map((item) => (
                     <tr
                       key={"tableDashContact" + item.name + item.id}>
