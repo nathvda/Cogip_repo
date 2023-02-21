@@ -56,5 +56,60 @@
             @include titleTable;
             margin-bottom: 2.5%;
 
+            &--margin {
+                  margin-left: 7%;
+            }
+
+      }
+}
+
+@media only screen and (min-width: 1025px) {
+      .showCompanies {
+            &__contacts {
+                  margin-top: 7%;
+                  margin-bottom: 7%;
+
+                  &::before {
+                        @include afterElement (80vw, 0.15vw, 10%, -10%);
+                        background-color: #CDCDCD;
+                  }
+
+                  &::after {
+                        @include afterElement (80vw, 0.15vw, 10%, 105%);
+                        background-color: #CDCDCD;
+                  }
+
+                  p {
+                        font-size: 1.5vw;
+                        margin: 0% 0% 5% 20%;
+                  }
+
+                  ul {
+                        margin: 3% 5%;
+                        width: 25%;
+                        padding: 2.5%;
+                        border-radius: 2.5vw;
+
+                        li {
+                              width: 40%;
+                              font-size: 2vw;
+
+                              img {
+                                    width: 90%;
+                                    border-radius: 50%;
+                                    margin: auto;
+                              }
+                        }
+                  }
+            }
+
+            &__h2 {
+                  font-size: 3vw;
+                  margin-bottom: 2.5%;
+
+                  &--margin {
+                        margin-left: 0%;
+                  }
+            }
       }
 }

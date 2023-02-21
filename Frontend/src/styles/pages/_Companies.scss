@@ -2,9 +2,10 @@
       &__title {
             @include titleTable;
             margin-bottom: 5%;
+            position: relative;
 
             &::after {
-                  @include afterElement(25vw, 1.5vh, 22%, 17.3%)
+                  @include afterElement(25vw, 1.5vh, 11%, 55%)
             }
       }
 
@@ -52,5 +53,41 @@
                   }
             }
 
+      }
+}
+
+@media only screen and (min-width: 1025px) {
+      .companies {
+            &__title {
+                  font-size: 3vw;
+
+                  &::after {
+                        @include afterElement(15vw, 3vh, 8%, 55%);
+                  }
+            }
+
+            &__divTable {
+                  width: 80%;
+            }
+
+            &__table {
+                  font-size: 1.5vw;
+
+                  &__head {
+                        height: 2vh;
+                  }
+
+                  &__body {
+                        td {
+                              padding: 0.7vw 2vw;
+                              padding-right: 5%;
+                        }
+
+                        &--link {
+                              font-size: 1.5vw;
+                        }
+                  }
+
+            }
       }
 }

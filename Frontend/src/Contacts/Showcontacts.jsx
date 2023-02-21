@@ -15,39 +15,47 @@ const Showcontacts = () => {
       responseType: "json",
     }).then((res) => setData(res.data));
   }, []);
+  console.log(data);
   return (
     <div>
       <Header />
       <RectHeader />
       {data.map((item) => (
-        <div key={"Contact" + id.toString()} className="showUnique">
-          <h1 className="showUnique__title">{item.name}</h1>
-          <ul className="showUnique__list">
-            <li
-              key={"contactName" + item + id.toString()}
-              className="showUnique__list__elem"
-            >
-              Contact : {item.name}
-            </li>
-            <li
-              key={"contactPhone" + item + id.toString()}
-              className="showUnique__list__elem"
-            >
-              Phone : {item.phone}
-            </li>
-            <li
-              key={"contactEmail" + item + id.toString()}
-              className="showUnique__list__elem"
-            >
-              Mail : {item.email}
-            </li>
-            <li
-              key={"contactCompanyId" + item + id.toString()}
-              className="showUnique__list__elem"
-            >
-              Company : {item.company_id}
-            </li>
-          </ul>
+        <div className="showUnique__contact__div">
+          <div key={"Contact" + id.toString()} className="showUnique">
+            <h1 className="showUnique__title">{item.name}</h1>
+            <ul className="showUnique__list">
+              <li
+                key={"contactName" + item + id.toString()}
+                className="showUnique__list__elem"
+              >
+                Contact : {item.name}
+              </li>
+              <li
+                key={"contactPhone" + item + id.toString()}
+                className="showUnique__list__elem"
+              >
+                Phone : {item.phone}
+              </li>
+              <li
+                key={"contactEmail" + item + id.toString()}
+                className="showUnique__list__elem"
+              >
+                Mail : {item.email}
+              </li>
+              <li
+                key={"contactCompanyId" + item + id.toString()}
+                className="showUnique__list__elem"
+              >
+                Company : {item.company_id}
+              </li>
+            </ul>
+          </div>
+          <img
+            className="showUnique__contact__img"
+            src={"../public/assets/img/user/" + item.contact_img + ".webp"}
+            alt={"picture of " + item.contact_img}
+          ></img>
         </div>
       ))}
       <Footer />
