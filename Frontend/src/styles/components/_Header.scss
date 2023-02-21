@@ -311,14 +311,71 @@
 
 @media only screen and (min-width: 1025px) {
     .header {
+        padding-top: 5%;
+
+        &__logo {
+
+            &--desktop {
+                margin-left: 5%;
+                @include fontRoboto(3vw, 900, black);
+            }
+        }
+
+
         &__button {
             &--signup {
-                font-size: 1vw;
+                font-size: 1.5vw;
+                padding: 1vw 2vw;
+                border-radius: 1vw;
             }
 
             &--login {
-                font-size: 1vw;
+                font-size: 1.5vw;
             }
         }
+
+        &__nav {
+            &--desktop {
+                font-size: 1.5vw;
+
+                a {
+                    &:hover {}
+                }
+            }
+        }
+
+        &__login {
+            &--open {
+                @extend .header__nav--open;
+                width: 20%;
+                flex-direction: column;
+                margin-top: 7vw;
+                background-color: $yellow;
+
+                label {
+                    font-size: 1.5vw;
+                    margin: auto;
+                }
+
+                input {
+                    border-radius: 1vw;
+                    height: 2vw;
+                    width: 10vw;
+                    margin: auto;
+                    font-size: 1.3vw;
+                }
+
+                &--submit {
+                    height: 7vw;
+                    width: 10vw;
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+    .nav-active {
+        border: 2px solid black;
+        padding: 1vw;
     }
 }

@@ -27,7 +27,9 @@ const LastInvoices = ({ idCompanies }) => {
 
   return (
     <div className="homepage__sectionMiddle homepage__sectionMiddle__divAll">
-      <h2 className="showCompanies__h2">Last invoices</h2>
+      <h2 className="showCompanies__h2 showCompanies__h2--margin">
+        Last invoices
+      </h2>
       <table className="invoices__table">
         <thead>
           <tr className="invoices__table__head">

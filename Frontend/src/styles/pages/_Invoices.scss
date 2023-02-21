@@ -55,3 +55,44 @@
 
       }
 }
+
+@media only screen and (min-width: 1025px) {
+      .invoices {
+            &__title {
+                  font-size: 3vw;
+
+                  &::after {
+                        @include afterElement(15vw, 3vh, 8%, 55%);
+                  }
+            }
+
+            &__divTable {
+                  width: 80%;
+            }
+
+            &__table {
+                  font-size: 1.5vw;
+
+                  &__head {
+                        height: 2vh;
+
+                        th {
+                              padding: 2vw 0vw;
+                              margin-right: 2.5%;
+                        }
+                  }
+
+                  &__body {
+                        td {
+                              padding: 0.7vw 2vw;
+                              padding-right: 5%;
+                        }
+
+                        &--link {
+                              font-size: 1.5vw;
+                        }
+                  }
+
+            }
+      }
+}
