@@ -31,7 +31,7 @@ const DashStatistics = () => {
   }, []);
 
   return (
-    <div className="dash__sectionMiddle">
+    <div className="dash__sectionMiddle dash__sectionMiddleDiv">
       <h1 className="dash__sectionMiddle__title">Statistics</h1>
       <div className="dash_sectionMiddle__stats">
         <div className="dash_sectionMiddle__stats--invoices">
