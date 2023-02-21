@@ -3,3 +3,11 @@
       margin: 2.5% 5% 2.5% 65%;
       @include fontInter (3vw, 300, #636363);
 }
+
+@media only screen and (min-width: 1025px) {
+      .searchBar {
+            width: 20%;
+            margin: 2% 5% 2% 70%;
+            font-size: 1.5vw;
+      }
+}

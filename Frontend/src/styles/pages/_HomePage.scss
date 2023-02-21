@@ -115,12 +115,84 @@
             &__sectionTop {
                   margin-top: -8%;
 
+                  &__rect {
+                        top: 84.4%;
+                  }
+            }
+      }
+}
+
+@media only screen and (min-width: 1025px) {
+      .homepage {
+            &__sectionTop {
+                  margin-top: -8%;
+                  height: 37vw;
+
+                  &__rect {
+                        top: 79.5%;
+                  }
+
+                  &__title {
+                        font-size: 3.5vw;
+                        margin-left: 15%;
+                        width: 50%;
+                  }
+
                   &__img {
-                        width: 55%;
+                        width: 40%;
+                  }
+            }
+
+            &__sectionMiddle {
+                  margin: 10% auto;
+                  width: 80%;
+
+
+                  &__title {
+                        font-size: 3vw;
+                  }
+
+                  &__table {
+                        font-size: 1.5vw;
+
+                        &--head {
+                              height: 2vh;
+                        }
+
+                        &--headCell {
+                              padding: 2vw 2vw;
+                              margin-right: 5%;
+                        }
+
+                        &--bodyCell {
+                              padding: 1vw 2vw;
+                              padding-right: 2.5%;
+                        }
+
+                        &--link {
+                              font-size: 1.5vw;
+                        }
+                  }
+            }
+
+            &__sectionBottom {
+                  height: 30vw;
+
+                  &__title {
+                        font-size: 3.5vw;
+                        margin-left: 15%;
+                        width: 40%;
+                  }
+
+                  &__img {
+                        width: 35%;
                   }
 
                   &__rect {
-                        top: 84.4%;
+                        width: 35%;
+                        position: absolute;
+                        z-index: -1;
+                        right: 0;
                   }
             }
       }
