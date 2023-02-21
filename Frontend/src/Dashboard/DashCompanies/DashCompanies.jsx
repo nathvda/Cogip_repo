@@ -8,6 +8,17 @@ const DashCompanies = () => {
   const [country, setCountry] = useState("");
   const [tva, setTva] = useState([]);
   const [type, setType] = useState();
+  
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+      [e.target.country]: e.target.value,
+      [e.target.tva]: e.target.value,
+      [e.target.type]: e.target.value,
+    });
+  };
+
   const {
     register,
     handleSubmit,
@@ -50,6 +61,8 @@ const DashCompanies = () => {
             minLength="3"
             maxLength="80"
             placeholder="ex: Chocopie"
+            value={data.name}  
+            onChange={handleChange}
             {...register("name", {
               required: true,
               maxLength: 80,
@@ -66,6 +79,8 @@ const DashCompanies = () => {
             minLength="2"
             maxLength="10"
             placeholder="ex: Belgium"
+            value={data.country}  
+            onChange={handleChange}
             {...register("country", {
               required: true,
               maxLength: 10,
@@ -81,6 +96,8 @@ const DashCompanies = () => {
             minLength="11"
             maxLength="80"
             placeholder="TVA"
+            value={data.tva}  
+            onChange={handleChange}
             {...register("tva", {
               required: true,
               maxLength: 80,

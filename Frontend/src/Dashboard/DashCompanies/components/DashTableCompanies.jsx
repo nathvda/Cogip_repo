@@ -37,7 +37,7 @@ const DashTableCompanies = () => {
     setType(elem[0].types_id);
   };
 
-  useEffect(() => {
+ useEffect(() => {
     axios({
       method: "GET",
       url: "http://localhost:8080/companies",
