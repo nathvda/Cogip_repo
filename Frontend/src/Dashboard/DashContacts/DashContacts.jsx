@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import DashTableContacts from "./components/DashTableContacts";
 
-const DashInvoices = () => {
-  const [id_company, setId_company] = useState([]);
-  const [reference, setRef] = useState("");
-  const [date, setDate] = useState("");
+const DashContacts = () => {
+  const [name, setName] = useState("");
+  const [company_id, setCompany_id] = useState([]);
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState([]);
   const [chosenCompany, setChosenCompany] = useState(0);
   const {
     register,
@@ -14,22 +16,23 @@ const DashInvoices = () => {
   } = useForm();
 
   async function onSubmit(data) {
+    const name = data.name;
+    const email = data.email;
+    const phone = data.phone;
     const chosenCompany = data.chosenCompany;
-    const reference = data.reference;
-    const date = data.date;
 
     try {
+      setName(name);
+      setEmail(email);
+      setPhone(phone);
       setChosenCompany(chosenCompany);
-      setRef(reference);
-      setDate(date);
 
-      const response = await axios.post("http://localhost:8080/invoices/add", {
-        ref: reference,
-        date_due: date,
-        id_company: chosenCompany,
+      const response = await axios.post("http://localhost:8080/contacts/add", {
+        name: name,
+        company_id: chosenCompany,
+        email: email,
+        phone: phone,
       });
-      //const responseData = response.data;
-      //console.log(responseData);
     } catch (error) {
       console.log(error);
     }
@@ -40,7 +43,7 @@ const DashInvoices = () => {
       try {
         const res = await axios.get("http://localhost:8080/companies");
         const data = await res.data;
-        setId_company(data);
+        setCompany_id(data);
       } catch (error) {
         console.log(error);
       }
@@ -49,33 +52,44 @@ const DashInvoices = () => {
   }, []);
 
   return (
-    <>
-      <h2>New invoice</h2>
+    <div className="forms">
+      <h2>New contact</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
-          name="reference"
+          name="name"
           type="text"
           required
-          minLength="10"
+          minLength="3"
           maxLength="80"
-          placeholder="Reference"
-          {...register("reference", {
+          placeholder="Name"
+          {...register("name", {
             required: true,
             maxLength: 80,
-            minLength: 10,
+            minLength: 3,
+          })}
+        />
+        <input
+          name="phone"
+          type="tel"
+          required
+          placeholder="Phone"
+          {...register("phone", {
+            required: true,
+            pattern: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g,
           })}
         />
 
         <input
-          name="date"
-          type="date"
+          name="email"
+          type="email"
+          placeholder="Email"
           required
-          {...register("date", { required: true })}
+          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
         />
 
         <select {...register("chosenCompany", { required: true })}>
           <option value="0">Company name</option>
-          {id_company.map((company, index) => (
+          {company_id.map((company, index) => (
             <option key={index} value={company.id}>
               {company.name}
             </option>
@@ -85,7 +99,9 @@ const DashInvoices = () => {
 
         <button type="submit">Create</button>
       </form>
-    </>
+      <DashTableContacts />
+    </div>
   );
 };
-export default DashInvoices;
+
+export default DashContacts;

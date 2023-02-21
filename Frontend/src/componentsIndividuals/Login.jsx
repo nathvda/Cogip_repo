@@ -34,6 +34,7 @@ const Login = () => {
       setTimeout(() => {
         redirect("/");
       }, 500);
+      window.location.replace("/dashboard");
     } catch (error) {
       console.log("no such user");
       alert("Oops ! Some error occured.");

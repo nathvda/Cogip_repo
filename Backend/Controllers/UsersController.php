@@ -61,17 +61,15 @@ class UsersController extends DbConnect{
         }
     }
 
-    public function checkToken(string $token,string $secret) : bool
+    public function checkToken(string $token) : bool
     {
 
         $header = $this->getHeaders($token);
         $payload = $this->getPayload($token);
-        $token = $header + $payload;
         
-        $verifToken = JWT::encode($header, $secret, 'HS256');
+        $verifToken = JWT::encode($payload, $_ENV['SECRET'], 'HS256');
 
-        return $verifToken === $token;
-
+        return $verifToken == $token;
     }
 
     private function getHeaders(string $token){
