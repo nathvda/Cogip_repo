@@ -1,30 +1,37 @@
-.dashTable{
+.dashTable {
       &__divTable {
             overflow-x: auto;
             width: 90%;
             margin: auto;
             background-color: white;
-            border-radius: 10px;  
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
       }
-      &__table{
-            width:180%; 
+
+      &__table {
+            width: 180%;
             text-align: left;
             border-collapse: collapse;
             table-layout: auto;
-            &__head{
-                 @include fontInter(3.5vw, 900, black); 
-                 padding: 2vw 0vw 2vw 2vw;
-                 height: 4vh;
+
+            &__head {
+                  @include fontInter(3.5vw, 900, black);
+                  padding: 2vw 0vw 2vw 2vw;
+                  height: 4vh;
 
             }
-            &__body{
+
+            &__body {
                   @include fontInter(3.5vw, 400, black);
+
                   td {
-                        padding: 2vw 3vw;
-                       
+                        padding: 1vw 4vw 1vw 0;
                   }
-             
+
             }
 
       }
+
+
 }

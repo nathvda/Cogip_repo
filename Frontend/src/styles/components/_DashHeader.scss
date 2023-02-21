@@ -13,7 +13,7 @@
     border-radius: 10px;
     position: relative;
 
-    @include fontInter(1.3rem, 900, rgb(255, 255, 255));
+    @include fontInter(0.7rem, 900, rgb(255, 255, 255));
 
     p {
       @include fontInter(3vw, 400, rgb(255, 255, 255));
@@ -34,9 +34,9 @@
 
 .dash__sectionTop {
   h4 {
-    padding: 0 9rem;
-    width: 80%;
+    width: 89%;
     font-family: inter;
-    font-weight: 400;
+    font-weight: 300;
+    margin: auto;
   }
 }

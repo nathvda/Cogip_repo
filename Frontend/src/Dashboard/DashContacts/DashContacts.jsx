@@ -52,55 +52,57 @@ const DashContacts = () => {
   }, []);
 
   return (
-    <div className="forms">
-      <h2>New contact</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          name="name"
-          type="text"
-          required
-          minLength="3"
-          maxLength="80"
-          placeholder="Name"
-          {...register("name", {
-            required: true,
-            maxLength: 80,
-            minLength: 3,
-          })}
-        />
-        <input
-          name="phone"
-          type="tel"
-          required
-          placeholder="Phone"
-          {...register("phone", {
-            required: true,
-            pattern: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g,
-          })}
-        />
+    <>
+      <div className="forms">
+        <h2>New contact</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            name="name"
+            type="text"
+            required
+            minLength="3"
+            maxLength="80"
+            placeholder="Name"
+            {...register("name", {
+              required: true,
+              maxLength: 80,
+              minLength: 3,
+            })}
+          />
+          <input
+            name="phone"
+            type="tel"
+            required
+            placeholder="Phone"
+            {...register("phone", {
+              required: true,
+              pattern: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g,
+            })}
+          />
 
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          required
-          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-        />
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+          />
 
-        <select {...register("chosenCompany", { required: true })}>
-          <option value="0">Company name</option>
-          {company_id.map((company, index) => (
-            <option key={index} value={company.id}>
-              {company.name}
-            </option>
-          ))}
-        </select>
-        {errors["Company name"] && <span>This field is required</span>}
+          <select {...register("chosenCompany", { required: true })}>
+            <option value="0">Company name</option>
+            {company_id.map((company, index) => (
+              <option key={index} value={company.id}>
+                {company.name}
+              </option>
+            ))}
+          </select>
+          {errors["Company name"] && <span>This field is required</span>}
 
-        <button type="submit">Create</button>
-      </form>
+          <button type="submit">Create</button>
+        </form>
+      </div>
       <DashTableContacts />
-    </div>
+    </>
   );
 };
 
