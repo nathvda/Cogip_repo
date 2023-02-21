@@ -19,6 +19,7 @@
                   @include fontInter(3.5vw, 900, black);
                   padding: 2vw 0vw 2vw 2vw;
                   height: 4vh;
+                  background-color: $lightGray;
 
             }
 
@@ -26,7 +27,7 @@
                   @include fontInter(3.5vw, 400, black);
 
                   td {
-                        padding: 1vw 4vw 1vw 0;
+                        padding: 2vw 4vw 1vw 0;
                   }
 
             }
@@ -37,5 +38,30 @@
 }
 
 @media screen AND (min-width:820px) {
-      //Coucou Nour
+      .dashTable {
+            &__divTable {
+                  width: 80%;
+            }
+
+            &__table {
+                  &__head {
+                        font-size: 2vw;
+                        padding: 1vw 0vw 1vw 1vw;
+                        height: 2vh;
+
+                  }
+
+                  &__body {
+                        font-size: 1.5vw;
+
+                        td {
+                              padding: 1vw 2vw 1vw 0;
+                        }
+
+                  }
+
+            }
+
+
+      }
 }
