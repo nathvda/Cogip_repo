@@ -14,17 +14,17 @@ const DashTableInvoices = () => {
 
   const currentItems = data;
   return (
-    <div className="dashinvoices__divTable">
-      <table className="dashinvoices__table">
+    <div className="dashTable__divTable">
+      <table className="dashTable__table">
         <thead>
-          <tr className="dashinvoices__table__head">
+          <tr className="dashTable__table__head">
             <th>Invoice number</th>
             <th>Due dates</th>
             <th>Company</th>
             <th>Created at</th>
           </tr>
         </thead>
-        <tbody className="dashinvoices__table__body">
+        <tbody className="dashTable__table__body">
           {currentItems.map((item) => (
             <tr key={"tableDashCompanies" + item.name + item.id}>
               <td>{item.ref}</td>

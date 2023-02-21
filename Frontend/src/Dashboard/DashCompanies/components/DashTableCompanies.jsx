@@ -14,10 +14,10 @@ const DashTableCompanies = () => {
 
       const currentItems = data;
       return (
-            <div className="dashcompanies__divTable">
-              <table className="dashcompanies__table">
+            <div className="dashTable__divTable">
+              <table className="dashTable__table">
                 <thead>
-                  <tr className="dashcompanies__table__head">
+                  <tr className="dashTable__table__head">
                     <th>Name</th>
                     <th>TVA</th>
                     <th>Country</th>
@@ -25,7 +25,7 @@ const DashTableCompanies = () => {
                     <th>Created at</th>
                   </tr>
                 </thead>
-                <tbody className="dashcompanies__table__body">
+                <tbody className="dashTable__table__body">
                   {currentItems.map((item) => (
                     <tr
                       key={"tableDashCompanies" + item.name + item.id}>
