@@ -108,3 +108,19 @@
             }
       }
 }
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+      .homepage {
+            &__sectionTop {
+                  margin-top: -12.5%;
+
+                  &__img {
+                        width: 55%;
+                  }
+
+                  &__rect {
+                        top: 35.2%;
+                  }
+            }
+      }
+}
