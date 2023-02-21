@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-const DashModificationCompanies = () => {
+const DashModificationCompanies = ({id}) => {
       const [name, setName] = useState("");
       const [country, setCountry] = useState("");
       const [tva, setTva] = useState([]);
@@ -12,7 +12,23 @@ const DashModificationCompanies = () => {
         handleSubmit,
         formState: { errors },
       } = useForm();
-    
+   
+      useEffect(() => {
+            async function fetchCompany() {
+              try {
+                const response = await axios.get(`http://localhost:8080/companies/${id}`);
+                const { name, country, tva, type } = response.data;
+                setName(name);
+                setCountry(country);
+                setTva(tva);
+                setType(type);
+              } catch (error) {
+                console.log(error);
+              }
+            }
+            fetchCompany();
+          }, [id]);
+
       async function onSubmit(data) {
         const name = data.name;
         const country = data.country;
@@ -20,10 +36,6 @@ const DashModificationCompanies = () => {
         const type = data.type;
     
         try {
-          setName(name);
-          setCountry(country);
-          setTva(tva);
-          setType(type);
     
           const response = await axios.put(`http://localhost:8080/companies/${id}/edit`, {
             name: name,
